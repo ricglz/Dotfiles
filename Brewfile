@@ -24,6 +24,7 @@ brew "zsh"
 
 # Casks
 cask "docker"
+cask "flux"
 cask "font-source-code-pro"
 cask "google-chrome"
 # cask "scilab"
