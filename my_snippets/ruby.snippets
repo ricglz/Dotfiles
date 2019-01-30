@@ -1,0 +1,33 @@
+snippet "\b(de)?f" "def <name>..." r
+def ${1:function_name}${2:(${3:*args})}
+  $0
+end
+endsnippet
+
+snippet for
+(${1:from}..${2:to}).each
+endsnippet
+
+snippet do
+do
+  $1
+end
+endsnippet
+
+snippet dop
+do |${1:p}|
+  $2
+end
+endsnippet
+
+snippet "each_?s(lice)?" "<array>.each_slice(n) do |slice| <block> end" r
+${1:elements}.each_slice(${2:2}) do |${3:slice}|
+  $0
+end
+endsnippet
+
+snippet clac "Create controller class"
+class ${1:Model}Controller < $2Controller
+  $0
+end
+endsnippet

@@ -19,6 +19,11 @@ colorscheme molotov
 let mapleader=","
 " }}}
 
+" Mapping important stuff {{{
+nnoremap <Leader><space> :noh<cr>
+nnoremap <Leader>t :tabnew<cr>
+"}}}
+
 " Local directories {{{
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
@@ -557,6 +562,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'mxw/vim-jsx'
+Plug 'mrk21/yaml-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdcommenter'
