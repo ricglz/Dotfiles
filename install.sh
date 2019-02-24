@@ -3,6 +3,4 @@
 
 brew bundle
 
-cp my_snippets ~/.vim/
-
 ./sl-setup.sh
