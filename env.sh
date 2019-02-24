@@ -1,9 +1,10 @@
 # Add commonly used folders to $PATH
 export PATH="/usr/local/opt/ruby/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="${HOME}/.npm-packages/bin:/usr/local/opt/python/libexec/bin:$PATH"
+export PATH="/usr/local/lib/ruby/gems/2.6.0/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
 
 export PYTHONUSERBASE="${HOME}/myappenv"
-export PATH="/usr/local/lib/ruby/gems/2.5.0/gems/travis-1.8.9/bin:${HOME}/.npm-packages/bin:/usr/local/opt/python/libexec/bin:$PATH"
-export PATH="$HOME/.rbenv/bin:$PATH"
 
 # Specify default editor. Possible values: vim, nano, ed etc.
 export EDITOR=vim
@@ -26,5 +27,5 @@ alias dcrdbs='docker-compose run --rm app rails db:seed'
 alias dcrgm='docker-compose run --rm app rails generate migration'
 
 alias dcrspec='docker-compose run --rm test rspec'
-alias bupgr='brew upgrade && brew cleanup'
+alias bupgr='brew upgrade && brew cask upgrade && brew cleanup && brew doctor'
 alias nupgr='npm update -g'
