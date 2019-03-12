@@ -276,7 +276,7 @@ augroup END
 augroup filetype_ruby
   autocmd!
 
-  au BufRead,BufNewFile Rakefile,Capfile,Gemfile,.autotest,.irbrc,*.treetop,*.tt set ft=ruby syntax=ruby
+  au BufRead,BufNewFile Rakefile,Capfile,Gemfile set ft=ruby syntax=ruby
 
   " Ruby.vim {{{
   let ruby_operators = 1
