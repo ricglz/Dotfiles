@@ -11,7 +11,7 @@ export EDITOR=vim
 
 # Other exports
 export LANG=en_US.UTF-8
-export DEFAULT_USER=`whoami`
+export DEFAULT_USER=`whoami` # Removes user name and dispositve name in terminal
 
 alias dcup='docker-compose up'
 alias dcdn='docker-compose down'

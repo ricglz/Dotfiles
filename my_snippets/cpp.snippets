@@ -9,10 +9,6 @@ int main() {
 }
 endsnippet
 
-snippet inc
-#include <$1>
-endsnippet
-
 snippet incv
 #include <vector>
 endsnippet
@@ -21,40 +17,8 @@ snippet incm
 #include <map>
 endsnippet
 
-snippet if
-if($1) {
-  $2
-}
-endsnippet
-
-snippet ife
-if($1) {
-  $2
-} else {
-  $3
-}
-endsnippet
-
-snippet fori
-for(int i = ${1:0}; i < ${2:n}; i${3:++}) {
-  $4
-}
-endsnippet
-
 snippet fore
 for(${1:int} ${2:elem} : ${3: v}) {
-  $4
-}
-endsnippet
-
-snippet while
-while($1) {
-  $2
-}
-endsnippet
-
-snippet fun
-${1:type} ${2:name}(${3:args}) {
   $4
 }
 endsnippet
@@ -67,18 +31,8 @@ snippet sort
 sort($1.begin(), $1.end()${2:, myFunction});
 endsnippet
 
-snippet struct
-struct ${1:Node} {
-  ${2:int val}
-};
-endsnippet
-
 snippet cout
 cout << $1 << endl;
-endsnippet
-
-snippet def
-#define $1
 endsnippet
 
 snippet cl "class .. (class)"
@@ -90,4 +44,8 @@ class ${1:`!p snip.rv = snip.basename or "name"`} {
   private:
     ${0:/* data */}
 };
+endsnippet
+
+snippet pb
+$1.push_back($2);
 endsnippet
