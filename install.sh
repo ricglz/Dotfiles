@@ -16,3 +16,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 
 echo "Setting up symlinks"
 ./sl-setup.sh
+
+echo "Finished installation"
+source ~/.zshrc
