@@ -45,7 +45,6 @@ set foldlevel=0 " Close all folds by default
 set foldmethod=syntax " Syntax are used to specify folds
 set foldminlines=0 " Allow folding single lines
 set foldnestmax=5 " Set max fold nesting level
-set formatoptions=
 set formatoptions+=c " Format comments
 set formatoptions+=r " Continue comments by default
 set formatoptions+=o " Make comment when using o or O from comment line
@@ -67,7 +66,7 @@ set nojoinspaces " Only insert single space after a '.', '?' and '!' with a join
 set noshowmode " Don't show the current mode (airline.vim takes care of us)
 set nostartofline " Don't reset cursor to start of line when moving around
 set nowrap " Do not wrap lines
-set nu
+set rnu
 set ofu=syntaxcomplete#Complete " Set omni-completion method
 set regexpengine=1 " Use the old regular expression engine (it's faster for certain language syntaxes)
 set report=0 " Show all changes
@@ -376,41 +375,43 @@ let g:UltiSnipsSnippetDirectories=["my_snippets"]
 let g:UltiSnipsEditSplit="vertical"
 "}}}
 
+"{{{
+nmap <leader>go :Goyo<cr>
+"}}}
+
 " Plugins -------------------------------------------------------------
 
 " Load plugins {{{
 call plug#begin('~/.vim/plugged')
 
 Plug '/usr/local/opt/fzf'
-Plug 'ap/vim-css-color'
 Plug 'bling/vim-airline'
-Plug 'cohama/lexima.vim'
-Plug 'FelikZ/ctrlp-py-matcher'
-Plug 'joker1007/vim-ruby-heredoc-syntax'
+Plug 'christoomey/vim-sort-motion'
+Plug 'cohama/lexima.vim' "Autoclose parenthesis, and others
+Plug 'digitaltoad/vim-pug'
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-easy-align'
-Plug 'junegunn/vim-emoji'
+Plug 'junegunn/vim-easy-align' "Aligns text in columns
 Plug 'junegunn/goyo.vim'
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-indent'
 Plug 'kchmck/vim-coffee-script'
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'mxw/vim-jsx'
-Plug 'mrk21/yaml-vim'
-Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx', {'for': 'javascript'}
+Plug 'mrk21/yaml-vim', {'for': 'yaml'}
+Plug 'pangloss/vim-javascript', {'for': 'javascript'}
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'SirVer/ultisnips'
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
-Plug 'terryma/vim-multiple-cursors'
-Plug 'thoughtbot/vim-rspec'
+Plug 'thoughtbot/vim-rspec', {'for': 'ruby'}
 Plug 'tpope/vim-markdown',     { 'for': 'markdown' }
-Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rails', {'for': 'ruby'}
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'vim-ruby/vim-ruby'
+Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
 Plug 'wavded/vim-stylus',      { 'for': 'stylus' }
 Plug 'w0rp/ale'
 Plug 'xolox/vim-misc'
-Plug 'Yggdroot/indentLine'
 
 call plug#end()
 " }}}
