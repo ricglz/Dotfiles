@@ -8,5 +8,4 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 source ~/env.sh
 source ~/functions.sh
-source ~/ids.sh
-
+source ~/extra.sh
