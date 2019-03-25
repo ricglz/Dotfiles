@@ -1,5 +1,15 @@
+snippet header
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+$0
+endsnippet
+
 snippet imp
 import $1
+endsnippet
+
+snippet as
+import $1 as $2
 endsnippet
 
 snippet from
@@ -10,7 +20,21 @@ snippet fori
 for $1 in range(${2:1..n}):
     $3
 endsnippet
+
 snippet fore
 for $1 in $2:
     $3
+endsnippet
+
+snippet def
+def ${1:function}(${2:args})
+    $3
+endsnippet
+
+snippet recv
+s.recv(1024).decode('utf-8')
+endsnippet
+
+snippet sendto
+s.sendto($1.encode('utf-8'), $2)
 endsnippet
