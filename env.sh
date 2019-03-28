@@ -16,16 +16,10 @@ export DEFAULT_USER=`whoami` # Removes user name and dispositve name in terminal
 alias dcup='docker-compose up'
 alias dcdn='docker-compose down'
 alias dcb='docker-compose build'
-alias dcr='docker-compose run --rm app'
 
-alias dcrra='docker-compose run --rm app rails'
+alias bri='brew install'
+alias cask='brew cask'
+alias caski='brew cask install'
 
-alias dcrdbm='docker-compose run --rm app rails db:migrate'
-alias dcrdbr='docker-compose run --rm app rails db:reset'
-alias dcrdbs='docker-compose run --rm app rails db:seed'
-
-alias dcrgm='docker-compose run --rm app rails generate migration'
-
-alias dcrspec='docker-compose run --rm test rspec'
 alias bupgr='brew upgrade && brew cask upgrade && brew cleanup && brew doctor'
 alias nupgr='npm update -g'
