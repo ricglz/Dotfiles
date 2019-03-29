@@ -8,3 +8,5 @@ alias caski='brew cask install'
 
 alias bupgr='brew upgrade && brew cask upgrade && brew cleanup && brew doctor'
 alias nupgr='npm update -g'
+
+alias npmglist='npm list -g --depth 0'
