@@ -6,7 +6,7 @@ plugins=(
   git
 )
 source $ZSH/oh-my-zsh.sh
-source ~/env.sh
+source ~/.exports
 source ~/.functions
 source ~/.aliases
 source ~/extra.sh
