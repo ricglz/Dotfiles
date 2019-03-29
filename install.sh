@@ -14,6 +14,9 @@ brew bundle
 echo "Installing oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+echo "Making directories"
+mkdir ~/.npm-packages
+
 echo "Setting up symlinks"
 ./sl-setup.sh
 
