@@ -42,12 +42,8 @@ function upDotfiles() {
   cd $last_path
 }
 
-function dcr() { local service="${1:-app}"; docker-compose run --rm $service }
-
 # Docker functions
-function dcrra() { local service="${1:-app}"; docker-compose run --rm $service rails }
 function dcrdbm() { local service="${1:-app}"; docker-compose run --rm $service rails db:migrate }
 function dcrdbr() { local service="${1:-app}"; docker-compose run --rm $service rails db:reset }
 function dcrdbs() { local service="${1:-app}"; docker-compose run --rm $service rails db:seed }
 function dcrgm() { local service="${1:-app}"; docker-compose run --rm $service rails generate migration }
-function dcrspec() { local service="${1:-test}"; docker-compose run --rm $service rspec }
