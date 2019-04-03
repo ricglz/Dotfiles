@@ -364,6 +364,9 @@ augroup ale_config
   let g:ale_sign_warning = '⚠'
   let g:ale_completion_enabled = 1
 
+  let g:ale_linter_aliases = {'jsx': ['javascript']}
+  let g:ale_linters = {'jsx': ['eslint']}
+
   let b:ale_fixers = ['eslint', 'stylelint']
   let b:ale_fix_on_save = 1
 augroup END
@@ -396,7 +399,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-indent'
 Plug 'kchmck/vim-coffee-script'
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'mxw/vim-jsx', {'for': 'javascript'}
+Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mrk21/yaml-vim', {'for': 'yaml'}
 Plug 'pangloss/vim-javascript', {'for': 'javascript'}
 Plug 'rking/ag.vim'
