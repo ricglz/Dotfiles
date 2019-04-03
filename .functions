@@ -46,4 +46,3 @@ function upDotfiles() {
 function dcrdbm() { local service="${1:-app}"; docker-compose run --rm $service rails db:migrate }
 function dcrdbr() { local service="${1:-app}"; docker-compose run --rm $service rails db:reset }
 function dcrdbs() { local service="${1:-app}"; docker-compose run --rm $service rails db:seed }
-function dcrgm() { local service="${1:-app}"; docker-compose run --rm $service rails generate migration }

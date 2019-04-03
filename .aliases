@@ -9,6 +9,7 @@ alias caski='brew cask install'
 alias dcr='docker-compose run --rm app'
 alias dcrra='docker-compose run --rm app rails'
 alias dcrspec='docker-compose run --rm app rspec'
+alias dcrgm='docker-compose run --rm app rails generate migration'
 
 alias bupgr='brew upgrade && brew cask upgrade && brew cleanup && brew doctor'
 alias nupgr='npm update -g'
