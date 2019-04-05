@@ -31,7 +31,7 @@ function create_subjects() {
 
 # Update dotfiles
 function upDotfiles() {
-  last_path=pwd
+  last_path=$(pwd)
   cd ~/Dotfiles
   echo doing brew bundle
   brew bundle dump --force
