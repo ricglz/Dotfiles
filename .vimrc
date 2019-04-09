@@ -361,8 +361,12 @@ let g:UltiSnipsSnippetDirectories=["my_snippets"]
 let g:UltiSnipsEditSplit="vertical"
 "}}}
 
-"{{{
+"{{{ Goyo
 nmap <leader>go :Goyo<cr>
+"}}}
+
+"{{{ Vim-Test
+nmap <leader>t :TestFile<cr>
 "}}}
 
 " Plugins -------------------------------------------------------------
@@ -375,6 +379,7 @@ Plug 'bling/vim-airline'
 Plug 'christoomey/vim-sort-motion'
 Plug 'cohama/lexima.vim' "Autoclose parenthesis, and others
 Plug 'digitaltoad/vim-pug'
+Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align' "Aligns text in columns
 Plug 'junegunn/goyo.vim'
