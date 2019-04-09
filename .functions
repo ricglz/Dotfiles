@@ -29,6 +29,9 @@ function create_subjects() {
   done
 }
 
+# General upgrade
+function gupgr() { bupgr; nupgr; }
+
 # Update dotfiles
 function upDotfiles() {
   last_path=$(pwd)
