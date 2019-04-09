@@ -32,6 +32,7 @@ set undodir=~/.vim/undo
 " Set some junk {{{
 set autoindent " Copy indent from last line when starting new line
 set backspace=indent,eol,start
+set clipboard=unnamed
 set cursorcolumn " Highlight current column
 set cursorline " Highlight current line
 set diffopt=filler " Add vertical spaces to keep right and left aligned
