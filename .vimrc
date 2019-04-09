@@ -103,7 +103,7 @@ set wrapscan " Searches wrap around end of file
 " }}}
 
 " Deletes trailling whitespaces after saving {{{
-autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd BufWritePre * :%s/\s\+$//e
 "}}}
 
 " }}}
@@ -156,11 +156,6 @@ augroup general_config
   inoremap <expr> <Up>   pumvisible() ? "\<C-p>" : "\<Up>"
   " }}}
 
-  " Paste toggle (,p) {{{
-  set pastetoggle=<leader>p
-  map <leader>p :set invpaste paste?<CR>
-  " }}}
-
   " Yank from cursor to end of line {{{
   nnoremap Y y$
   " }}}
@@ -194,19 +189,6 @@ augroup nerd_commenter
   let NERDSpaceDelims=1
   let NERDCompactSexyComs=1
   let g:NERDCustomDelimiters = { 'racket': { 'left': ';', 'leftAlt': '#|', 'rightAlt': '|#' } }
-augroup END
-" }}}
-
-" Buffers {{{
-augroup buffer_control
-  autocmd!
-
-  " Buffer navigation (,,) (gb) (gB) (,ls) {{{
-  map <Leader>, <C-^>
-  map <Leader>ls :buffers<CR>
-  map gb :bnext<CR>
-  map gB :bprev<CR>
-  " }}}
 augroup END
 " }}}
 
@@ -314,7 +296,7 @@ augroup END
 " }}}
 
 " fzf.vim {{{
-augroup ctrlp_config
+augroup fzf_config
   autocmd!
   map <C-p> :GFiles<CR>
 augroup END
