@@ -213,19 +213,6 @@ augroup END
 
 " Filetypes -------------------------------------------------------------
 
-" C {{{
-augroup filetype_c
-  autocmd!
-
-  " Highlight Custom C Types {{{
-  autocmd BufRead,BufNewFile *.[ch] let fname = expand('<afile>:p:h') . '/types.vim'
-  autocmd BufRead,BufNewFile *.[ch] if filereadable(fname)
-  autocmd BufRead,BufNewFile *.[ch]   exe 'so ' . fname
-  autocmd BufRead,BufNewFile *.[ch] endif
-  " }}}
-augroup END
-" }}}
-
 " Coffee {{{
 augroup filetype_coffee
   autocmd!
@@ -237,6 +224,7 @@ augroup END
 augroup filetype_javascript
   autocmd!
   let g:javascript_conceal = 1
+  autocmd BufRead,BufNewFile *.js setl completeopt+=noinsert
 augroup END
 " }}}
 
@@ -282,63 +270,11 @@ augroup END
 
 " Plugin Configuration -------------------------------------------------------------
 
-" Airline.vim {{{
-augroup airline_config
-  autocmd!
-  let g:airline_powerline_fonts = 1
-  let g:airline_enable_syntastic = 1
-  let g:airline#extensions#tabline#buffer_nr_format = '%s '
-  let g:airline#extensions#tabline#buffer_nr_show = 1
-  let g:airline#extensions#tabline#enabled = 1
-  let g:airline#extensions#tabline#fnamecollapse = 0
-  let g:airline#extensions#tabline#fnamemod = ':t'
-augroup END
-" }}}
-
-" fzf.vim {{{
-augroup fzf_config
-  autocmd!
-  map <C-p> :GFiles<CR>
-augroup END
-" }}}
-
-" Silver Searcher {{{
-augroup ag_config
-  autocmd!
-
-  if executable("ag")
-    " Note we extract the column as well as the file and line number
-    set grepprg=ag\ --nogroup\ --nocolor\ --column
-    set grepformat=%f:%l:%c%m
-
-    " Have the silver searcher ignore all the same things as wilgignore
-    let b:ag_command = 'ag %s -i --nocolor --nogroup'
-
-    for i in split(&wildignore, ",")
-      let i = substitute(i, '\*/\(.*\)/\*', '\1', 'g')
-      let b:ag_command = b:ag_command . ' --ignore "' . substitute(i, '\*/\(.*\)/\*', '\1', 'g') . '"'
-    endfor
-
-    let b:ag_command = b:ag_command . ' --hidden -g ""'
-    let g:ctrlp_user_command = b:ag_command
-  endif
-augroup END
-" }}}
-
-" EasyAlign.vim {{{
-augroup easy_align_config
-  autocmd!
-  vmap <Enter> <Plug>(EasyAlign) " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
-  nmap <Leader>a <Plug>(EasyAlign) " Start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
-augroup END
-" }}}
-
-" RainbowParenthesis.vim {{{
-augroup rainbow_parenthesis_config
-  autocmd!
-  nnoremap <leader>rp :RainbowParenthesesToggle<CR>
-augroup END
-" }}}
+"{{{ Ack.vim
+if executable('ag')
+  let g:ackprg = 'ag --nogroup --nocolor --column'
+endif
+"}}}
 
 " Ale.vim {{{
 augroup ale_config
@@ -355,14 +291,49 @@ augroup ale_config
 augroup END
 " }}}
 
+" Airline.vim {{{
+augroup airline_config
+  autocmd!
+  let g:airline_powerline_fonts = 1
+  let g:airline_enable_syntastic = 1
+  let g:airline#extensions#tabline#buffer_nr_format = '%s '
+  let g:airline#extensions#tabline#buffer_nr_show = 1
+  let g:airline#extensions#tabline#enabled = 1
+  let g:airline#extensions#tabline#fnamecollapse = 0
+  let g:airline#extensions#tabline#fnamemod = ':t'
+augroup END
+" }}}
+
+" EasyAlign.vim {{{
+augroup easy_align_config
+  autocmd!
+  vmap <Enter> <Plug>(EasyAlign) " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+  nmap <Leader>a <Plug>(EasyAlign) " Start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
+augroup END
+" }}}
+
+" fzf.vim {{{
+augroup fzf_config
+  autocmd!
+  map <C-p> :GFiles<CR>
+augroup END
+" }}}
+
+"{{{ Goyo
+nmap <leader>go :Goyo<cr>
+"}}}
+
+" RainbowParenthesis.vim {{{
+augroup rainbow_parenthesis_config
+  autocmd!
+  nnoremap <leader>rp :RainbowParenthesesToggle<CR>
+augroup END
+" }}}
+
 " UltiSnips.vim {{{
 nmap <leader>us :UltiSnipsEdit<cr>
 let g:UltiSnipsSnippetDirectories=["my_snippets"]
 let g:UltiSnipsEditSplit="vertical"
-"}}}
-
-"{{{ Goyo
-nmap <leader>go :Goyo<cr>
 "}}}
 
 "{{{ Vim-Test
@@ -388,19 +359,19 @@ Plug 'kana/vim-textobj-indent'
 Plug 'kchmck/vim-coffee-script'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'mileszs/ack.vim'
 Plug 'mrk21/yaml-vim', {'for': 'yaml'}
 Plug 'pangloss/vim-javascript', {'for': 'javascript'}
-Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'SirVer/ultisnips'
-Plug 'slim-template/vim-slim', { 'for': 'slim' }
+Plug 'slim-template/vim-slim', {'for': 'slim'}
 Plug 'thoughtbot/vim-rspec', {'for': 'ruby'}
-Plug 'tpope/vim-markdown',     { 'for': 'markdown' }
+Plug 'tpope/vim-markdown', {'for': 'markdown'}
 Plug 'tpope/vim-rails', {'for': 'ruby'}
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
-Plug 'wavded/vim-stylus',      { 'for': 'stylus' }
+Plug 'wavded/vim-stylus', {'for': 'stylus'}
 Plug 'w0rp/ale'
 Plug 'xolox/vim-misc'
 
