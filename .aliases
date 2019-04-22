@@ -3,6 +3,7 @@ alias bi='brew install'
 alias bupgr='brew upgrade && brew cask upgrade && brew cleanup && brew doctor'
 alias cask='brew cask'
 alias caski='brew cask install'
+alias casku='brew cask uninstall'
 
 alias dcb='docker-compose build'
 alias dcdn='docker-compose down'
@@ -13,6 +14,8 @@ alias dcrra='docker-compose run --rm app rails'
 alias dcrspec='docker-compose run --rm app rspec'
 
 alias dcup='docker-compose up'
+
+alias ins_net="nmap -sP $(ipconfig getifaddr en1)/24"
 
 alias gcc_lex='gcc lex.yy.c -o program.out -ll'
 
