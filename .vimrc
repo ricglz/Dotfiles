@@ -349,7 +349,7 @@ Plug '/usr/local/opt/fzf'
 Plug 'bling/vim-airline'
 Plug 'christoomey/vim-sort-motion'
 Plug 'cohama/lexima.vim' "Autoclose parenthesis, and others
-Plug 'digitaltoad/vim-pug'
+Plug 'ekalinin/Dockerfile.vim'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align' "Aligns text in columns
