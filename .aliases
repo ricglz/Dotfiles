@@ -18,7 +18,11 @@ alias dcla='docker stop $(docker container ls -a -q) && docker system prune -a -
 
 alias ins_net="nmap -sP $(ipconfig getifaddr en1)/24"
 
+alias gi='gem install'
+alias gu='gem uninstall'
 alias gcc_lex='gcc lex.yy.c -o program.out -ll'
 
 alias npmglist='npm list -g --depth 0'
 alias nupgr='npm update -g'
+
+alias rupgr='gem upgrade && gem cleanup'

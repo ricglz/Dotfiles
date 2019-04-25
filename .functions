@@ -30,7 +30,7 @@ function create_subjects() {
 }
 
 # General upgrade
-function gupgr() { bupgr; nupgr; }
+function gupgr() { bupgr; nupgr; rupgr }
 
 # Update dotfiles
 function upDotfiles() {
