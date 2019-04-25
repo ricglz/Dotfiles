@@ -14,6 +14,7 @@ alias dcrra='docker-compose run --rm app rails'
 alias dcrspec='docker-compose run --rm app rspec'
 
 alias dcup='docker-compose up'
+alias dcla='docker stop $(docker container ls -a -q) && docker system prune -a -f --volumes'
 
 alias ins_net="nmap -sP $(ipconfig getifaddr en1)/24"
 
