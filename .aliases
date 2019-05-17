@@ -1,5 +1,6 @@
 alias b='brew'
 alias bi='brew install'
+alias bu='brew uninstall'
 alias bupgr='brew upgrade && brew cask upgrade && brew cleanup && brew doctor'
 alias cask='brew cask'
 alias caski='brew cask install'
@@ -7,7 +8,7 @@ alias casku='brew cask uninstall'
 
 alias dcb='docker-compose build'
 alias dcdn='docker-compose down'
-alias dcr='docker-compose run --rm app'
+alias dcr='docker-compose run --rm'
 
 alias dcrgm='docker-compose run --rm app rails generate migration'
 alias dcrra='docker-compose run --rm app rails'
@@ -25,4 +26,4 @@ alias gcc_lex='gcc lex.yy.c -o program.out -ll'
 alias npmglist='npm list -g --depth 0'
 alias nupgr='npm update -g'
 
-alias rupgr='gem upgrade && gem cleanup'
+alias rupgr='gem update && gem cleanup'
