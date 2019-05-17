@@ -20,5 +20,8 @@ mkdir ~/.npm-packages
 echo "Setting up symlinks"
 ./sl-setup.sh
 
+echo "Installing npm global packages"
+./npm-g-installs.sh
+
 echo "Finished installation"
 source ~/.zshrc
