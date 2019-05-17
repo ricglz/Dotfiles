@@ -133,6 +133,11 @@ augroup general_config
   endif
   " }}}
 
+  " Buffer navigation {{{
+    map gb :bnext<CR>
+    map gB :bprev<CR>
+  " }}}
+
   " Better split switching (Ctrl-j, Ctrl-k, Ctrl-h, Ctrl-l) {{{
   map <C-j> <C-W>j
   map <C-k> <C-W>k
@@ -164,6 +169,10 @@ augroup general_config
   nnoremap <leader>* :%s/\<<C-r><C-w>\>//<Left>
   vnoremap <leader>* "hy:%s/\V<C-r>h//<left>
   " }}}
+
+  " Add space between equal signs {{{
+  nnoremap <leader>= :%s/\s\@<!=\+\s\@!/ \0 /g<CR>
+  "}}}
 
   " Join lines and restore cursor location (J) {{{
   nnoremap J mjJ`j
@@ -224,7 +233,6 @@ augroup END
 augroup filetype_javascript
   autocmd!
   let g:javascript_conceal = 1
-  autocmd BufRead,BufNewFile *.js setl completeopt+=noinsert
 augroup END
 " }}}
 
@@ -283,10 +291,16 @@ augroup ale_config
   let g:ale_sign_warning = '⚠'
   let g:ale_completion_enabled = 1
 
-  let g:ale_linter_aliases = {'jsx': ['javascript']}
-  let g:ale_linters = {'jsx': ['eslint']}
+  let g:ale_linter_aliases = {'jsx': ['javascript'] }
+  let g:ale_linters = {
+  \ 'jsx': ['eslint'],
+  \ 'javascript': ['eslint']
+  \}
 
-  let b:ale_fixers = ['eslint', 'stylelint']
+  let b:ale_fixers = {
+  \ 'javascript': ['eslint'],
+  \ 'css': ['stylelint']
+  \}
   let b:ale_fix_on_save = 1
 augroup END
 " }}}
@@ -355,12 +369,16 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align' "Aligns text in columns
 Plug 'junegunn/goyo.vim'
 Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-entire'
+Plug 'kana/vim-textobj-function'
+Plug 'lucapette/vim-textobj-underscore'
 Plug 'kana/vim-textobj-indent'
 Plug 'kchmck/vim-coffee-script'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mileszs/ack.vim'
 Plug 'mrk21/yaml-vim', {'for': 'yaml'}
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'pangloss/vim-javascript', {'for': 'javascript'}
 Plug 'scrooloose/nerdcommenter'
 Plug 'SirVer/ultisnips'
