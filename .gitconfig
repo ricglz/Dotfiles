@@ -4,3 +4,5 @@
   email = rjgcastillo@hotmail.com
   username = ricglz0201
 
+[core]
+  excludesfile = /Users/ricglz/.gitignore
