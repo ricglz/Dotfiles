@@ -362,19 +362,19 @@ call plug#begin('~/.vim/plugged')
 Plug '/usr/local/opt/fzf'
 Plug 'bling/vim-airline'
 Plug 'christoomey/vim-sort-motion'
-Plug 'cohama/lexima.vim' "Autoclose parenthesis, and others
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'janko-m/vim-test'
+Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-easy-align' "Aligns text in columns
 Plug 'junegunn/goyo.vim'
-Plug 'kana/vim-textobj-user'
+Plug 'junegunn/vim-easy-align' "Aligns text in columns
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-function'
-Plug 'lucapette/vim-textobj-underscore'
 Plug 'kana/vim-textobj-indent'
+Plug 'kana/vim-textobj-user'
 Plug 'kchmck/vim-coffee-script'
 Plug 'kien/rainbow_parentheses.vim'
+Plug 'lucapette/vim-textobj-underscore'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mileszs/ack.vim'
 Plug 'mrk21/yaml-vim', {'for': 'yaml'}
