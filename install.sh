@@ -1,5 +1,4 @@
-# Install brew
-echo "Installing/Updating brew..."
+# Install brew echo "Installing/Updating brew..."
 which -s brew
 if [[ $? != 0 ]] ; then
     # Install Homebrew
@@ -22,6 +21,9 @@ echo "Setting up symlinks"
 
 echo "Installing npm global packages"
 ./npm-g-installs.sh
+
+echo "Setting up configuration for osx"
+./osx.sh
 
 echo "Finished installation"
 source ~/.zshrc
