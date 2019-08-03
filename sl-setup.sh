@@ -120,7 +120,6 @@ print_success() {
 #
 # finds all .dotfiles in this folder
 declare -a FILES_TO_SYMLINK=$(find . -type f -maxdepth 1 -name ".*" -not -name .DS_Store -not -name .git -not -name .osx | sed -e 's|//|/|' | sed -e 's|./.|.|')
-FILES_TO_SYMLINK="$FILES_TO_SYMLINK my_snippets" # add other files
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -132,12 +131,7 @@ main() {
 
   for i in ${FILES_TO_SYMLINK[@]}; do
     sourceFile="$(pwd)/$i"
-    targetFile=""
-    if [[ $i == my_snippets ]]; then
-      targetFile="$HOME/.vim/$i"
-    else
-      targetFile="$HOME/$(printf "%s" "$i" | sed "s/.*\/\(.*\)/\1/g")"
-    fi
+    targetFile="$HOME/$(printf "%s" "$i" | sed "s/.*\/\(.*\)/\1/g")"
     if [ -e "$targetFile" ]; then
       if [ "$(readlink "$targetFile")" != "$sourceFile" ]; then
         ask_for_confirmation "'$targetFile' already exists, do you want to overwrite it?"

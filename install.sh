@@ -19,6 +19,15 @@ mkdir ~/.npm-packages
 echo "Setting up symlinks"
 ./sl-setup.sh
 
+echo "Adding extra folders for .vim"
+if [! -d "~/.vim/plugged/"]; then
+  mkdir "~/.vim/plugged/"
+fi
+
+if [! -d "~/.vim/undo/"]; then
+  mkdir "~/.vim/undo/"
+fi
+
 echo "Installing npm global packages"
 ./npm-g-installs.sh
 

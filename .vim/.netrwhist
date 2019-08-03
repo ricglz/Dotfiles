@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/ricglz/.expo'
+let g:netrw_dirhist_2='/Users/ricglz/ukko/agenda_2030/source/javascripts'
+let g:netrw_dirhist_3='/Users/ricglz/.expo'
+let g:netrw_dirhist_4='/Users/ricglz/ukko/stn_web'
