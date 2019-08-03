@@ -21,7 +21,7 @@ $
 
 # Command Line History (newest to oldest):
 :q
-|2,0,1564376002,,"q"
+|2,0,1564866882,,"q"
 :w
 |2,0,1564375999,,"w"
 :x
@@ -287,36 +287,50 @@ $
 |3,1,36,0,1,0,1564375998,":"
 
 # File marks:
-'0  6  64  ~/.exports
-|4,48,6,64,1564376002,"~/.exports"
-'1  1  0  ~/.alias
-|4,49,1,0,1564375966,"~/.alias"
-'2  1  0  ~/.extra
-|4,50,1,0,1564375919,"~/.extra"
-'3  1  0  ~/.zshrc
-|4,51,1,0,1564375902,"~/.zshrc"
-'4  1  0  ~/.exports
-|4,52,1,0,1564375891,"~/.exports"
+'0  1  0  ~/.yarnrc
+|4,48,1,0,1564866882,"~/.yarnrc"
+'1  6  64  ~/.exports
+|4,49,6,64,1564376002,"~/.exports"
+'2  1  0  ~/.alias
+|4,50,1,0,1564375966,"~/.alias"
+'3  1  0  ~/.extra
+|4,51,1,0,1564375919,"~/.extra"
+'4  1  0  ~/.zshrc
+|4,52,1,0,1564375902,"~/.zshrc"
 '5  1  0  ~/.exports
 |4,53,1,0,1564375891,"~/.exports"
-'6  2  0  ~/.alias
-|4,54,2,0,1564348821,"~/.alias"
+'6  1  0  ~/.exports
+|4,54,1,0,1564375891,"~/.exports"
 '7  2  0  ~/.alias
 |4,55,2,0,1564348821,"~/.alias"
-'8  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,56,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
+'8  2  0  ~/.alias
+|4,56,2,0,1564348821,"~/.alias"
 '9  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,57,1,0,1563058897,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
+|4,57,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
 
 # Jumplist (newest first):
+-'  1  0  ~/.yarnrc
+|4,39,1,0,1564866882,"~/.yarnrc"
 -'  6  64  ~/.exports
 |4,39,6,64,1564376002,"~/.exports"
+-'  6  64  ~/.exports
+|4,39,6,64,1564376002,"~/.exports"
+-'  1  0  ~/.exports
+|4,39,1,0,1564375976,"~/.exports"
 -'  1  0  ~/.exports
 |4,39,1,0,1564375976,"~/.exports"
 -'  1  0  ~/.alias
 |4,39,1,0,1564375966,"~/.alias"
 -'  1  0  ~/.alias
 |4,39,1,0,1564375966,"~/.alias"
+-'  1  0  ~/.alias
+|4,39,1,0,1564375966,"~/.alias"
+-'  1  0  ~/.alias
+|4,39,1,0,1564375966,"~/.alias"
+-'  1  0  ~/.extra
+|4,39,1,0,1564375919,"~/.extra"
+-'  1  0  ~/.extra
+|4,39,1,0,1564375919,"~/.extra"
 -'  1  0  ~/.extra
 |4,39,1,0,1564375919,"~/.extra"
 -'  1  0  ~/.extra
@@ -329,6 +343,22 @@ $
 |4,39,1,0,1564375902,"~/.zshrc"
 -'  1  0  ~/.zshrc
 |4,39,1,0,1564375902,"~/.zshrc"
+-'  1  0  ~/.zshrc
+|4,39,1,0,1564375902,"~/.zshrc"
+-'  1  0  ~/.zshrc
+|4,39,1,0,1564375902,"~/.zshrc"
+-'  1  0  ~/.zshrc
+|4,39,1,0,1564375902,"~/.zshrc"
+-'  1  0  ~/.zshrc
+|4,39,1,0,1564375902,"~/.zshrc"
+-'  1  0  ~/.exports
+|4,39,1,0,1564375891,"~/.exports"
+-'  1  0  ~/.exports
+|4,39,1,0,1564375891,"~/.exports"
+-'  1  0  ~/.exports
+|4,39,1,0,1564375891,"~/.exports"
+-'  1  0  ~/.exports
+|4,39,1,0,1564375891,"~/.exports"
 -'  1  0  ~/.exports
 |4,39,1,0,1564375891,"~/.exports"
 -'  1  0  ~/.exports
@@ -373,6 +403,74 @@ $
 |4,39,2,0,1564348821,"~/.alias"
 -'  2  0  ~/.alias
 |4,39,2,0,1564348821,"~/.alias"
+-'  2  0  ~/.alias
+|4,39,2,0,1564348821,"~/.alias"
+-'  2  0  ~/.alias
+|4,39,2,0,1564348821,"~/.alias"
+-'  2  0  ~/.alias
+|4,39,2,0,1564348821,"~/.alias"
+-'  2  0  ~/.alias
+|4,39,2,0,1564348821,"~/.alias"
+-'  2  0  ~/.alias
+|4,39,2,0,1564348821,"~/.alias"
+-'  2  0  ~/.alias
+|4,39,2,0,1564348821,"~/.alias"
+-'  2  0  ~/.alias
+|4,39,2,0,1564348821,"~/.alias"
+-'  2  0  ~/.alias
+|4,39,2,0,1564348821,"~/.alias"
+-'  2  0  ~/.alias
+|4,39,2,0,1564348821,"~/.alias"
+-'  2  0  ~/.alias
+|4,39,2,0,1564348821,"~/.alias"
+-'  2  0  ~/.alias
+|4,39,2,0,1564348821,"~/.alias"
+-'  2  0  ~/.alias
+|4,39,2,0,1564348821,"~/.alias"
+-'  2  0  ~/.alias
+|4,39,2,0,1564348821,"~/.alias"
+-'  2  0  ~/.alias
+|4,39,2,0,1564348821,"~/.alias"
+-'  2  0  ~/.alias
+|4,39,2,0,1564348821,"~/.alias"
+-'  2  0  ~/.alias
+|4,39,2,0,1564348821,"~/.alias"
+-'  2  0  ~/.alias
+|4,39,2,0,1564348821,"~/.alias"
+-'  2  0  ~/.alias
+|4,39,2,0,1564348821,"~/.alias"
+-'  1  0  ~/.alias
+|4,39,1,0,1564348817,"~/.alias"
+-'  1  0  ~/.alias
+|4,39,1,0,1564348817,"~/.alias"
+-'  1  0  ~/.alias
+|4,39,1,0,1564348817,"~/.alias"
+-'  1  0  ~/.alias
+|4,39,1,0,1564348817,"~/.alias"
+-'  1  0  ~/.alias
+|4,39,1,0,1564348817,"~/.alias"
+-'  1  0  ~/.alias
+|4,39,1,0,1564348817,"~/.alias"
+-'  1  0  ~/.alias
+|4,39,1,0,1564348817,"~/.alias"
+-'  1  0  ~/.alias
+|4,39,1,0,1564348817,"~/.alias"
+-'  1  0  ~/.alias
+|4,39,1,0,1564348817,"~/.alias"
+-'  1  0  ~/.alias
+|4,39,1,0,1564348817,"~/.alias"
+-'  1  0  ~/.alias
+|4,39,1,0,1564348817,"~/.alias"
+-'  1  0  ~/.alias
+|4,39,1,0,1564348817,"~/.alias"
+-'  1  0  ~/.alias
+|4,39,1,0,1564348817,"~/.alias"
+-'  1  0  ~/.alias
+|4,39,1,0,1564348817,"~/.alias"
+-'  1  0  ~/.alias
+|4,39,1,0,1564348817,"~/.alias"
+-'  1  0  ~/.alias
+|4,39,1,0,1564348817,"~/.alias"
 -'  1  0  ~/.alias
 |4,39,1,0,1564348817,"~/.alias"
 -'  1  0  ~/.alias
@@ -411,109 +509,15 @@ $
 |4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
 -'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
 |4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563064383,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563058897,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563058897,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563058897,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563058897,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563058897,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563058897,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563058897,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563058897,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563058897,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563058897,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563058897,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563058897,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563058897,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563058897,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563058897,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
--'  1  0  ~/ttt-stuff/ttt-react/.git/MERGE_MSG
-|4,39,1,0,1563058897,"~/ttt-stuff/ttt-react/.git/MERGE_MSG"
 
 # Buffer list:
-%~/.exports	6	64
+%~/.yarnrc	1	0
 
 # History of marks within files (newest to oldest):
+
+> ~/.yarnrc
+	*	1564866881	0
+	"	1	0
 
 > ~/.exports
 	*	1564376000	0
@@ -8083,10 +8087,6 @@ $
 > ~/.npmrc
 	*	1554732745	0
 	"	1	0
-
-> ~/.yarnrc
-	*	1554732731	0
-	"	4	0
 
 > ~/project_delta/app.py
 	*	1554682470	0
