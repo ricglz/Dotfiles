@@ -26,4 +26,6 @@ alias gcc_lex='gcc lex.yy.c -o program.out -ll'
 alias npmglist='npm list -g --depth 0'
 alias nupgr='npm update -g'
 
+alias python='/usr/local/bin/python2.7'
+
 alias rupgr='gem update && gem cleanup'
