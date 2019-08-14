@@ -5,6 +5,7 @@ alias bupgr='brew upgrade && brew cask upgrade && brew cleanup && brew doctor'
 alias cask='brew cask'
 alias caski='brew cask install'
 alias casku='brew cask uninstall'
+alias conda='/usr/local/anaconda3/bin/conda'
 
 alias dcb='docker-compose build'
 alias dcdn='docker-compose down'
