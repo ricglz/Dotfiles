@@ -17,11 +17,18 @@ function change_date() {
 
 # Create subjects for the semester
 function create_subjects() {
-  files=(Métodos_Numéricos Sistemas_Operativos AMSS MC Álgebra_Lineal Medios Redes)
+  subjects=()
+  ans="y"
+  while [[ $ans =~ ^[Yy]$ ]]; do
+    printf "Which subject do you want to add?\n"
+    read new_subject
+    subjects+=($new_subject)
+    printf "Want to add another subject? \n"
+    read ans
+  done
   terms=(1_Parcial 2_Parcial Final)
-  for file in ${files[@]}; do
-    mkdir $file
-    cd $file
+  for subject in ${subjects[@]}; do
+    mkcd $subject
     for term in ${terms[@]}; do
       mkdir $term
     done
