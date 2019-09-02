@@ -4,6 +4,12 @@ function mkcd() { mkdir -p "$@" && cd "$_"; }
 # Cd to git root
 function cd_root() { cd $(git rev-parse --show-toplevel) }
 
+# txt to md
+function txt_to_md() {
+  new_name=$(echo "$1" | cut -d '.' -f 1)
+  mv $1 "$new_name.md"
+}
+
 # Change dates
 function change_date() {
   files=(~/Downloads/photos/dated/*)
@@ -56,3 +62,14 @@ function upDotfiles() {
 function dcrdbm() { docker-compose run --rm ${1:-app} rails db:migrate }
 function dcrdbr() { docker-compose run --rm ${1:-app} rails db:reset }
 function dcrdbs() { docker-compose run --rm ${1:-app} rails db:seed }
+
+# Pandoc function
+function md_to_pdf() {
+  new_name=$(echo "$1" | cut -d '.' -f 1)
+  pandoc "$1" -o "$new_name.pdf" --template eisvogel --listings
+}
+
+function md_to_word() {
+  new_name=$(echo "$1" | cut -d '.' -f 1)
+  pandoc "$1" -o "$new_name.docx" --pdf-engine=xelatex --template eisvogel --listings
+}
