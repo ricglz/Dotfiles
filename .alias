@@ -2,6 +2,7 @@ alias b='brew'
 alias bi='brew install'
 alias bu='brew uninstall'
 alias bupgr='brew upgrade && brew cask upgrade && brew cleanup && brew doctor'
+
 alias cask='brew cask'
 alias caski='brew cask install'
 alias casku='brew cask uninstall'
@@ -26,7 +27,5 @@ alias gcc_lex='gcc lex.yy.c -o program.out -ll'
 
 alias npmglist='npm list -g --depth 0'
 alias nupgr='npm update -g'
-
-alias python='/usr/local/bin/python2.7'
 
 alias rupgr='gem update && gem cleanup'
