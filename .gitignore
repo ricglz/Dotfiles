@@ -5,3 +5,5 @@
 .vim/plugged/*
 .vim/undo/*
 viminfo
+dump.rdb
+ssh

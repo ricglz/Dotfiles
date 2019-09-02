@@ -23,7 +23,7 @@ alias gfa='git fetch --all --prune'
 
 alias ggl='git pull origin "$(git_current_branch)"'
 
-alias gl='git pull'
+alias gl='git pull origin $(git_current_branch)'
 alias glog='git log --oneline --decorate --graph'
 
 alias gm='git merge'
