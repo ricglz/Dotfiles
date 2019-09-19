@@ -1,9 +1,13 @@
+# Things to always ignore
 .DS_Store
 
 # Vim related
 .netrwhist
 .vim/plugged/*
 .vim/undo/*
+.vim/autoload/plug.vim.old
 viminfo
+
+# Other things to ignore
 dump.rdb
 ssh
