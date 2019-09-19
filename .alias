@@ -7,7 +7,7 @@ alias cask='brew cask'
 alias caski='brew cask install'
 alias casku='brew cask uninstall'
 alias conda='/usr/local/anaconda3/bin/conda'
-
+alias current_ip='ipconfig getifaddr en1'
 alias dcb='docker-compose build'
 alias dcdn='docker-compose down'
 alias dcr='docker-compose run --rm'
