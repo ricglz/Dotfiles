@@ -71,5 +71,10 @@ function md_to_pdf() {
 
 function md_to_word() {
   new_name=$(echo "$1" | cut -d '.' -f 1)
-  pandoc "$1" -o "$new_name.docx" --pdf-engine=xelatex --template eisvogel --listings
+  pandoc "$1" -o "$new_name.docx"
+}
+
+function md_to_pptx() {
+  new_name=$(echo "$1" | cut -d '.' -f 1)
+  pandoc "$1" -o "$new_name.pptx"
 }
