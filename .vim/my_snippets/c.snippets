@@ -8,7 +8,15 @@ int main() {
 endsnippet
 
 snippet inc
-#include <$1>
+#include <$1.h>
+endsnippet
+
+snippet incb
+#include <stdbool.h>
+endsnippet
+
+snippet incp
+#include "$1.h"
 endsnippet
 
 snippet if
@@ -44,7 +52,7 @@ ${1:type} ${2:name}(${3:args}) {
 endsnippet
 
 snippet struct
-struct ${1:Node} {
+typedef struct ${1:Node} {
   ${2:int val}
 };
 endsnippet

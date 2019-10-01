@@ -4,7 +4,15 @@ def ${1:function_name}${2:(${3:*args})}
 end
 endsnippet
 
-snippet for
+snippet hattr
+${1:Model}.human_attribute_name(:${2:attr})${3:.capitalize}
+endsnippet
+
+snippet mname
+${1:Model}.model_name.human(${2:count: 2})
+endsnippet
+
+snippet fori
 (${1:from}..${2:to}).each
 endsnippet
 
@@ -28,6 +36,12 @@ endsnippet
 
 snippet clac "Create controller class"
 class ${1:Model}Controller < $2Controller
+  $0
+end
+endsnippet
+
+snippet module "Create module"
+module $1
   $0
 end
 endsnippet

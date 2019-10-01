@@ -1,0 +1,41 @@
+snippet fun
+(${1:args}) ->
+  ${0:# body...}
+
+snippet bfun
+(${1:args}) =>
+  ${0:# body...}
+
+snippet cla
+class ${1:`substitute(vim_snippets#Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`}
+  constructor: (${2:args}) ->
+   ${3}
+
+snippet if
+if ${1:condition}
+  ${0:${VISUAL}}
+
+snippet ife
+if ${1:condition}
+  ${2:${VISUAL}}
+else
+  ${0:# body...}
+
+snippet eif
+else if ${1:condition}
+  ${0:${VISUAL}}
+
+snippet ifte
+if ${1:condition} then ${2:value} else ${0:other}
+
+snippet unl
+${1:action} unless ${0:condition}
+
+snippet swi
+switch ${1:object}
+  when ${2:value}
+    ${0:# body...}
+  ${3:else}
+
+snippet log
+console.log ${0:Hello world}
