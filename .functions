@@ -62,6 +62,14 @@ function upDotfiles() {
 function dcrdbm() { docker-compose run --rm ${1:-app} rails db:migrate }
 function dcrdbr() { docker-compose run --rm ${1:-app} rails db:reset }
 function dcrdbs() { docker-compose run --rm ${1:-app} rails db:seed }
+function docker_pg_restore() {
+  if [ $# -ne 3 ]; then
+    echo "Error lacking arguments: docker_pg_restore #{container_id} #{database_name} #{dump_path}"
+    return 1
+  else
+    docker exec -i "$1" pg_restore -U postgres -v -c -O -d "$2" < "$3"
+  fi
+}
 
 # Pandoc function
 function md_to_pdf() {
