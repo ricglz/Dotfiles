@@ -1,0 +1,21 @@
+snippet word
+---
+title: "${1:`!p snip.rv = snip.basename or "name"`}"
+author: "${2:Ricardo Javier González Castillo${3: - [A01282829]}}"
+date: "`#!/usr/bin/perl
+@a = localtime(); print $a[3] . '/' . $a[4] . '/' . ($a[5]+1900);`"
+output: word_document
+---
+$0
+endsnippet
+
+snippet pdf
+---
+title: "${1:`!p snip.rv = snip.basename or "name"`}"
+author: "${2:Ricardo Javier González Castillo${3: - [A01282829]}}"
+date: "`#!/usr/bin/perl
+@a = localtime(); print $a[3] . '/' . $a[4] . '/' . ($a[5]+1900);`"
+output: pdf_document
+---
+$0
+endsnippet
