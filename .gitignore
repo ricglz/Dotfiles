@@ -1,5 +1,7 @@
 # Things to always ignore
 .DS_Store
+node_modules
+.vs
 
 # Vim related
 .netrwhist
