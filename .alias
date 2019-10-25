@@ -1,4 +1,12 @@
 alias b='brew'
+alias be='bundle exec'
+alias ber='bundle exec rails'
+alias berc='bundle exec rails c'
+alias berdbm='bundle exec rake db:migrate'
+alias berdbr='bundle exec rake db:reset'
+alias berdbs='bundle exec rake db:setup'
+alias berk='bundle exec rake'
+alias bers='bundle exec rails s'
 alias bi='brew install'
 alias bu='brew uninstall'
 alias bupgr='brew upgrade && brew cask upgrade && brew cleanup && brew doctor'
@@ -8,24 +16,25 @@ alias caski='brew cask install'
 alias casku='brew cask uninstall'
 alias conda='/usr/local/anaconda3/bin/conda'
 alias current_ip='ipconfig getifaddr en1'
+
 alias dcb='docker-compose build'
 alias dcdn='docker-compose down'
+alias dcla='docker stop $(docker container ls -a -q) && docker system prune -a -f --volumes'
 alias dcr='docker-compose run --rm'
-
 alias dcrgm='docker-compose run --rm app rails generate migration'
 alias dcrra='docker-compose run --rm app rails'
 alias dcrspec='docker-compose run --rm app rspec'
-
 alias dcup='docker-compose up'
-alias dcla='docker stop $(docker container ls -a -q) && docker system prune -a -f --volumes'
 
 alias ins_net="nmap -sP $(ipconfig getifaddr en1)/24"
 
+alias gcc_lex='gcc lex.yy.c -o program.out -ll'
 alias gi='gem install'
 alias gu='gem uninstall'
-alias gcc_lex='gcc lex.yy.c -o program.out -ll'
 
 alias npmglist='npm list -g --depth 0'
 alias nupgr='npm update -g'
+
+alias op-itc='open ITC/5_Semestre/'
 
 alias rupgr='gem update && gem cleanup'
