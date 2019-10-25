@@ -134,8 +134,8 @@ augroup general_config
   " }}}
 
   " Buffer navigation {{{
-    map gb :bnext<CR>
-    map gB :bprev<CR>
+    nnoremap <leader>p :bp<CR>
+    nnoremap <leader>n :bn<CR>
   " }}}
 
   " Better split switching (Ctrl-j, Ctrl-k, Ctrl-h, Ctrl-l) {{{
@@ -246,6 +246,7 @@ augroup END
 " Markdown {{{
 augroup filetype_markdown
   autocmd!
+  au BufRead,BufNewFile *.md set shiftwidth=4
   let g:markdown_fenced_languages = ['ruby', 'html', 'javascript', 'css', 'erb=eruby.html', 'bash=sh']
 augroup END
 " }}}
