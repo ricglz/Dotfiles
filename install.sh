@@ -1,4 +1,3 @@
-# Install brew echo "Installing/Updating brew..."
 which -s brew
 if [[ $? != 0 ]] ; then
     # Install Homebrew
@@ -18,6 +17,9 @@ mkdir ~/.npm-packages
 
 echo "Setting up symlinks"
 ./sl-setup.sh
+
+echo "Installing poweline"
+git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 
 echo "Adding extra folders for .vim"
 if [! -d "~/.vim/plugged/"]; then
