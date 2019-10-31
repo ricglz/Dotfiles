@@ -273,7 +273,7 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 " ZSH {{{
 augroup filetype_zsh
   autocmd!
-  au BufRead,BufNewFile .zsh_rc,.functions,.commonrc set ft=zsh
+  au BufRead,BufNewFile .zsh_rc,.functions,.commonrc,.git_stuff set ft=zsh
 augroup END
 " }}}
 
@@ -294,8 +294,8 @@ augroup ale_config
 
   let g:ale_linter_aliases = {'jsx': ['javascript'] }
   let g:ale_linters = {
-  \ 'jsx': ['eslint'],
-  \ 'javascript': ['eslint']
+  \ 'jsx': ['eslint', 'flow-language-server'],
+  \ 'javascript': ['eslint', 'flow-language-server']
   \}
 
   let b:ale_fixers = {
@@ -319,24 +319,12 @@ augroup airline_config
 augroup END
 " }}}
 
-" EasyAlign.vim {{{
-augroup easy_align_config
-  autocmd!
-  vmap <Enter> <Plug>(EasyAlign) " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
-  nmap <Leader>a <Plug>(EasyAlign) " Start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
-augroup END
-" }}}
-
 " fzf.vim {{{
 augroup fzf_config
   autocmd!
   map <C-p> :GFiles<CR>
 augroup END
 " }}}
-
-"{{{ Goyo
-nmap <leader>go :Goyo<cr>
-"}}}
 
 " RainbowParenthesis.vim {{{
 augroup rainbow_parenthesis_config
@@ -351,47 +339,37 @@ let g:UltiSnipsSnippetDirectories=["my_snippets"]
 let g:UltiSnipsEditSplit="vertical"
 "}}}
 
-"{{{ Vim-Test
-nmap <leader>t :TestFile<cr>
-"}}}
-
 " Plugins -------------------------------------------------------------
 
 " Load plugins {{{
 call plug#begin('~/.vim/plugged')
 
 Plug '/usr/local/opt/fzf'
+Plug 'SirVer/ultisnips'
 Plug 'bling/vim-airline'
 Plug 'christoomey/vim-sort-motion'
 Plug 'ekalinin/Dockerfile.vim'
-Plug 'janko-m/vim-test'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/vim-easy-align' "Aligns text in columns
-Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-function'
 Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-user'
-Plug 'kchmck/vim-coffee-script'
+Plug 'kchmck/vim-coffee-script', {'for': 'coffee'}
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'lucapette/vim-textobj-underscore'
-Plug 'maxmellon/vim-jsx-pretty'
+Plug 'maxmellon/vim-jsx-pretty', {'for': 'jsx'}
 Plug 'mileszs/ack.vim'
 Plug 'mrk21/yaml-vim', {'for': 'yaml'}
-Plug 'NLKNguyen/papercolor-theme'
 Plug 'pangloss/vim-javascript', {'for': 'javascript'}
 Plug 'scrooloose/nerdcommenter'
-Plug 'SirVer/ultisnips'
 Plug 'slim-template/vim-slim', {'for': 'slim'}
-Plug 'thoughtbot/vim-rspec', {'for': 'ruby'}
 Plug 'tpope/vim-markdown', {'for': 'markdown'}
 Plug 'tpope/vim-rails', {'for': 'ruby'}
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
-Plug 'wavded/vim-stylus', {'for': 'stylus'}
 Plug 'w0rp/ale'
+Plug 'wavded/vim-stylus', {'for': 'stylus'}
 Plug 'xolox/vim-misc'
 
 call plug#end()
