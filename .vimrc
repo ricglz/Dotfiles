@@ -280,7 +280,9 @@ augroup END
 " Plugin Configuration -------------------------------------------------------------
 
 "{{{ Ack.vim
-if executable('ag')
+if executable('rg')
+  let g:ackprg = 'rg --column'
+elseif executable('ag')
   let g:ackprg = 'ag --nogroup --nocolor --column'
 endif
 "}}}
@@ -334,8 +336,8 @@ augroup END
 " }}}
 
 " UltiSnips.vim {{{
-nmap <leader>us :UltiSnipsEdit<cr>
-let g:UltiSnipsSnippetDirectories=["my_snippets"]
+nmap <leader>s :UltiSnipsEdit<cr>
+let g:UltiSnipsSnippetDirectories=["~/.vim/my_snippets"]
 let g:UltiSnipsEditSplit="vertical"
 "}}}
 
@@ -348,9 +350,9 @@ Plug '/usr/local/opt/fzf'
 Plug 'SirVer/ultisnips'
 Plug 'bling/vim-airline'
 Plug 'christoomey/vim-sort-motion'
-Plug 'ekalinin/Dockerfile.vim'
+Plug 'ekalinin/Dockerfile.vim', {'on': 'Dockerfile'}
 Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim', {'on': 'GFiles'}
 Plug 'kana/vim-textobj-function'
 Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-user'
@@ -358,7 +360,7 @@ Plug 'kchmck/vim-coffee-script', {'for': 'coffee'}
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'lucapette/vim-textobj-underscore'
 Plug 'maxmellon/vim-jsx-pretty', {'for': 'jsx'}
-Plug 'mileszs/ack.vim'
+Plug 'mileszs/ack.vim', {'on': 'Ack'}
 Plug 'mrk21/yaml-vim', {'for': 'yaml'}
 Plug 'pangloss/vim-javascript', {'for': 'javascript'}
 Plug 'scrooloose/nerdcommenter'
