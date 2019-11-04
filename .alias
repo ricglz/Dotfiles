@@ -14,6 +14,7 @@ alias bupgr='brew upgrade && brew cask upgrade && brew cleanup && brew doctor'
 alias cask='brew cask'
 alias caski='brew cask install'
 alias casku='brew cask uninstall'
+alias cat='bat'
 alias conda='/usr/local/anaconda3/bin/conda'
 alias current_ip='ipconfig getifaddr en1'
 
