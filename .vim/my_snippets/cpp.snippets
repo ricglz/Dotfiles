@@ -19,6 +19,10 @@ int main() {
 }
 endsnippet
 
+snippet std
+using namespace std;
+endsnippet
+
 snippet incv
 #include <vector>
 endsnippet
@@ -34,7 +38,7 @@ for(${1:int} ${2:elem} : ${3: v}) {
 endsnippet
 
 snippet v
-vector<$1> $2;
+vector<$1> ${2:v}${3:(${4:n})};
 endsnippet
 
 snippet sort
@@ -42,7 +46,11 @@ sort($1.begin(), $1.end()${2:, ${3:myFunction}});
 endsnippet
 
 snippet cout
-cout << $1 << endl;
+cout${1: << $2} << endl;
+endsnippet
+
+snippet cin
+cin >> $1;
 endsnippet
 
 snippet cl "class .. (class)"

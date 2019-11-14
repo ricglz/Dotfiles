@@ -8,7 +8,7 @@ int main() {
 endsnippet
 
 snippet inc
-#include <$1.h>
+#include <${1:stdio}.h>
 endsnippet
 
 snippet incb
@@ -25,6 +25,14 @@ if($1) {
 }
 endsnippet
 
+snippet scan
+scanf("$1", $2);
+endsnippet
+
+snippet print
+printf("${1:Hola mundo}\n"${2:, $3});
+endsnippet
+
 snippet ife
 if($1) {
   $2
@@ -39,7 +47,7 @@ for(int i = ${1:0}; i < ${2:n}; i${3:++}) {
 }
 endsnippet
 
-snippet while
+snippet w
 while($1) {
   $2
 }
@@ -51,14 +59,18 @@ ${1:type} ${2:name}(${3:args}) {
 }
 endsnippet
 
-snippet struct
-typedef struct ${1:Node} {
-  ${2:int val}
-} ${1:Node};
+snippet str
+typedef struct $1 {
+  ${2:int val};
+} $1;
 endsnippet
 
 snippet def
 #define $1
+endsnippet
+
+snippet typ
+typedef ${1:long long} ${2:ll};
 endsnippet
 
 snippet debug
