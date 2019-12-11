@@ -76,9 +76,9 @@ defaults write com.apple.dashboard mcx-disabled -bool true
 # Change indexing order and disable some search results
 defaults write com.apple.spotlight orderedItems -array \
   '{"enabled" = 1;"name" = "APPLICATIONS' \
-  '{"enabled" = 1;"name" = "DOCUMENTS' \
-  '{"enabled" = 1;"name" = "DIRECTORIES' \
-  '{"enabled" = 1;"name" = "PDF";}' \
+  '{"enabled" = 0;"name" = "DOCUMENTS' \
+  '{"enabled" = 0;"name" = "DIRECTORIES' \
+  '{"enabled" = 0;"name" = "PDF";}' \
   '{"enabled" = 0;"name" = "SYSTEM_PREFS";}' \
   '{"enabled" = 0;"name" = "FONTS";}' \
   '{"enabled" = 0;"name" = "MESSAGES";}' \
