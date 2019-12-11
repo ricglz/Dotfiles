@@ -4,6 +4,17 @@ def ${1:function_name}${2:(${3:*args})}
 end
 endsnippet
 
+snippet cl "class .. (class)"
+# $2
+class $1
+  $0
+end
+endsnippet
+
+snippet inc
+include $1
+endsnippet
+
 snippet hattr
 ${1:Model}.human_attribute_name(:${2:attr})${3:.capitalize}
 endsnippet
@@ -48,7 +59,8 @@ class ${1:Model}Controller < $2Controller
 end
 endsnippet
 
-snippet module "Create module"
+snippet mod "Create module"
+$2
 module $1
   $0
 end

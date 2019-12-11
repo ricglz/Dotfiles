@@ -8,6 +8,22 @@ function ${1:myFunction}(${2:args}) {
 }
 endsnippet
 
+snippet afun
+async function ${1:myFunction}(${2:args}) {
+  $3
+}
+endsnippet
+
 snippet imp
 import $1 from '$2';
+endsnippet
+
+snippet constf
+const $1 = () => (
+  $2
+)
+endsnippet
+
+snippet expd
+export default $1;
 endsnippet

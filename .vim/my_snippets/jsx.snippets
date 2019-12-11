@@ -1,68 +1,22 @@
-snippet startC
-import React from 'react';
-import PropTypes from 'prop-types';
+snippet start
+//@flow
+import * as React from 'react';
 
-class $1 extendes React.Component {
-  constructor(props) {
-    super(props);
-    this.state = $2
-  }
-}
-
-$1.propTypes = {
-
-};
-
-export default $1;
-endsnippet
-
-snippet startF
-import React from 'react';
-import PropTypes from 'prop-types';
-
-const $1 = ({ ${2:args} }) => (
-  $3
+const $1 = (): React.Node => (
+  $0
 );
 
-$1.propTypes = {
-
-};
-
 export default $1;
 endsnippet
 
-snippet st
-this.state
+snippet ust
+const [${1:state}, ${2:setState}] = React.useState($3);
 endsnippet
 
-snippet dst
-let { $1 } = this.state;
-endsnippet
-
-snippet sst
-this.setState({
+snippet use
+React.useEffect(() => {
   $1
-});
-endsnippet
-
-snippet props
-this.props
-endsnippet
-
-snippet dpro
-let { $1 } = props;
-endsnippet
-
-snippet dtpro
-let { $1 } = this.props;
-endsnippet
-
-snippet bind
-this.$1 = this.$1.bind(this);
-endsnippet
-
-snippet expd
-export default $1;
+}, [$2]);
 endsnippet
 
 snippet styles
@@ -70,4 +24,3 @@ const styles = StyleSheet.create({
   $1
 });
 endsnippet
-
