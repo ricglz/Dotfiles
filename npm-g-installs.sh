@@ -1,1 +1,1 @@
-npm i -g coffelint eslint npm typescript
+yarn global add coffelint eslint npm typescript
