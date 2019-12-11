@@ -11,3 +11,5 @@ export LANG=en_US.UTF-8
 export DEFAULT_USER=`whoami` # Removes user name and dispositve name in terminal
 export FZF_DEFAULT_COMMAND='fd --type file'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export PGHOST=localhost
+export PGPORT=5432
