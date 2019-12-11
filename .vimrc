@@ -3,7 +3,6 @@
 " Settings -------------------------------------------------------------
 
 " Preamble {{{
-
 " Make vim more useful {{{
 set nocompatible
 " }}}
@@ -101,11 +100,6 @@ set wildmode=list:longest " Complete only until point of ambiguity
 set winminheight=0 " Allow splits to be reduced to a single line
 set wrapscan " Searches wrap around end of file
 " }}}
-
-" Deletes trailling whitespaces after saving {{{
-autocmd BufWritePre * :%s/\s\+$//e
-"}}}
-
 " }}}
 
 " Configuration -------------------------------------------------------------
@@ -165,8 +159,13 @@ augroup general_config
   nnoremap Y y$
   " }}}
 
+  " Move lines will in visual mode {{{
+  vnoremap <leader>u :m-2<CR>gv=gv
+  vnoremap <leader>d :m'>+<CR>gv=gv
+  " }}}
+
   " Search and replace word under cursor (,*) {{{
-  nnoremap <leader>* :%s/\<<C-r><C-w>\>//<Left>
+  nnoremap <leader>* :%s/\<<C-r><C-w>\>//g<Left><Left>
   vnoremap <leader>* "hy:%s/\V<C-r>h//<left>
   " }}}
 
@@ -236,6 +235,13 @@ augroup filetype_javascript
 augroup END
 " }}}
 
+" JSX {{{
+augroup filetype_jsx
+  autocmd!
+  au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+augroup END
+" }}}
+
 " JSON {{{
 augroup filetype_json
   autocmd!
@@ -247,6 +253,9 @@ augroup END
 augroup filetype_markdown
   autocmd!
   au BufRead,BufNewFile *.md set shiftwidth=4
+  au BufRead,BufNewFile *.md let b:surround_191 = "¿\r?"
+  au BufRead,BufNewFile *.md let b:surround_241 = "¡\r!"
+  au FileType markdown vmap <Leader>i :EasyAlign*<Bar><Enter>
   let g:markdown_fenced_languages = ['ruby', 'html', 'javascript', 'css', 'erb=eruby.html', 'bash=sh']
 augroup END
 " }}}
@@ -292,19 +301,19 @@ augroup ale_config
   autocmd!
   let g:ale_sign_error = '✗'
   let g:ale_sign_warning = '⚠'
+
   let g:ale_completion_enabled = 1
 
   let g:ale_linter_aliases = {'jsx': ['javascript'] }
   let g:ale_linters = {
-  \ 'jsx': ['eslint', 'flow-language-server'],
   \ 'javascript': ['eslint', 'flow-language-server']
   \}
 
-  let b:ale_fixers = {
+  let g:ale_fixers = {
+  \ '*': ['remove_trailing_lines', 'trim_whitespace'],
   \ 'javascript': ['eslint'],
-  \ 'css': ['stylelint']
   \}
-  let b:ale_fix_on_save = 1
+  let g:ale_fix_on_save = 1
 augroup END
 " }}}
 
@@ -324,7 +333,14 @@ augroup END
 " fzf.vim {{{
 augroup fzf_config
   autocmd!
-  map <C-p> :GFiles<CR>
+  silent! !git rev-parse --is-inside-work-tree
+  if v:shell_error == 0
+    map <C-p> :GFiles --cached --others --exclude-standard<CR>
+    map <C-o> :GFiles?<CR>
+  else
+    map <C-p> :Files<CR>
+  endif
+  map <C-a> :Rg<CR>
 augroup END
 " }}}
 
@@ -350,29 +366,32 @@ Plug '/usr/local/opt/fzf'
 Plug 'SirVer/ultisnips'
 Plug 'bling/vim-airline'
 Plug 'christoomey/vim-sort-motion'
+Plug 'dense-analysis/ale'
 Plug 'ekalinin/Dockerfile.vim', {'on': 'Dockerfile'}
 Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/fzf.vim', {'on': 'GFiles'}
+Plug 'junegunn/fzf.vim', {'on': ['GFiles', 'Files', 'Rg']}
+Plug 'junegunn/vim-easy-align', { 'for': 'markdown' }
 Plug 'kana/vim-textobj-function'
 Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-user'
 Plug 'kchmck/vim-coffee-script', {'for': 'coffee'}
-Plug 'kien/rainbow_parentheses.vim'
+Plug 'keith/swift.vim', {'for': 'swift'}
 Plug 'lucapette/vim-textobj-underscore'
-Plug 'maxmellon/vim-jsx-pretty', {'for': 'jsx'}
+Plug 'maxmellon/vim-jsx-pretty', {'for': ['js', 'jsx']}
 Plug 'mileszs/ack.vim', {'on': 'Ack'}
 Plug 'mrk21/yaml-vim', {'for': 'yaml'}
+Plug 'onemanstartup/vim-slim', {'for': 'slim'}
 Plug 'pangloss/vim-javascript', {'for': 'javascript'}
+Plug 'ricglz0201/vim-move-lines'
 Plug 'scrooloose/nerdcommenter'
-Plug 'slim-template/vim-slim', {'for': 'slim'}
 Plug 'tpope/vim-markdown', {'for': 'markdown'}
 Plug 'tpope/vim-rails', {'for': 'ruby'}
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
-Plug 'w0rp/ale'
 Plug 'wavded/vim-stylus', {'for': 'stylus'}
 Plug 'xolox/vim-misc'
+Plug 'yuezk/vim-js', { 'for': 'js' }
 
 call plug#end()
 " }}}
