@@ -74,7 +74,7 @@ function docker_pg_restore() {
 # Pandoc function
 function md_to_pdf() {
   new_name=$(echo "$1" | cut -d '.' -f 1)
-  pandoc "$1" -o "$new_name.pdf" --template eisvogel --listings
+  pandoc "$1" -o "$new_name.pdf" --listings
 }
 
 function md_to_word() {
@@ -85,4 +85,14 @@ function md_to_word() {
 function md_to_pptx() {
   new_name=$(echo "$1" | cut -d '.' -f 1)
   pandoc "$1" -o "$new_name.pptx"
+}
+
+# youtube-dl functions
+function add_music() {
+  past_path=$(pwd)
+  cd $HOME/Music/legal
+  youtube-dl $1 -x --audio-format "mp3" \
+    --metadata-from-title "([0-9]*\\. )?(?P<artist>.+?)(OST [0-9]*)?\\s?(-|\\|)\\s?(?P<title>.+)" \
+    --embed-thumbnail -o "%(title)s.%(ext)s"
+  cd $past_path
 }
