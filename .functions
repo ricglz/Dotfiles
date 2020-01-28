@@ -92,6 +92,7 @@ function add_music() {
   past_path=$(pwd)
   cd $HOME/Music/legal
   youtube-dl $1 -x --audio-format "mp3" \
+    --add-metadata \
     --metadata-from-title "([0-9]*\\. )?(?P<artist>.+?)(OST [0-9]*)?\\s?(-|\\|)\\s?(?P<title>.+)" \
     --embed-thumbnail -o "%(title)s.%(ext)s"
   cd $past_path
