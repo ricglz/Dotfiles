@@ -1,3 +1,123 @@
+snippet html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      $1
+    </title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    $0
+  </body>
+</html>
+endsnippet
+
 snippet a
-<a> $1 </a>
+<a href="$1">$2</a>
+endsnippet
+
+snippet h1
+<h1>$1</h1>
+endsnippet
+
+snippet ol
+<ol>
+  <li>$1</li>$2
+</ol>$0
+endsnippet
+
+snippet ul
+<ul>
+  <li>$1</li>$2
+</ul>$0
+endsnippet
+
+snippet li
+<li>$1</li>
+endsnippet
+
+snippet p
+<p>$1</p>
+endsnippet
+
+snippet img
+<img src="$1" alt="$2" />
+endsnippet
+
+snippet form
+<form>
+  $1
+</form>
+endsnippet
+
+snippet leg
+<legend>
+  $1
+</legend>
+endsnippet
+
+snippet lab
+<label for="${1:input}">$2</label>
+endsnippet
+
+snippet inp
+<input type="${1:text}" id="${2:input}" />$0
+endsnippet
+
+snippet main
+<main>
+  $1
+</main>
+endsnippet
+
+snippet tab
+<table>
+  <thead>
+    <tr>
+      <th>$1</th>$2
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$3</td>$4
+    </tr>
+  </tbody>
+</table>
+endsnippet
+
+snippet sp
+<span>$1</span>
+endsnippet
+
+snippet foot
+<footer>
+  $1
+</footer>
+endsnippet
+
+snippet div
+<div>
+  $1
+</div>
+endsnippet
+
+snippet sel
+<select id="$1">
+  <option value="$2">
+    $3
+  </option>$0
+</select>
+endsnippet
+
+snippet opt
+<option value="$1">
+  $2
+</option>
+endsnippet
+
+snippet ta
+<textarea id="$1">
+  $2
+</textarea>
 endsnippet
