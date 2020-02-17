@@ -389,7 +389,6 @@ Plug 'mileszs/ack.vim', {'on': 'Ack'}
 Plug 'mrk21/yaml-vim', {'for': 'yaml'}
 Plug 'onemanstartup/vim-slim', {'for': 'slim'}
 Plug 'pangloss/vim-javascript', {'for': 'javascript'}
-Plug 'ricglz0201/vim-move-lines'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-markdown', {'for': 'markdown'}
 Plug 'tpope/vim-rails', {'for': 'ruby'}
