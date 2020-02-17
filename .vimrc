@@ -238,7 +238,7 @@ augroup END
 " JSX {{{
 augroup filetype_jsx
   autocmd!
-  au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+  au BufNewFile,BufRead *.jsx set filetype=javascript.react
 augroup END
 " }}}
 
@@ -271,6 +271,13 @@ augroup filetype_ruby
   let ruby_space_errors = 1
   let ruby_fold = 1
   " }}}
+augroup END
+" }}}
+
+" TSX {{{
+augroup filetype_tsx
+  autocmd!
+  au BufNewFile,BufRead *.tsx set filetype=typescript.react
 augroup END
 " }}}
 
