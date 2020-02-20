@@ -31,7 +31,13 @@ echo "Setting up symlinks"
 ./sl-setup.sh
 
 echo "Making directories"
-mkdir ~/.npm-packages
+if [! -d "~/.npm-packages"]; then
+  mkdir "~/.npm-packages"
+fi
+
+if [! -d "~/Screenshots"]; then
+  mkdir "~/Screenshots"
+fi
 
 echo "Adding extra folders for .vim"
 if [! -d "~/.vim/plugged/"]; then
@@ -42,8 +48,16 @@ if [! -d "~/.vim/undo/"]; then
   mkdir "~/.vim/undo/"
 fi
 
-echo "Installing poweline"
-git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+echo "Creating the extra.zsh file in case it doesn't exist"
+touch ~/extra.zsh
+
+ask_for_confirmation "You want to install powerline?"
+if answer_is_yes; then
+  echo "Installing poweline"
+  if [! -d "$ZSH_CUSTOM/themes/powerlevel10k"]; then
+    git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+  fi
+fi
 
 ask_for_confirmation "You want to install brew packages?"
 if answer_is_yes; then
