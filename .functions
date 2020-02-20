@@ -74,7 +74,7 @@ function docker_pg_restore() {
 # Pandoc function
 function md_to_pdf() {
   new_name=$(echo "$1" | cut -d '.' -f 1)
-  pandoc "$1" -o "$new_name.pdf" --listings --pdf-engine=xelatex
+  pandoc "$1" -o "$new_name.pdf" --template eisvogel --listings --pdf-engine=xelatex
 }
 
 function md_to_word() {
