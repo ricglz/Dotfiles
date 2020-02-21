@@ -31,21 +31,25 @@ echo "Setting up symlinks"
 ./sl-setup.sh
 
 echo "Making directories"
-if [! -d "~/.npm-packages"]; then
-  mkdir "~/.npm-packages"
+if [! -d "$HOME/.npm-packages"]; then
+  mkdir "$HOME/.npm-packages"
 fi
 
-if [! -d "~/Screenshots"]; then
-  mkdir "~/Screenshots"
+if [! -d "$HOME/Screenshots"]; then
+  mkdir "$HOME/Screenshots"
 fi
 
 echo "Adding extra folders for .vim"
-if [! -d "~/.vim/plugged/"]; then
-  mkdir "~/.vim/plugged/"
+if [! -d "$HOME/.vim/plugged/"]; then
+  mkdir "$HOME/.vim/plugged/"
 fi
 
-if [! -d "~/.vim/undo/"]; then
-  mkdir "~/.vim/undo/"
+if [! -d "$HOME/.vim/undo/"]; then
+  mkdir "$HOME/.vim/undo/"
+fi
+
+if [! -d "$HOME/.vim/swap/"]; then
+  mkdir "$HOME/.vim/swap/"
 fi
 
 echo "Creating the extra.zsh file in case it doesn't exist"
@@ -75,6 +79,12 @@ ask_for_confirmation "You want to setup osx configuration?"
 if answer_is_yes; then
   echo "Setting up configuration for osx"
   ./osx.sh
+fi
+
+ask_for_confirmation "You want to setup latex and pandoc?"
+if answer_is_yes; then
+  echo "Setting up latex and pandoc"
+  ./latex_installation.zsh
 fi
 
 echo "Finished installation"
