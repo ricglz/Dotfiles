@@ -221,6 +221,13 @@ augroup END
 
 " Filetypes -------------------------------------------------------------
 
+" Bibtex {{{
+augroup filetype_bibtex
+  autocmd!
+  au BufNewFile,BufReadPost *.bibtex setl filetype=bibtex
+augroup END
+" }}}
+
 " Coffee {{{
 augroup filetype_coffee
   autocmd!
@@ -253,10 +260,19 @@ augroup END
 augroup filetype_markdown
   autocmd!
   au BufRead,BufNewFile *.md set shiftwidth=4
-  au BufRead,BufNewFile *.md let b:surround_191 = "¿\r?"
+  au BufRead,BufNewFile *.md let b:surround_42 = "*\r*"
+  au BufRead,BufNewFile *.md let b:surround_95 = "_\r_"
+  au BufRead,BufNewFile *.md let b:surround_241 = "¡\r!"
   au BufRead,BufNewFile *.md let b:surround_241 = "¡\r!"
   au FileType markdown vmap <Leader>i :EasyAlign*<Bar><Enter>
   let g:markdown_fenced_languages = ['ruby', 'html', 'javascript', 'css', 'erb=eruby.html', 'bash=sh']
+augroup END
+" }}}
+
+" Mustache {{{
+augroup filetype_mustache
+  autocmd!
+  au BufRead,BufNewFile *.slimbars set ft=mustache
 augroup END
 " }}}
 
@@ -385,17 +401,19 @@ Plug 'kchmck/vim-coffee-script', {'for': 'coffee'}
 Plug 'keith/swift.vim', {'for': 'swift'}
 Plug 'lucapette/vim-textobj-underscore'
 Plug 'maxmellon/vim-jsx-pretty', {'for': ['js', 'jsx']}
+Plug 'mustache/vim-mustache-handlebars', {'for': ['mustache']}
 Plug 'mileszs/ack.vim', {'on': 'Ack'}
 Plug 'mrk21/yaml-vim', {'for': 'yaml'}
 Plug 'onemanstartup/vim-slim', {'for': 'slim'}
 Plug 'pangloss/vim-javascript', {'for': 'javascript'}
+Plug 'pechorin/any-jump.vim', {'for': ['ruby', 'slim']}
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-markdown', {'for': 'markdown'}
 Plug 'tpope/vim-rails', {'for': 'ruby'}
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
-Plug 'wavded/vim-stylus', {'for': 'stylus'}
+Plug 'wlangstroth/vim-racket', {'for': 'racket'}
 Plug 'xolox/vim-misc'
 Plug 'yuezk/vim-js', { 'for': 'js' }
 
