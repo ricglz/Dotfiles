@@ -77,6 +77,11 @@ function md_to_pdf() {
   pandoc "$1" -o "$new_name.pdf" --template eisvogel --listings --pdf-engine=xelatex
 }
 
+function md_to_pdf_cited() {
+  new_name=$(echo "$1" | cut -d '.' -f 1)
+  pandoc "$1" -o "$new_name.pdf" --template eisvogel --listings --pdf-engine=xelatex --filter pandoc-citeproc
+}
+
 function md_to_word() {
   new_name=$(echo "$1" | cut -d '.' -f 1)
   pandoc "$1" -o "$new_name.docx"
@@ -95,9 +100,8 @@ function add_music() {
   fi
   cd $HOME/Music/legal
   youtube-dl $1 -x --download-archive archive.txt \
-    --audio-format "mp3" \
     --add-metadata \
-    --metadata-from-title "([0-9]*\\. )?(?P<artist>.+?)(OST [0-9]*)?\\s*(-|\\|)\\s*(?P<title>.+)\\s*" \
+    --metadata-from-title "([0-9]*\\. )?(?P<artist>.+?)(\\s*OST [0-9]*)?\\s*(-|\\|)\\s*(?P<title>.+)\\s*" \
     --embed-thumbnail -o "%(title)s.%(ext)s"
   cd $past_path
 }
