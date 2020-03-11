@@ -6,6 +6,8 @@ snippet html
       $1
     </title>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    $2
   </head>
   <body>
     $0
@@ -138,4 +140,12 @@ snippet nav
 <nav>
   $1
 </nav>
+endsnippet
+
+snippet link
+<link rel="stylesheet" type="text/css" href="$1"/>
+endsnippet
+
+snippet scr
+<script defer src="$1"></script>
 endsnippet

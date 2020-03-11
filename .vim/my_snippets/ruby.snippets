@@ -15,10 +15,6 @@ snippet inc
 include $1
 endsnippet
 
-snippet hattr
-${1:Model}.human_attribute_name(:${2:attr})${3:.capitalize}
-endsnippet
-
 snippet mname
 ${1:Model}.model_name.human${2:(count: 2)}${3:.capitalize}
 endsnippet
@@ -66,37 +62,12 @@ module $1
 end
 endsnippet
 
-snippet hum
-${1:model_class}.human_attribute_name(:${2:attribute})${3:.capitalize}$4
-endsnippet
-
-snippet frozen
+snippet fro
 # frozen_string_literal: true
 endsnippet
 
-snippet adc
-add_column :${1:model_table}, :${2:new_column}, :${3:integer}
-endsnippet
+snippet head
+# frozen_string_literal: true
 
-snippet adi
-add_column :$1, :$2, :$3
-add_index :$1, :$2
-endsnippet
-
-snippet bt
-belongs_to :$1${2:, -> { with_deleted }}, inverse_of: :$3
-endsnippet
-
-snippet hm
-has_many :$1, inverse_of: :$2
-endsnippet
-
-snippet it
-it '$1' do
-  $2
-end
-endsnippet
-
-snippet upda
-$1.update_attribute :${2:name}, ${3:value}
+# $1
 endsnippet

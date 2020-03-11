@@ -7,16 +7,37 @@ namespace :$1 do
 end
 endsnippet
 
-snippet fro
-# frozen_string_literal: true
+snippet hattr
+${1:Model}.human_attribute_name(:${2:attr})${3:.capitalize}
 endsnippet
 
-snippet head
-# frozen_string_literal: true
-
-# $1
+snippet chc
+change_column :${1:model}, :${2:column}${3:, ${4:null: false}}
 endsnippet
 
-snippet human_attribute_name
-${1:model}.human_attribute_name${2:.${3:capitalize}}
+snippet adc
+add_column :${1:model_table}, :${2:new_column}, :${3:integer}
+endsnippet
+
+snippet adi
+add_column :$1, :$2, :$3
+add_index :$1, :$2
+endsnippet
+
+snippet bt
+belongs_to :$1${2:, -> { with_deleted }}, inverse_of: :$3
+endsnippet
+
+snippet hm
+has_many :$1, inverse_of: :$2
+endsnippet
+
+snippet it
+it '$1' do
+  $2
+end
+endsnippet
+
+snippet upda
+$1.update_attribute :${2:name}, ${3:value}
 endsnippet
