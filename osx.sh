@@ -83,14 +83,14 @@ defaults write com.apple.dashboard mcx-disabled -bool true
 
 # Change indexing order and disable some search results
 defaults write com.apple.spotlight orderedItems -array \
-  '{"enabled" = 1;"name" = "APPLICATIONS;}' \
+  '{"enabled" = 1;"name" = "APPLICATIONS";}' \
   '{"enabled" = 0;"name" = "MENU_SPOTLIGHT_SUGGESTIONS";}' \
   '{"enabled" = 0;"name" = "MENU_CONVERSION";}' \
   '{"enabled" = 1;"name" = "MENU_EXPRESSION";}' \
   '{"enabled" = 0;"name" = "MENU_DEFINITION";}' \
   '{"enabled" = 0;"name" = "SYSTEM_PREFS";}' \
-  '{"enabled" = 0;"name" = "DOCUMENTS;}' \
-  '{"enabled" = 0;"name" = "DIRECTORIES;}' \
+  '{"enabled" = 0;"name" = "DOCUMENTS";}' \
+  '{"enabled" = 0;"name" = "DIRECTORIES";}' \
   '{"enabled" = 0;"name" = "PRESENTATIONS";}' \
   '{"enabled" = 0;"name" = "SPREADSHEETS";}' \
   '{"enabled" = 0;"name" = "PDF";}' \
@@ -124,3 +124,5 @@ apps=("Activity Monitor" "Address Book" "Calendar" "Contacts" "Dock" "Finder" \
 for app in $apps; do
   killall "${app}" &> /dev/null
 done
+
+echo "Done"
