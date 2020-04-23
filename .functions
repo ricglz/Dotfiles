@@ -100,8 +100,9 @@ function add_music() {
   fi
   cd $HOME/Music/legal
   youtube-dl $1 -x --download-archive archive.txt \
-    --add-metadata \
+    --audio-format "mp3" \
+    --add-metadata --embed-thumbnail \
     --metadata-from-title "([0-9]*\\. )?(?P<artist>.+?)(\\s*OST [0-9]*)?\\s*(-|\\|)\\s*(?P<title>.+)\\s*" \
-    --embed-thumbnail -o "%(title)s.%(ext)s"
+    -o "%(title)s.%(ext)s"
   cd $past_path
 }
