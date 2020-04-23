@@ -181,6 +181,10 @@ augroup general_config
   nnoremap <silent> <space> :exe 'silent! normal! '.((foldclosed('.')>0)? 'zMzx' : 'zc')<CR>
   " }}}
 
+  " Set configuration for increment number {{{
+  nnoremap <C-i> <C-a>
+  " }}}
+
   " Fix page up and down {{{
   map <PageUp> <C-U>
   map <PageDown> <C-D>
@@ -260,7 +264,7 @@ augroup END
 augroup filetype_markdown
   autocmd!
   au BufRead,BufNewFile *.md set shiftwidth=4
-  au BufRead,BufNewFile *.md let b:surround_42 = "*\r*"
+  au BufRead,BufNewFile *.md let b:surround_42 = "**\r**"
   au BufRead,BufNewFile *.md let b:surround_95 = "_\r_"
   au BufRead,BufNewFile *.md let b:surround_241 = "¡\r!"
   au BufRead,BufNewFile *.md let b:surround_241 = "¡\r!"
@@ -399,6 +403,7 @@ Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-user'
 Plug 'kchmck/vim-coffee-script', {'for': 'coffee'}
 Plug 'keith/swift.vim', {'for': 'swift'}
+Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
 Plug 'lucapette/vim-textobj-underscore'
 Plug 'maxmellon/vim-jsx-pretty', {'for': ['js', 'jsx']}
 Plug 'mustache/vim-mustache-handlebars', {'for': ['mustache']}
@@ -407,6 +412,7 @@ Plug 'mrk21/yaml-vim', {'for': 'yaml'}
 Plug 'onemanstartup/vim-slim', {'for': 'slim'}
 Plug 'pangloss/vim-javascript', {'for': 'javascript'}
 Plug 'pechorin/any-jump.vim', {'for': ['ruby', 'slim']}
+Plug 'peitalin/vim-jsx-typescript', {'for': 'typescript'}
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-markdown', {'for': 'markdown'}
 Plug 'tpope/vim-rails', {'for': 'ruby'}
