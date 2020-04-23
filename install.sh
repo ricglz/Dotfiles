@@ -24,6 +24,10 @@ else
   brew update
 fi
 
+echo "Installing basic brew packages"
+brew install bat ffmpeg fzf gcc git joplin node python ruby vim yarn youtube-dl
+brew cask install flux font-source-code-pro google-chrom iterm2
+
 echo "Installing oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
@@ -48,8 +52,8 @@ if [! -d "$HOME/.vim/undo/"]; then
   mkdir "$HOME/.vim/undo/"
 fi
 
-if [! -d "$HOME/.vim/swap/"]; then
-  mkdir "$HOME/.vim/swap/"
+if [! -d "$HOME/.vim/swaps/"]; then
+  mkdir "$HOME/.vim/swaps/"
 fi
 
 echo "Creating the extra.zsh file in case it doesn't exist"
@@ -84,7 +88,9 @@ fi
 ask_for_confirmation "You want to setup latex and pandoc?"
 if answer_is_yes; then
   echo "Setting up latex and pandoc"
-  ./latex_installation.zsh
+  brew install pandoc
+  brew cask install basictex
+  ./tlmgr_configuration.zsh
 fi
 
 echo "Finished installation"

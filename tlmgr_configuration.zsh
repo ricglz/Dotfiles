@@ -1,5 +1,3 @@
-brew install pandoc
-brew cask install basictex
 sudo chmod -R ugo+rw /usr/local/texlive
 tlmgr update --self
 tlmgr install adjustbox babel-german background bidi collectbox csquotes everypage filehook footmisc \
