@@ -1,3 +1,17 @@
+snippet start
+* {
+  box-sizing: border-box;
+}
+
+// Tablet responsiveness
+@media (min-width: 600px) {
+}
+
+// Computer responsiveness
+@media (min-width: 801px) {
+}
+endsnippet
+
 snippet tablet
 @media (min-width: 600px) {
   $1
@@ -8,4 +22,12 @@ snippet computer
 @media (min-width: 801px) {
   $1
 }
+endsnippet
+
+snippet p
+padding: $1;
+endsnippet
+
+snippet m
+margin: $1;
 endsnippet

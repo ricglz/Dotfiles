@@ -3,7 +3,7 @@ console.log($1);
 endsnippet
 
 snippet fun
-function ${1:myFunction}(${2:args}) {
+function ${1:myFunction}($2) {
   $3
 }
 endsnippet
@@ -18,7 +18,7 @@ snippet imp
 import $1 from '$2';
 endsnippet
 
-snippet constf
+snippet cf
 const $1 = () => (
   $2
 )
@@ -40,4 +40,10 @@ if($1) {
 } else {
   $0
 }
+endsnippet
+
+snippet addE
+${1:document}.addEventListener('click', function() {
+  $0
+});
 endsnippet

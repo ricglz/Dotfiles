@@ -41,3 +41,32 @@ endsnippet
 snippet upda
 $1.update_attribute :${2:name}, ${3:value}
 endsnippet
+
+snippet cont
+context '$1' do
+  $0
+end
+endsnippet
+
+snippet FactoryBot
+FactoryBot.define do
+  factory :${1:model} do
+    $0
+  end
+end
+endsnippet
+
+snippet req
+require '$1'
+endsnippet
+
+snippet desc
+describe '$1' do
+end
+endsnippet
+
+snippet RSpec
+RSpec.describe ${1:Spec}, type: $2 do
+  $0
+end
+endsnippet

@@ -17,7 +17,7 @@ from $1 import $2
 endsnippet
 
 snippet fori
-for $1 in range(${2:1..n}):
+for $1 in range(0, ${2:n}):
     $3
 endsnippet
 
@@ -42,4 +42,11 @@ endsnippet
 snippet main
 if __name__ == "__main__":
     main()
+endsnippet
+
+snippet ife
+if $1:
+    $2
+else:
+    $0
 endsnippet
