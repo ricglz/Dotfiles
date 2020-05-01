@@ -26,7 +26,7 @@ fi
 
 echo "Installing basic brew packages"
 brew install bat ffmpeg fzf gcc git joplin node python ruby vim yarn youtube-dl
-brew cask install flux font-source-code-pro google-chrom iterm2
+brew cask install flux font-source-code-pro google-chrome iterm2
 
 echo "Installing oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
