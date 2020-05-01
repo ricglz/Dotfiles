@@ -6,6 +6,7 @@ alias gap='git add -p'
 
 alias gb='git branch'
 alias gbD='git branch -D'
+alias gba='git branch -a'
 alias gbd='git branch -d'
 alias gbda='git branch --no-color --merged | command grep -vE "^(\*|\s*(master|develop|dev)\s*$)" | command xargs -n 1 git branch -d'
 alias gbl='git log -p -M --follow --stat --'
@@ -31,17 +32,16 @@ alias gp='git push origin "$(git_current_branch)"'
 alias gpf='git push --force origin "$(git_current_branch)"'
 
 alias greb='git rebase'
-alias grebc='git rebase --abort'
+alias greba='git rebase --abort'
 alias grebc='git rebase --continue'
+alias grebd='git rebase dev'
+alias grebm='git rebase master'
 alias grebs='git rebase --skip'
 alias gres='git restore'
 alias gress='git restore --staged'
 alias grst='git reset --soft'
 
 alias gst='git status'
-autoload -Uz is-at-least
-is-at-least 2.13 "$(git --version 2>/dev/null | awk '{print $3}')" \
-  && alias gsta='git stash push' \
-  || alias gsta='git stash save'
-alias gstat='git diff --shortstat'
+alias gsta='git stash push'
+alias gstat='git --no-pager diff --shortstat'
 alias gstp='git stash pop'
