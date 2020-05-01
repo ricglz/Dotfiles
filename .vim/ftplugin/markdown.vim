@@ -6,8 +6,6 @@ setlocal shiftwidth=4
 " surround.vim {{{
 let b:surround_42 = "**\r**"
 let b:surround_95 = "_\r_"
-let b:surround_241 = "¡\r!"
-let b:surround_241 = "¡\r!"
 " }}}
 
 " EasyAlign
