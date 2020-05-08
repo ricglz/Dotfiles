@@ -57,6 +57,7 @@ augroup sets_config
   set relativenumber " Set relative numbers line
   set report=0 " Show all changes
   set ruler " Show the cursor position
+  set scrolloff=3 "Start scrolling three lines before horizontal border of window
   set shell=/bin/zsh " Use /bin/sh for executing shell commands
   set shiftwidth=2 " The # of spaces for indenting
   set shortmess=atI " Don't show the intro message when starting vim
@@ -150,8 +151,6 @@ augroup ale_config
   autocmd!
   let g:ale_sign_error = '✗'
   let g:ale_sign_warning = '⚠'
-
-  let g:ale_completion_enabled = 1
   let g:ale_fixers = {
   \ '*': ['remove_trailing_lines', 'trim_whitespace'],
   \}
@@ -222,12 +221,11 @@ Plug 'kchmck/vim-coffee-script', {'for': 'coffee'}
 Plug 'keith/swift.vim', {'for': 'swift'}
 Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
 Plug 'lucapette/vim-textobj-underscore'
-Plug 'maxmellon/vim-jsx-pretty', {'for': ['js', 'jsx']}
+Plug 'maxmellon/vim-jsx-pretty', {'for': 'react'}
 Plug 'mrk21/yaml-vim', {'for': 'yaml'}
 Plug 'onemanstartup/vim-slim', {'for': 'slim'}
 Plug 'pangloss/vim-javascript', {'for': 'javascript'}
 Plug 'pechorin/any-jump.vim', {'for': ['ruby', 'slim']}
-Plug 'peitalin/vim-jsx-typescript', {'for': 'typescript'}
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-markdown', {'for': 'markdown'}
 Plug 'tpope/vim-rails', {'for': 'ruby'}
@@ -236,7 +234,6 @@ Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
 Plug 'wlangstroth/vim-racket', {'for': 'racket'}
 Plug 'xolox/vim-misc'
-Plug 'yuezk/vim-js', {'for': 'js'}
 
 call plug#end()
 " }}}
