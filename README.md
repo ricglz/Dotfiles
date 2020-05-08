@@ -9,13 +9,13 @@ This is the setup is use for my dotfiles, it cover a wide range of configuration
 
 Run: `./install.sh`
 
-What it will do is the next in the exact order
-1. Install brew if you don't have it installed
-2. Install brew packages using `brew bundle`, which is a default command of brew that reads the content of the `Brewfile` and install the packages.
-3. Make `.npm-packages`, this will be a folder to store global npm packages
-4. Set up symlinks of dotfiles, this is done in the script of [sl-setup.sh](./sl-setup.sh)
-5. Install [powerline10k](https://github.com/romkatv/powerlevel10k)
-6. Add extra folders for vim (`.vim/plugged` and `.vim/undo`)
-7. Install npm global packages using [npm-g-installs.sh](./npm-g-installs.sh)
-8. Configure osx using [osx.sh](./osx.sh)
+## What it will do?
+1. Install brew if you haven't installed it yet.
+2. Install essential brew packages
+3. Install `oh-my-zsh`
+4. Set up symlinks of dotfiles, this is done with [sl-setup.sh](./sl-setup.sh)
+5. Create folders and files that are missing and are required
+6. Install npm global packages using [npm-g-installs.sh](./npm-g-installs.sh)
+7. Configure osx using [osx.sh](./osx.sh)
+8. Setup for latex and pandoc, installing with brew and running [tlmgr_configuration.zsh](./tlmgr_configuration.zsh)
 9. Source zshrc file
