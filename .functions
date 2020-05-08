@@ -84,7 +84,7 @@ function md_to_pdf_cited() {
 
 function md_to_word() {
   new_name=$(echo "$1" | cut -d '.' -f 1)
-  pandoc "$1" -o "$new_name.docx"
+  pandoc "$1" -o "$new_name.docx" --reference-doc="$HOME/.pandoc/templates/default.docx"
 }
 
 function md_to_pptx() {
