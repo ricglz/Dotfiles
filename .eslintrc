@@ -3,7 +3,8 @@
   "env": {
     "jquery": true,
     "es6": true,
-    "node": true
+    "node": true,
+    "browser": true
   },
   "parserOptions": {
     "ecmaVersion": 9,
