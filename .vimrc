@@ -158,19 +158,6 @@ augroup ale_config
 augroup END
 " }}}
 
-" Airline.vim {{{
-augroup airline_config
-  autocmd!
-  let g:airline_powerline_fonts = 1
-  let g:airline_enable_syntastic = 1
-  let g:airline#extensions#tabline#buffer_nr_format = '%s '
-  let g:airline#extensions#tabline#buffer_nr_show = 1
-  let g:airline#extensions#tabline#enabled = 1
-  let g:airline#extensions#tabline#fnamecollapse = 0
-  let g:airline#extensions#tabline#fnamemod = ':t'
-augroup END
-" }}}
-
 " fzf.vim {{{
 augroup fzf_config
   autocmd!
@@ -207,7 +194,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug '/usr/local/opt/fzf'
 Plug 'SirVer/ultisnips'
-Plug 'bling/vim-airline'
 Plug 'christoomey/vim-sort-motion'
 Plug 'dense-analysis/ale'
 Plug 'ekalinin/Dockerfile.vim', {'for': 'Dockerfile'}
