@@ -145,6 +145,12 @@ hi! link Tag            Special
 hi! link Terminal       Normal
 hi! link Conceal        Whitespace
 
+hi! link BufTabLineCurrent TabLineSel
+hi! link BufTabLineActive  PmenuSel
+hi! link BufTabLineHidden  TabLine
+hi! link BufTabLineFill    TabLineFill
+
+
 highlight Sneak               ctermfg=108 guifg=#d79921 ctermbg=235 guibg=#3c3836 cterm=bold gui=bold
 highlight SneakLabel          ctermfg=108 guifg=#d79921 ctermbg=235 guibg=#3c3836 cterm=bold gui=bold
 
