@@ -1,5 +1,3 @@
-" vim:fdm=marker
-
 " General VIM Configuration
 
 " Mapleader {{{
@@ -172,15 +170,6 @@ augroup fzf_config
 augroup END
 " }}}
 
-" NERD Commenter {{{
-augroup nerd_commenter_config
-  autocmd!
-
-  let NERDSpaceDelims=1
-  let NERDCompactSexyComs=1
-augroup END
-" }}}
-
 " UltiSnips.vim {{{
 nmap <leader>s :UltiSnipsEdit<cr>
 let g:UltiSnipsSnippetDirectories=["~/.vim/my_snippets"]
@@ -196,7 +185,7 @@ Plug '/usr/local/opt/fzf'
 Plug 'SirVer/ultisnips'
 Plug 'christoomey/vim-sort-motion'
 Plug 'dense-analysis/ale'
-Plug 'ekalinin/Dockerfile.vim', {'for': 'Dockerfile'}
+Plug 'ekalinin/Dockerfile.vim', {'for': ['Dockerfile', 'docker-compose']}
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf.vim', {'on': ['GFiles', 'Files', 'Rg']}
 Plug 'junegunn/vim-easy-align', {'for': 'markdown', 'on': 'EasyAlign'}
@@ -206,15 +195,13 @@ Plug 'kana/vim-textobj-user'
 Plug 'kchmck/vim-coffee-script', {'for': 'coffee'}
 Plug 'keith/swift.vim', {'for': 'swift'}
 Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
-Plug 'lucapette/vim-textobj-underscore'
 Plug 'maxmellon/vim-jsx-pretty', {'for': 'react'}
 Plug 'mrk21/yaml-vim', {'for': 'yaml'}
 Plug 'onemanstartup/vim-slim', {'for': 'slim'}
 Plug 'pangloss/vim-javascript', {'for': 'javascript'}
 Plug 'pechorin/any-jump.vim', {'for': ['ruby', 'slim']}
-Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-markdown', {'for': 'markdown'}
-Plug 'tpope/vim-rails', {'for': 'ruby'}
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
