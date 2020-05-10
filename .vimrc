@@ -181,6 +181,8 @@ let g:UltiSnipsEditSplit="vertical"
 call plug#begin('~/.vim/plugged')
 
 Plug '/usr/local/opt/fzf'
+Plug 'HerringtonDarkholme/yats.vim', {'for': ['typescript', 'typescriptreact']}
+Plug 'MaxMEllon/vim-jsx-pretty', {'for': 'react'}
 Plug 'SirVer/ultisnips'
 Plug 'christoomey/vim-sort-motion'
 Plug 'dense-analysis/ale'
@@ -193,11 +195,8 @@ Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-user'
 Plug 'kchmck/vim-coffee-script', {'for': 'coffee'}
 Plug 'keith/swift.vim', {'for': 'swift'}
-Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
-Plug 'maxmellon/vim-jsx-pretty', {'for': 'react'}
 Plug 'mrk21/yaml-vim', {'for': 'yaml'}
 Plug 'onemanstartup/vim-slim', {'for': 'slim'}
-Plug 'pangloss/vim-javascript', {'for': 'javascript'}
 Plug 'pechorin/any-jump.vim', {'for': ['ruby', 'slim']}
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-markdown', {'for': 'markdown'}
@@ -206,6 +205,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
 Plug 'wlangstroth/vim-racket', {'for': 'racket'}
 Plug 'xolox/vim-misc'
+Plug 'yuezk/vim-js', {'for': 'javascript'}
 
 call plug#end()
 " }}}
