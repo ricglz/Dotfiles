@@ -20,7 +20,7 @@ function! statusline#active() abort
   let statuslinetext .= statusline#fileinfo(1)
   let statuslinetext .= '%='
   let statuslinetext .= statusline#temporary()
-  let statuslinetext .= statusline#errors(1)
+  let statuslinetext .= statusline#errors()
   let statuslinetext .= '%#stlTypeInfo# %y '
   let statuslinetext .= statusline#cursorinfo(1)
   return statuslinetext
@@ -43,7 +43,6 @@ endfunction
 function! statusline#fileinfo(active) abort
   " Returns: 'filename modified spacer'
   let statuslinetext = ' %f'
-  " let statuslinetext = ' %t' " only filename
   " Should catch attention when unfocused
   if a:active
     let statuslinetext .= &modifiable ? '%#stlModified#' : ''
@@ -79,11 +78,7 @@ function! s:modecolor() abort
   return get(s:modes, mode(), '%*')[0]
 endfunction
 
-function! statusline#errors(active) abort
-  if exists('b:stl_noerr') || !a:active
-    return ''
-  endif
-
+function! statusline#errors() abort
   let statuslinetext = '%#stlErrorInfo#'
   if !has('vim_starting')
     if &modifiable && search('^\t', 'nw', line('.') + 1) && search('^  [^\s]', 'nw')
@@ -91,8 +86,8 @@ function! statusline#errors(active) abort
     endif
   endif
 
-  let statuslinetext .= len(getloclist(0)) > 0 ? ' (ll:' . len(getloclist(0)) . ') ' : ''
-  let statuslinetext .= len(getqflist()) > 0 ? '(qf:' . len(getqflist()) . ')' : ''
+  let errors_count = ale#statusline#Count(winbufnr(0)).total
+  if errors_count > 0 | let statuslinetext .= ' #' . errors_count | endif
   let statuslinetext .= '%*'
   return statuslinetext
 endfunction
@@ -106,6 +101,6 @@ let s:modes ={
       \ 'R'  : ['%#stlReplaceMode#', 'REPLACE'],
       \ 's'  : ['%#stlSelectMode#', 's'],
       \ 'S'  : ['%#stlSelectMode#', 'S'],
-      \ 'c'  : ['%#stlTerminalMode#', 'c'],
+      \ 'c'  : ['%#stlTerminalMode#', 'COMMAND'],
       \ 't'  : ['%#stlTerminalMode#', 't'],
       \ '-'  : ['%#stlNormalMode#', '-']}
