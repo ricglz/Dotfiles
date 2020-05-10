@@ -115,8 +115,8 @@ augroup mappings_config
   " Better split switching (Ctrl-j, Ctrl-k, Ctrl-h, Ctrl-l) {{{
   map <C-j> <C-W>j
   map <C-k> <C-W>k
-  map <C-H> <C-W>h
-  map <C-L> <C-W>l
+  map <C-h> <C-W>h
+  map <C-l> <C-W>l
   " }}}
 
   " Remap :W to :w {{{
@@ -149,10 +149,10 @@ augroup ale_config
   autocmd!
   let g:ale_sign_error = '✗'
   let g:ale_sign_warning = '⚠'
-  let g:ale_fixers = {
-  \ '*': ['remove_trailing_lines', 'trim_whitespace'],
-  \}
+  let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace']}
   let g:ale_fix_on_save = 1
+  nmap <silent> <C-p> <Plug>(ale_previous_wrap)
+  nmap <silent> <C-n> <Plug>(ale_next_wrap)
 augroup END
 " }}}
 
