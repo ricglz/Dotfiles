@@ -1,3 +1,8 @@
+global !p
+def camelcase_filename():
+  return ''.join(word.title() for word in (snip.basename or "name").split('_'))
+endglobal
+
 snippet log
 console.log $0
 endsnippet
@@ -6,9 +11,62 @@ snippet if
 if $1
   $0
 endsnippet
+
 snippet ife
 if $1
   $2
 else
   $0
+endsnippet
+
+snippet fun
+(${1:args}) ->
+  ${0:# body...}
+endsnippet
+
+snippet bfun
+(${1:args}) =>
+  ${0:# body...}
+endsnippet
+
+snippet cla
+class ${1:`!p snip.rv = camelcase_filename()`}
+  constructor: (${2:args}) ->
+   ${3}
+endsnippet
+
+snippet if
+if ${1:condition}
+  ${0:${VISUAL}}
+endsnippet
+
+snippet ife
+if ${1:condition}
+  ${2:${VISUAL}}
+else
+  ${0:# body...}
+endsnippet
+
+snippet eif
+else if ${1:condition}
+  ${0:${VISUAL}}
+endsnippet
+
+snippet ifte
+if ${1:condition} then ${2:value} else ${0:other}
+endsnippet
+
+snippet unl
+${1:action} unless ${0:condition}
+endsnippet
+
+snippet swi
+switch ${1:object}
+  when ${2:value}
+    ${0:# body...}
+  ${3:else}
+endsnippet
+
+snippet log
+console.log ${0:Hello world}
 endsnippet

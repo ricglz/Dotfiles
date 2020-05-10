@@ -4,11 +4,12 @@ extends c
 
 priority 1
 
-snippet inc
-#include <$1>$0
-endsnippet
+global !p
+def camelcase_filename():
+  return ''.join(word.title() for word in (snip.basename or "name").split('_'))
+endglobal
 
-snippet start
+snippet start "Boilerplate for initial state of program"
 #include <iostream>
 
 using namespace std;
@@ -19,16 +20,20 @@ int main() {
 }
 endsnippet
 
-snippet std
-using namespace std;
+snippet inc "Include std-header"
+#include <$1>
 endsnippet
 
-snippet incv
+snippet incv "Include vector header"
 #include <vector>
 endsnippet
 
-snippet incm
+snippet incm "Include map header"
 #include <map>
+endsnippet
+
+snippet std
+using namespace std;
 endsnippet
 
 snippet fore
@@ -37,12 +42,16 @@ for(${1:int} ${2:elem} : ${3:v}) {
 }
 endsnippet
 
-snippet v
+snippet v "Std ector definition"
 vector<$1> ${2:v}${3:(${4:n})};
 endsnippet
 
 snippet sort
 sort($1.begin(), $1.end()${2:, ${3:myFunction}});
+endsnippet
+
+snippet pb ""
+$1.push_back($2);
 endsnippet
 
 snippet cout
@@ -54,7 +63,7 @@ cin >> $1;
 endsnippet
 
 snippet cl "class .. (class)"
-class ${1:`!p snip.rv = snip.basename or "name"`} {
+class ${1:`!p snip.rv = camelcase_filename()`} {
   public:
     ${1/(\w+).*/$1/} (${2:arguments});
     virtual ~${1/(\w+).*/$1/} ();
@@ -62,10 +71,6 @@ class ${1:`!p snip.rv = snip.basename or "name"`} {
   private:
     ${0:/* data */}
 };
-endsnippet
-
-snippet pb
-$1.push_back($2);
 endsnippet
 
 snippet debug

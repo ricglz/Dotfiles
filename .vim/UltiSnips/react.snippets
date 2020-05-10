@@ -1,25 +1,34 @@
-snippet start
+global !p
+def camelcase_filename():
+  return ''.join(word.title() for word in (snip.basename or "name").split('_'))
+endglobal
+
+snippet start "Boilerplate for react component"
 //@flow
 import * as React from 'react';
 
-const $1 = (): React.Node => (
+const ${1:`!p snip.rv = camelcase_filename()`} = (): React.Node => (
   $0
 );
 
-export default $1;
+export default ${1/(\w+).*/$1/};
 endsnippet
 
-snippet ust
+snippet ust "useState snippet"
 const [${1:state}, ${2:setState}] = React.useState($3);
 endsnippet
 
-snippet use
+snippet usef "useEffect snippet"
 React.useEffect(() => {
   $1
 }, [$2]);
 endsnippet
 
-snippet styles
+snippet usec "useContext snippet"
+const $1 = React.useContext($2);
+endsnippet
+
+snippet styles "Styles for ReactNative"
 const styles = StyleSheet.create({
   $1
 });

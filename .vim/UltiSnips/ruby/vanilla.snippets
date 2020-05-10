@@ -1,22 +1,33 @@
+global !p
+def camelcase_filename():
+  return ''.join(word.title() for word in (snip.basename or "name").split('_'))
+endglobal
+
+snippet fro
+# frozen_string_literal: true
+endsnippet
+
+snippet head
+# frozen_string_literal: true
+
+# $1
+endsnippet
+
 snippet "\b(de)?f" "def <name>..." r
 def ${1:function_name}${2:(${3:*args})}
   $0
 end
 endsnippet
 
-snippet cl "class .. (class)"
+snippet "cla?s?s?" "class .. (class)" r
 # $2
-class $1
+class ${1:`!p snip.rv = camelcase_filename()`}
   $0
 end
 endsnippet
 
 snippet inc
 include $1
-endsnippet
-
-snippet mname
-${1:Model}.model_name.human${2:(count: 2)}${3:.capitalize}
 endsnippet
 
 snippet fori
@@ -55,25 +66,13 @@ ${1:elements}.each_slice(${2:2}) do |${3:slice}|
 end
 endsnippet
 
-snippet clac "Create controller class"
-class ${1:Model}Controller < $2Controller
-  $0
-end
-endsnippet
-
 snippet mod "Create module"
 $2
-module $1
+module ${1:`!p snip.rv = camelcase_filename()`}
   $0
 end
 endsnippet
 
-snippet fro
-# frozen_string_literal: true
-endsnippet
-
-snippet head
-# frozen_string_literal: true
-
-# $1
+snippet req
+require '$1'
 endsnippet

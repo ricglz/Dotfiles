@@ -1,4 +1,4 @@
-snippet ns
+snippet ns "Create namespace for rake file"
 namespace :$1 do
   desc '$2'
   task $3: :environment do
@@ -7,28 +7,32 @@ namespace :$1 do
 end
 endsnippet
 
-snippet hattr
+snippet mn "Translation of the model name"
+${1:Model}.model_name.human${2:(count: 2)}${3:.capitalize}
+endsnippet
+
+snippet hattr "Translation of the name of an attribute"
 ${1:Model}.human_attribute_name(:${2:attr})${3:.capitalize}
 endsnippet
 
-snippet chc
+snippet chc "Changes the name of a column"
 change_column :${1:model}, :${2:column}${3:, ${4:null: false}}
 endsnippet
 
-snippet adc
+snippet adc "Adds a column to a table"
 add_column :${1:model_table}, :${2:new_column}, :${3:integer}
 endsnippet
 
-snippet adi
+snippet adi "Adds index to a column"
 add_column :$1, :$2, :$3
 add_index :$1, :$2
 endsnippet
 
-snippet bt
+snippet bt "Belongs to relation with another model"
 belongs_to :$1${2:, -> { with_deleted }}, inverse_of: :$3
 endsnippet
 
-snippet hm
+snippet hm "Has many relation with another model"
 has_many :$1, inverse_of: :$2
 endsnippet
 
@@ -38,17 +42,13 @@ it '$1' do
 end
 endsnippet
 
-snippet upda
-$1.update_attribute :${2:name}, ${3:value}
-endsnippet
-
-snippet cont
+snippet cont "Creates context for specs"
 context '$1' do
   $0
 end
 endsnippet
 
-snippet FactoryBot
+snippet FactoryBot "Creates FactoryBot factory"
 FactoryBot.define do
   factory :${1:model} do
     $0
@@ -56,16 +56,12 @@ FactoryBot.define do
 end
 endsnippet
 
-snippet req
-require '$1'
-endsnippet
-
 snippet desc
 describe '$1' do
 end
 endsnippet
 
-snippet RSpec
+snippet RSpec "Creates Boilerplate for rspec spec"
 RSpec.describe ${1:Spec}, type: $2 do
   $0
 end

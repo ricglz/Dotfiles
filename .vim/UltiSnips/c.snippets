@@ -1,4 +1,4 @@
-snippet start
+snippet start "Boilerplate for initial state of program"
 #include <stdio.h>
 
 int main() {
@@ -7,15 +7,15 @@ int main() {
 }
 endsnippet
 
-snippet inc
+snippet inc "Include std-header"
 #include <${1:stdio}.h>
 endsnippet
 
-snippet incb
+snippet incb "Include boolean library"
 #include <stdbool.h>
 endsnippet
 
-snippet incp
+snippet incp "Include local header"
 #include "$1.h"
 endsnippet
 
@@ -25,7 +25,7 @@ if($1) {
 }
 endsnippet
 
-snippet scan
+snippet scan "Scanf format"
 scanf("$1", $2);
 endsnippet
 
@@ -47,7 +47,7 @@ for(int i = ${1:0}; i < ${2:n}; i${3:++}) {
 }
 endsnippet
 
-snippet w
+snippet w "While loop"
 while($1) {
   $2
 }
@@ -59,7 +59,7 @@ ${1:type} ${2:name}(${3:args}) {
 }
 endsnippet
 
-snippet str
+snippet str "Struct definition"
 typedef struct $1 {
   ${2:int val};
 } $1;
@@ -69,10 +69,10 @@ snippet def
 #define $1
 endsnippet
 
-snippet typ
+snippet type "New type definition"
 typedef ${1:long long} ${2:ll};
 endsnippet
 
-snippet debug
+snippet debug "Debug text"
 printf("work please :(\n");
 endsnippet

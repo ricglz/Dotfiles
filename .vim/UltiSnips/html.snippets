@@ -1,4 +1,4 @@
-snippet html
+snippet html "Boilerplate for the start of the html"
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,13 +28,13 @@ endsnippet
 snippet ol
 <ol>
   <li>$1</li>$2
-</ol>$0
+</ol>
 endsnippet
 
 snippet ul
 <ul>
   <li>$1</li>$2
-</ul>$0
+</ul>
 endsnippet
 
 snippet li
@@ -55,21 +55,21 @@ snippet form
 </form>
 endsnippet
 
-snippet leg
+snippet leg "Legend tag"
 <legend>
   $1
 </legend>
 endsnippet
 
-snippet lab
+snippet lab "Label tag"
 <label for="${1:input}">$2</label>
 endsnippet
 
-snippet inp
-<input type="${1:text}" id="${2:input}" />$0
+snippet inp "Input tag"
+<input type="${1:text}" id="${2:input}" />
 endsnippet
 
-snippet inpb
+snippet inpb "Submit button tag"
 <button id="${1:submit-btn}" type="submit">$2</button>
 endsnippet
 
@@ -79,7 +79,7 @@ snippet main
 </main>
 endsnippet
 
-snippet tab
+snippet tab "Table tag containing head and body"
 <table>
   <thead>
     <tr>
@@ -94,11 +94,11 @@ snippet tab
 </table>
 endsnippet
 
-snippet sp
+snippet span
 <span>$1</span>
 endsnippet
 
-snippet foot
+snippet foot "Footer tag"
 <footer>
   $1
 </footer>
@@ -110,33 +110,33 @@ snippet div
 </div>
 endsnippet
 
-snippet sel
+snippet sel "Select tag"
 <select id="$1">
   <option value="$2">
     $3
-  </option>$0
+  </option>
 </select>
 endsnippet
 
-snippet opt
+snippet opt "Option tag"
 <option value="$1">
   $2
 </option>
 endsnippet
 
-snippet ta
+snippet ta "Textarea tag"
 <textarea id="$1">
   $2
 </textarea>
 endsnippet
 
-snippet header
+snippet head
 <header>
   $1
 </header>
 endsnippet
 
-snippet add
+snippet add "Address tag"
 <address>
   $1
 </address>
@@ -152,11 +152,11 @@ snippet link
 <link rel="stylesheet" type="text/css" href="${1:./css/index.css}"/>
 endsnippet
 
-snippet scr
+snippet scr "Script tag with defer"
 <script defer src="${1:./js/index.js}"></script>
 endsnippet
 
-snippet sec
+snippet sec "Section tag"
 <section>
   $1
 </section>
