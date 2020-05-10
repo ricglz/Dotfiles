@@ -1,15 +1,31 @@
-global !p
-def camelcase_filename():
-  return ''.join(word.title() for word in (snip.basename or "name").split('_'))
-endglobal
-
 snippet start "Boilerplate for react component"
+import React from 'react';
+
+const ${1:`!p snip.rv = (snip.basename or "name")`} = () => (
+  $0
+);
+
+export default ${1/(\w+).*/$1/};
+endsnippet
+
+snippet startf "Boilerplate for react component with flow"
 //@flow
 import * as React from 'react';
 
-const ${1:`!p snip.rv = camelcase_filename()`} = (): React.Node => (
+const ${1:`!p snip.rv = (snip.basename or "name")`} = (): React.Node => (
   $0
 );
+
+export default ${1/(\w+).*/$1/};
+endsnippet
+
+
+snippet starth "Boilerplate for react hook"
+import { $3 } from 'react'
+
+function ${1:`!p snip.rv = (snip.basename or "name")`}($2) {
+  $0
+}
 
 export default ${1/(\w+).*/$1/};
 endsnippet
