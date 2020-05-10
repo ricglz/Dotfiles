@@ -172,7 +172,6 @@ augroup END
 
 " UltiSnips.vim {{{
 nmap <leader>s :UltiSnipsEdit<cr>
-let g:UltiSnipsSnippetDirectories=["~/.vim/my_snippets"]
 let g:UltiSnipsEditSplit="vertical"
 "}}}
 
