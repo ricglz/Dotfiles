@@ -68,9 +68,8 @@ augroup sets_config
   set suffixes=.bak,~,.swp,.swo,.o,.d,.info,.aux,.log,.dvi,.pdf,.bin,.bbl,.blg,.brf,.cb,.dmg,.exe,.ind,.idx,.ilg,.inx,.out,.toc,.pyc,.pyd,.dll
   set title " Show the filename in the window titlebar
   set ttyfast " Send more characters at a given time
-  set ttymouse=xterm " Set mouse type to xterm
+  if !(has('nvim')) | set ttymouse=xterm | endif " Set mouse type to xterm
   set undofile " Persistent Undo
-  set viminfo=%,'9999,s512,n~/.vim/viminfo " Restore buffer list, marks are remembered for 9999 files, registers up to 512Kb are remembered
   set visualbell " Use visual bell instead of audible bell (annnnnoying)
   set wildchar=<TAB> " Character for CLI expansion (TAB-completion)
   set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js
@@ -113,10 +112,10 @@ augroup mappings_config
   " }}}
 
   " Better split switching (Ctrl-j, Ctrl-k, Ctrl-h, Ctrl-l) {{{
-  map <C-j> <C-W>j
-  map <C-k> <C-W>k
-  map <C-h> <C-W>h
-  map <C-l> <C-W>l
+  nnoremap <C-j> <C-W>j
+  nnoremap <C-k> <C-W>k
+  nnoremap <C-h> <C-W>h
+  nnoremap <C-l> <C-W>l
   " }}}
 
   " Remap :W to :w {{{
@@ -138,6 +137,10 @@ augroup mappings_config
 
   " Set configuration for increment number {{{
   nnoremap <C-i> <C-a>
+  " }}}
+
+  " Maps to repeat macro {{{
+  nnoremap - @@
   " }}}
 augroup END
 "}}}
@@ -171,8 +174,22 @@ augroup END
 " }}}
 
 " UltiSnips.vim {{{
-nmap <leader>s :UltiSnipsEdit<cr>
-let g:UltiSnipsEditSplit="vertical"
+augroup ultisnips_config
+  nmap <leader>s :UltiSnipsEdit<cr>
+  let g:UltiSnipsEditSplit="vertical"
+  if has('nvim')
+    let g:UltiSnipsExpandTrigger="<C-z>"
+  endif
+augroup END
+"}}}
+
+" deoplete.nvim {{{
+if has('nvim')
+  augroup deoplete_config
+    let g:deoplete#enable_at_startup = 1
+    let g:loaded_python_provider = 0
+  augroup END
+endif
 "}}}
 
 " Plugins
@@ -183,6 +200,9 @@ call plug#begin('~/.vim/plugged')
 Plug '/usr/local/opt/fzf'
 Plug 'HerringtonDarkholme/yats.vim', {'for': ['typescript', 'typescriptreact']}
 Plug 'MaxMEllon/vim-jsx-pretty', {'for': 'react'}
+Plug 'Shougo/deoplete.nvim', {
+    \ 'do': ':UpdateRemotePlugins',
+    \'for': ['javascript', 'typescriptreact', 'typescript'] }
 Plug 'SirVer/ultisnips'
 Plug 'christoomey/vim-sort-motion'
 Plug 'dense-analysis/ale'
