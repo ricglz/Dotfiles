@@ -2,6 +2,8 @@
 
 " Settings
 setlocal shiftwidth=4
+setlocal wrap
+setlocal linebreak
 
 " surround.vim {{{
 let b:surround_42 = "**\r**"
