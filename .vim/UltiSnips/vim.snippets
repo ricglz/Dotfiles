@@ -1,0 +1,17 @@
+snippet if "If ... endif"
+if $1
+  $0
+endif
+endsnippet
+
+snippet ifn "If has nvim"
+if has('nvim')
+  $0
+endif
+endsnippet
+
+snippet com "Adds descriptive comment specially for the vimrc"
+" ${1:Comment} {{{
+$0
+" }}}
+endsnippet
