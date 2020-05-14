@@ -34,15 +34,20 @@ function! tabline#get_centerbuf_and_tabs()
   for bufnum in bufnums
     let screen_num += 1
     let tab = { 'num': bufnum }
-    let tab.hilite = currentbuf == bufnum ? 'Current' : 'Active'
+    let tab.hilite = currentbuf == bufnum ? 'Active' : 'Current'
     if currentbuf == bufnum | let [centerbuf, s:centerbuf] = [bufnum, bufnum] | endif
     let bufpath = bufname(bufnum)
     if strlen(bufpath)
       let tab.path = fnamemodify(bufpath, ':p:~:.')
       let tab.sep = strridx(tab.path, s:dirsep, strlen(tab.path) - 2) " keep trailing dirsep
-      let tab.label = '[' . tab.path[tab.sep + 1:] . ']'
-      let tab.pre = screen_num . ':'
-      let tab.post = ( getbufvar(bufnum, '&mod') ? ' [+]' : '' )
+      if isdirectory(bufpath)
+        let tab.pre = screen_num . ':'
+        let tab.label = '[' . fnamemodify(bufpath, ':~:.') . ']'
+      else
+        let tab.label = '[' . tab.path[tab.sep + 1:] . ']'
+        let tab.pre = screen_num . ':'
+        let tab.post = ( getbufvar(bufnum, '&mod') ? ' [+]' : '' )
+      endif
       let tabs_per_tail[tab.label] = get(tabs_per_tail, tab.label, 0) + 1
       let path_tabs += [tab]
     elseif -1 < index(['nofile','acwrite'], getbufvar(bufnum, '&buftype')) " scratch buffer
