@@ -15,28 +15,27 @@ augroup show_statusline
 augroup END
 
 function! statusline#active() abort
-  let statuslinetext  = statusline#mode(1)
+  let statuslinetext  = statusline#mode()
   let statuslinetext .= '%*'
   let statuslinetext .= statusline#fileinfo(1)
   let statuslinetext .= '%='
-  let statuslinetext .= statusline#temporary()
   let statuslinetext .= statusline#errors()
-  let statuslinetext .= '%#stlTypeInfo# %y '
-  let statuslinetext .= statusline#cursorinfo(1)
+  let statuslinetext .= '%#stlTypeInfo# %y ' " Filetype
+  let statuslinetext .= statusline#cursorinfo()
   return statuslinetext
 endfunction
 
 function! statusline#inactive() abort
-  let statuslinetext  = '%#SignColumn# %*%3.3( %)'
+  let statuslinetext  = '%#SignColumn# %*%3.3( %)' " Generates a padding
   let statuslinetext .= '%*'
   let statuslinetext .= statusline#fileinfo(0)
   let statuslinetext .= '%='
-  let statuslinetext .= '%y '
-  let statuslinetext .= '%{statusline#encoding(0)}'
+  let statuslinetext .= '%y ' " Filetype
+  let statuslinetext .= '%{statusline#encoding()}'
   return statuslinetext
 endfunction
 
-function! statusline#mode(active) abort
+function! statusline#mode() abort
   return ' ' . s:modecolor() . ' ' . get(s:modes, mode(), '-')[1] . ' %)'
 endfunction
 
@@ -52,12 +51,7 @@ function! statusline#fileinfo(active) abort
   return statuslinetext
 endfunction
 
-function! statusline#temporary() abort
-  let expr = get(b:, 'stl#tmp', get(g:, 'stl#tmp', ''))
-  return !empty(expr) ? eval(expr) . ' ' : ''
-endfunction
-
-function! statusline#encoding(active)
+function! statusline#encoding()
   " Returns: 'encoding[lineendings]' in the same width as statusline#cursorinfo()
   let linedigits = float2nr(ceil(log10(line('$') + 1)))
   let stl_typeinfo = (&fileencoding ? &fileencoding : &encoding) . '[' . &fileformat . ']'
@@ -65,7 +59,7 @@ function! statusline#encoding(active)
   return stl_typeinfo
 endfunction
 
-function! statusline#cursorinfo(active) abort
+function! statusline#cursorinfo() abort
   " Returns: '%line/lines ☰ lineno/lines : colnum'
   let linedigits = float2nr(ceil(log10(line('$') + 1)))
   let nwid = '%' . linedigits . '.' . linedigits
@@ -86,7 +80,7 @@ function! statusline#errors() abort
     endif
   endif
 
-  let errors_count = ale#statusline#Count(winbufnr(0)).total
+  let errors_count = ale#statusline#Count(winbufnr(0)).error
   if errors_count > 0 | let statuslinetext .= ' #' . errors_count | endif
   let statuslinetext .= '%*'
   return statuslinetext
