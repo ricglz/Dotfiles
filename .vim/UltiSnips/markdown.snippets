@@ -17,15 +17,13 @@ snippet pdf
 ---
 title: "${1:`!p snip.rv = titleized_filename()`}"
 author: "${2:Ricardo Javier González Castillo${3: - [A01282829]}}"
-date: "`#!/usr/bin/perl
-use POSIX ();print POSIX::strftime( '%d/%m/%y', ( localtime )[0..5])
-`"
+date: "`date +%d/%m/%y`"
 output: pdf_document
 ---
 $0
 endsnippet
 
-snippet cite
+snippet citeh
 bibliography: bib.bibtex
 csl: /Users/ricglz/.pandoc/citation_styles/apa.csl
 endsnippet

@@ -1,9 +1,9 @@
 snippet ws "Website citing data and format"
-@misc{${1:id},
+@online{${1:id},
   author = {$2},
   title = {$3},
-  howpublished = "\url{$4}",
   year = {$5},
-  note = "[Online; accessed $6]"
+  url = {$4},
+  urldate = {`date +%Y-%m-%d`}
 }
 endsnippet
