@@ -4,6 +4,10 @@
 setlocal shiftwidth=4
 setlocal wrap
 setlocal linebreak
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal spell
+setlocal spelllang=en_us,es_mx
 
 " surround.vim {{{
 let b:surround_42 = "**\r**"
