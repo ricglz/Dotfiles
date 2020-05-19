@@ -70,7 +70,6 @@ augroup sets_config
   set ttyfast " Send more characters at a given time
   if !(has('nvim')) | set ttymouse=xterm | endif " Set mouse type to xterm
   set undofile " Persistent Undo
-  set visualbell " Use visual bell instead of audible bell (annnnnoying)
   set wildchar=<TAB> " Character for CLI expansion (TAB-completion)
   set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js
   set wildignore+=*/bower_components/*,*/node_modules/*
