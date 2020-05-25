@@ -176,17 +176,16 @@ augroup END
 augroup ultisnips_config
   nmap <leader>s :UltiSnipsEdit<cr>
   let g:UltiSnipsEditSplit="vertical"
-  if has('nvim')
-    let g:UltiSnipsExpandTrigger="<C-z>"
-  endif
 augroup END
 "}}}
 
 " deoplete.nvim {{{
 if has('nvim')
   augroup deoplete_config
-    let g:deoplete#enable_at_startup = 1
+    let g:deoplete#enable_at_startup = 0
     let g:loaded_python_provider = 0
+    autocmd InsertEnter * call deoplete#enable()
+    let g:python3_host_prog = "/usr/local/opt/python/libexec/bin/python"
   augroup END
 endif
 "}}}
@@ -199,9 +198,7 @@ call plug#begin('~/.vim/plugged')
 Plug '/usr/local/opt/fzf'
 Plug 'HerringtonDarkholme/yats.vim', {'for': ['typescript', 'typescriptreact']}
 Plug 'MaxMEllon/vim-jsx-pretty', {'for': 'react'}
-Plug 'Shougo/deoplete.nvim', {
-    \ 'do': ':UpdateRemotePlugins',
-    \'for': ['javascript', 'typescriptreact', 'typescript'] }
+Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'SirVer/ultisnips'
 Plug 'christoomey/vim-sort-motion'
 Plug 'dense-analysis/ale'
