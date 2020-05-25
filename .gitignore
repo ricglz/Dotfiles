@@ -5,9 +5,10 @@ node_modules
 
 # Vim related
 .netrwhist
-.vim/plugged/*
-.vim/undo/*
 .vim/autoload/plug.vim.old
+.vim/plugged/*
+.vim/spell
+.vim/undo/*
 viminfo
 
 # Other things to ignore

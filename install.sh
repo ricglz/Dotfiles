@@ -35,7 +35,7 @@ echo "Setting up symlinks"
 ./sl-setup.sh
 
 echo "Making folders"
-DIRECTORIES=('.npm-packages', 'Screenshots', '.vim/plugged', '.vim/undo', '.vim/swaps')
+DIRECTORIES=('.npm-packages', 'Screenshots', '.vim/plugged', '.vim/undo', '.vim/swaps', '.vim/spell')
 for dir in DIRECTORIES; do
   dir_path="$HOME/$dir"
   if [! -d $dir_path]; then
