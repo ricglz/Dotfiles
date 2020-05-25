@@ -1,9 +1,12 @@
 snippet start "Boilerplate for react component"
 import React from 'react';
 
-const ${1:`!p snip.rv = (snip.basename or "name")`} = () => (
-  $0
-);
+const ${1:`!p snip.rv = (snip.basename or "name")`} = () => {
+  $2
+  return (
+    $0
+  );
+};
 
 export default ${1/(\w+).*/$1/};
 endsnippet
@@ -12,9 +15,12 @@ snippet startf "Boilerplate for react component with flow"
 //@flow
 import * as React from 'react';
 
-const ${1:`!p snip.rv = (snip.basename or "name")`} = (): React.Node => (
-  $0
-);
+const ${1:`!p snip.rv = (snip.basename or "name")`} = (): React.Node => {
+  $2
+  return (
+    $0
+  );
+};
 
 export default ${1/(\w+).*/$1/};
 endsnippet

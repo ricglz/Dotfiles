@@ -32,8 +32,20 @@ snippet bt "Belongs to relation with another model"
 belongs_to :$1${2:, -> { with_deleted }}, inverse_of: :$3
 endsnippet
 
+snippet bd "Before destroy callback"
+before_destroy :$1, prepend: true
+endsnippet
+
 snippet hm "Has many relation with another model"
 has_many :$1, inverse_of: :$2
+endsnippet
+
+snippet hoa "Has one attached (active storage)"
+has_one_attached $1
+endsnippet
+
+snippet vpo "Validation for presence"
+validates_presence_of :$1
 endsnippet
 
 snippet it
