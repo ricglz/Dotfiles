@@ -1,8 +1,8 @@
 # This is Git's per-user configuration file.
 [user]
-  name = Ricardo J. González C.
-  email = rjgcastillo@hotmail.com
-  username = ricglz0201
+  name="Ricardo J González C"
+  email="rjgcastillo@hotmail.com"
+  username="ricglz0201"
 
 [core]
-  excludesfile = /Users/ricglz/.gitignore
+  excludesfile=/Users/ricglz/.gitignore
