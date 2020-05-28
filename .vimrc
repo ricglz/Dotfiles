@@ -158,6 +158,12 @@ augroup ale_config
 augroup END
 " }}}
 
+" EasyAlign {{{
+augroup easy_align_config
+  nmap ga <Plug>(EasyAlign)
+augroup END
+" }}}
+
 " fzf.vim {{{
 augroup fzf_config
   autocmd!
