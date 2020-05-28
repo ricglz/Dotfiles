@@ -206,20 +206,24 @@ Plug 'HerringtonDarkholme/yats.vim', {'for': ['typescript', 'typescriptreact']}
 Plug 'MaxMEllon/vim-jsx-pretty', {'for': 'react'}
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'SirVer/ultisnips'
+Plug 'bps/vim-textobj-python', {'for': 'python'}
 Plug 'christoomey/vim-sort-motion'
+Plug 'coderifous/textobj-word-column.vim'
 Plug 'dense-analysis/ale'
 Plug 'ekalinin/Dockerfile.vim', {'for': ['Dockerfile', 'docker-compose']}
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf.vim', {'on': ['GFiles', 'Files', 'Rg']}
-Plug 'junegunn/vim-easy-align', {'for': 'markdown', 'on': 'EasyAlign'}
+Plug 'junegunn/vim-easy-align'
 Plug 'kana/vim-textobj-function'
 Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-user'
 Plug 'kchmck/vim-coffee-script', {'for': 'coffee'}
 Plug 'keith/swift.vim', {'for': 'swift'}
+Plug 'lucapette/vim-textobj-underscore'
 Plug 'mrk21/yaml-vim', {'for': 'yaml'}
 Plug 'onemanstartup/vim-slim', {'for': 'slim'}
 Plug 'pechorin/any-jump.vim', {'for': ['ruby', 'slim']}
+Plug 'rhysd/vim-textobj-ruby', {'for': 'ruby'}
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-markdown', {'for': 'markdown'}
 Plug 'tpope/vim-repeat'
