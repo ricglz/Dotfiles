@@ -216,4 +216,13 @@ hi def link rubyUserAssertion  rubyAssertion
 hi def link rubyValidation     rubyMacro
 hi def link rubyViewHelper     rubyHelper
 " }}}
+
+" Markdown Specific {{{
+hi def link markdownCode             String
+hi def link markdownCodeBlock        String
+hi def link markdownH1               Todo
+hi def link markdownH2               Todo
+hi def link markdownH3               Todo
+hi def link markdownHeadingDelimiter Todo
+" }}}
 " }}}
