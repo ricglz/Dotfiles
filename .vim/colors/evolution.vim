@@ -83,92 +83,96 @@ let s:colors.yellow = { 'cterm': 172, 'gui': '#d79921' }
 " }}}
 " General colorscheme {{{
 " Text; Miscellaneous {{{
-hi Directory      ctermfg=73   guifg=#72b7b5    ctermbg=NONE guibg=NONE    cterm=NONE gui=NONE
-hi NonText        ctermfg=237  guifg=#3c3836    ctermbg=NONE guibg=NONE    cterm=NONE gui=NONE
-hi Normal         ctermfg=187  guifg=#d5c4a1    ctermbg=234  guibg=#1d2021 cterm=NONE gui=NONE
-hi SignColumn     ctermfg=235  guifg=#282828    ctermbg=234  guibg=#1d2021 cterm=NONE gui=NONE
-hi SpecialKey     ctermfg=102  guifg=#948774    ctermbg=NONE guibg=NONE    cterm=NONE gui=NONE
-hi Title          ctermfg=187  guifg=#d5c4a1    ctermbg=NONE guibg=NONE    cterm=NONE gui=NONE
-hi VertSplit      ctermfg=237  guifg=#3c3836    ctermbg=NONE guibg=NONE    cterm=NONE gui=NONE
-hi QuickFixLine   ctermfg=NONE guifg=NONE       ctermbg=173  guibg=#2c2824 cterm=NONE gui=NONE
-hi SpecialChar    ctermfg=172  guifg=#d79921    ctermbg=NONE guibg=NONE    cterm=NONE gui=NONE
-hi SpecialComment ctermfg=73   guifg=#72b7b5    ctermbg=NONE guibg=NONE    cterm=NONE gui=NONE
+call s:Col('Directory', 'aqua_green')
+call s:Col('NonText', 'brown')
+call s:Col('Normal', 'light_yellow')
+call s:Col('Normal', 'light_yellow', 'black')
+call s:Col('SignColumn', 'grey', 'black')
+call s:Col('SpecialComment', 'aqua_green')
+call s:Col('VertSplit', 'brown')
+call s:Col('SpecialKey', 'light_brown')
+call s:Col('QuickFixLine', 'none', 'dark_brown')
+call s:Col('SpecialChar', 'yellow')
 " }}}
 
 " Cursor {{{
-hi Cursor       ctermfg=234  guifg=#1d2021 ctermbg=187 guibg=#d5c4a1 cterm=NONE gui=NONE
-hi CursorColumn ctermfg=NONE guifg=NONE    ctermbg=235 guibg=#282828 cterm=NONE gui=NONE
-hi CursorIM     ctermfg=234  guifg=#1d2021 ctermbg=187 guibg=#d5c4a1 cterm=NONE gui=NONE
-hi CursorLine   ctermfg=NONE guifg=NONE    ctermbg=235 guibg=#282828 cterm=NONE gui=NONE
-hi CursorLineNr ctermfg=73   guifg=#72b7b5 ctermbg=234 guibg=#1d2021 cterm=NONE gui=NONE
+call s:Col('Cursor', 'black', 'light_yellow_2')
+call s:Col('CursorColumn', 'none', 'grey')
+call s:Col('CursorIM', 'black', 'light_yellow')
+call s:Col('CursorLine', 'none', 'grey')
+call s:Col('CursorLineNr', 'aqua_green', 'black')
 " }}}
 
 " Folding {{{
-hi FoldColumn ctermfg=239 guifg=#504945 ctermbg=234 guibg=#1d2021 cterm=NONE gui=NONE
-hi Folded     ctermfg=102 guifg=#948774 ctermbg=235 guibg=#282828 cterm=NONE gui=NONE
+call s:Col('FoldColumn', 'brown_2', 'black')
+call s:Col('Folded', 'light_brown', 'grey')
 " }}}
 
 " Line info {{{
-hi ColorColumn      ctermfg=NONE guifg=NONE    ctermbg=235 guibg=#282828 cterm=NONE gui=NONE
-hi LineNr           ctermfg=239  guifg=#504945 ctermbg=234 guibg=#1d2021 cterm=NONE gui=NONE
-hi StatusLine       ctermfg=144  guifg=#bdae93 ctermbg=235 guibg=#282828 cterm=NONE gui=NONE
-hi StatusLineNC     ctermfg=102  guifg=#948774 ctermbg=237 guibg=#3c3836 cterm=NONE gui=NONE
-hi StatusLineTerm   ctermfg=73   guifg=#72b7b5 ctermbg=237 guibg=#3c3836 cterm=NONE gui=NONE
-hi StatusLineTermNC ctermfg=187  guifg=#d5c4a1 ctermbg=235 guibg=#282828 cterm=NONE gui=NONE
+call s:Col('ColorColumn', 'none', 'grey')
+call s:Col('LineNr', 'brown_2', 'black')
+call s:Col('StatusLine', 'washed_yellow', 'grey')
+call s:Col('StatusLineNC', 'light_brown', 'brown')
+call s:Col('StatusLineTerm', 'aqua_green', 'brown')
+call s:Col('StatusLineTermNC', 'light_yellow', 'grey')
 " }}}
 
 " Messages {{{
-hi ErrorMsg   ctermfg=187 guifg=#d5c4a1 ctermbg=167  guibg=#D84A44 cterm=NONE gui=NONE
-hi ModeMsg    ctermfg=187 guifg=#d5c4a1 ctermbg=NONE guibg=NONE    cterm=NONE gui=NONE
-hi MoreMsg    ctermfg=187 guifg=#d5c4a1 ctermbg=NONE guibg=NONE    cterm=NONE gui=NONE
-hi Question   ctermfg=187 guifg=#d5c4a1 ctermbg=NONE guibg=NONE    cterm=NONE gui=NONE
-hi WarningMsg ctermfg=167 guifg=#D84A44 ctermbg=234  guibg=#1d2021 cterm=NONE gui=NONE
+call s:Col('ErrorMsg', 'light_yellow', 'red')
+call s:Col('ModeMsg', 'light_yellow')
+call s:Col('MoreMsg', 'light_yellow')
+call s:Col('Question', 'light_yellow')
+call s:Col('WarningMsg', 'red', 'black')
 " }}}
 
 " Search {{{
-hi IncSearch ctermfg=235 guifg=#282828 ctermbg=173 guibg=#c7743e cterm=NONE gui=NONE
-hi Search    ctermfg=235 guifg=#282828 ctermbg=173 guibg=#c7743e cterm=NONE gui=NONE
+call s:Col('IncSearch', 'grey', 'orange')
+call s:Col('Search', 'grey', 'orange')
 " }}}
 
 " Diff {{{
-hi DiffAdd    ctermfg=NONE guifg=NONE ctermbg=65  guibg=#29342d cterm=NONE gui=NONE
+call s:Col('Add', 'none', 'dark_green')
 hi DiffChange ctermfg=NONE guifg=NONE ctermbg=172 guibg=#3c3421 cterm=NONE gui=NONE
 hi DiffDelete ctermfg=NONE guifg=NONE ctermbg=167 guibg=#4c2b2a cterm=NONE gui=NONE
 hi DiffText   ctermfg=NONE guifg=NONE ctermbg=108 guibg=#2b393a cterm=NONE gui=NONE
 " }}}
 
 " Menu {{{
-hi PMenu      ctermfg=187 guifg=#d5c4a1 ctermbg=235 guibg=#282828 cterm=NONE gui=NONE
-hi PMenuSel   ctermfg=73  guifg=#72b7b5 ctermbg=237 guibg=#3c3836 cterm=NONE gui=NONE
-hi PmenuSbar  ctermfg=187 guifg=#d5c4a1 ctermbg=235 guibg=#282828 cterm=NONE gui=NONE
+call s:Col('PMenu', 'light_yellow', 'grey')
+call s:Col('PMenuSel', 'aqua_green', 'brown')
+call s:Col('PmenuSbar', 'light_yellow', 'grey')
+call s:Col('PmenuThumb', 'light_yellow', 'grey')
+call s:Col('WildMenu', 'aqua_green', 'brown_2')
 hi PmenuThumb ctermfg=138 guifg=#a89984 ctermbg=237 guibg=#3c3836 cterm=NONE gui=NONE
-hi WildMenu   ctermfg=73  guifg=#72b7b5 ctermbg=239 guibg=#504945 cterm=NONE gui=NONE
 " }}}
 
 " Tabs {{{
-hi TabLine     ctermfg=102 guifg=#948774 ctermbg=235 guibg=#282828 cterm=NONE gui=NONE
-hi TabLineFill ctermfg=102 guifg=#948774 ctermbg=235 guibg=#282828 cterm=NONE gui=NONE
-hi TabLineSel  ctermfg=102 guifg=#948774 ctermbg=239 guibg=#504945 cterm=NONE gui=NONE
+call s:Col('TabLine', 'light_brown', 'grey')
+call s:Col('TabLineFill', 'light_brown', 'grey')
+call s:Col('TabLineSel', 'light_brown', 'brown_2')
 " }}}
 
 " Visual Mode {{{
-hi Visual    ctermfg=NONE guifg=NONE ctermbg=237 guibg=#3c3836 cterm=NONE gui=NONE
-hi VisualNOS ctermfg=NONE guifg=NONE ctermbg=237 guibg=#3c3836 cterm=NONE gui=NONE
+call s:Col('Visual', 'none', 'brown')
+call s:Col('VisualNOS', 'none', 'brown')
 " }}}
 
 " Code {{{
-hi Comment    ctermfg=102 guifg=#948774 ctermbg=NONE guibg=NONE    cterm=NONE gui=NONE
-hi Constant   ctermfg=187 guifg=#d5c4a1 ctermbg=NONE guibg=NONE    cterm=NONE gui=NONE
-hi Error      ctermfg=167 guifg=#D84A44 ctermbg=NONE guibg=NONE    cterm=bold gui=bold
-hi Function   ctermfg=73  guifg=#6fa3a6 ctermbg=NONE guibg=NONE    cterm=NONE gui=NONE
-hi Identifier ctermfg=65  guifg=#91ba93 ctermbg=NONE guibg=NONE    cterm=NONE gui=NONE
-hi MatchParen ctermfg=73  guifg=#72b7b5 ctermbg=239  guibg=#504945 cterm=NONE gui=NONE
-hi Number     ctermfg=139 guifg=#b48ead ctermbg=NONE guibg=NONE    cterm=NONE gui=NONE
+call s:Col('Comment', 'light_brown')
+call s:Col('Constant', 'light_yellow')
+call s:Col('Error', 'red')
+call s:Col('Function', 'dark_aqua_green')
+call s:Col('Identifier', 'washed_green')
+call s:Col('MatchParen', 'aqua_green', 'brown_2')
+call s:Col('Number', 'purple')
+call s:Col('Special', 'light_yellow')
+call s:Col('Todo', 'yellow')
+
+call s:Attr('Error', 'bold')
+call s:Attr('Todo', 'bold')
 hi PreProc    ctermfg=108 guifg=#83a598 ctermbg=NONE guibg=NONE    cterm=NONE gui=NONE
-hi Special    ctermfg=187 guifg=#d5c4a1 ctermbg=NONE guibg=NONE    cterm=NONE gui=NONE
 hi Statement  ctermfg=108 guifg=#83a598 ctermbg=NONE guibg=NONE    cterm=bold gui=bold
 hi String     ctermfg=65  guifg=#679a69 ctermbg=NONE guibg=NONE    cterm=NONE gui=NONE
-hi Todo       ctermfg=172 guifg=#d79921 ctermbg=NONE guibg=NONE    cterm=bold gui=bold
 hi Type       ctermfg=108 guifg=#83a598 ctermbg=NONE guibg=NONE    cterm=NONE gui=NONE
 " }}}
 
