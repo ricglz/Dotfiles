@@ -6,7 +6,6 @@ let mapleader=","
 
 " Syntax highlighting {{{
 set t_Co=256
-set background=dark
 syntax on
 colorscheme evolution
 " }}}
@@ -210,6 +209,7 @@ Plug 'bps/vim-textobj-python', {'for': 'python'}
 Plug 'christoomey/vim-sort-motion'
 Plug 'coderifous/textobj-word-column.vim'
 Plug 'dense-analysis/ale'
+Plug 'digitaltoad/vim-pug', {'for': 'pug'}
 Plug 'ekalinin/Dockerfile.vim', {'for': ['Dockerfile', 'docker-compose']}
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf.vim', {'on': ['GFiles', 'Files', 'Rg']}
@@ -221,6 +221,7 @@ Plug 'kchmck/vim-coffee-script', {'for': 'coffee'}
 Plug 'keith/swift.vim', {'for': 'swift'}
 Plug 'lucapette/vim-textobj-underscore'
 Plug 'mrk21/yaml-vim', {'for': 'yaml'}
+Plug 'mustache/vim-mustache-handlebars', {'for': 'mustache'}
 Plug 'onemanstartup/vim-slim', {'for': 'slim'}
 Plug 'pechorin/any-jump.vim', {'for': ['ruby', 'slim']}
 Plug 'rhysd/vim-textobj-ruby', {'for': 'ruby'}

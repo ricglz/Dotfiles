@@ -98,10 +98,12 @@ function add_music() {
     mkdir "$HOME/Music/legal"
   fi
   cd $HOME/Music/legal
+  metadata="([0-9]*\\. )?(?P<artist>.+?)(\\s*OST [0-9]*)?\\s*(-|\\|)"
+  metadata="${metadata}\\s*(?P<title>.+)\\s*(.*Oficial.*)?\\s*"
   youtube-dl $1 -x --download-archive archive.txt \
     --audio-format "mp3" \
     --add-metadata --embed-thumbnail \
-    --metadata-from-title "([0-9]*\\. )?(?P<artist>.+?)(\\s*OST [0-9]*)?\\s*(-|\\|)\\s*(?P<title>.+)\\s*" \
+    --metadata-from-title "${metadata}" \
     -o "%(title)s.%(ext)s"
   fd -E 'archive\.txt' -x open
   sleep 10

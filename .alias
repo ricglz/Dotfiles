@@ -31,8 +31,9 @@ alias dcla='docker stop $(docker container ls -a -q) && docker system prune -a -
 alias dcr='docker-compose run --rm'
 alias dcrb='docker-compose run --rm app bundle'
 alias dcrgm='docker-compose run --rm app rails generate migration'
-alias dcrra='docker-compose run --rm app rails'
-alias dcrspec='docker-compose run --rm app rspec'
+alias dcrr='docker-compose run --rm app rails'
+alias dcrrc='docker-compose run --rm app rails c'
+alias dcrs='docker-compose run --rm app rspec'
 alias dcup='docker-compose up'
 
 alias ins_net="nmap -sP $(ipconfig getifaddr en1)/24"
@@ -45,6 +46,8 @@ alias npmglist='npm list -g --depth 0'
 alias nupgr='yarn global upgrade'
 
 alias op-itc='open ITC/5_Semestre/'
+
+alias vim='nvim'
 
 alias ya='yarn add'
 alias yg='yarn global'
