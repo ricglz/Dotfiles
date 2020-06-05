@@ -131,23 +131,9 @@ if has('nvim')
   let g:terminal_color_14 = '#72b7b5'
   let g:terminal_color_15 = '#d5c4a1'
 else
-  let g:terminal_ansi_colors = [
-        \ '#1d2021',
-        \ '#D84A44',
-        \ '#91ba93',
-        \ '#d65d0e',
-        \ '#83a598',
-        \ '#b48ead',
-        \ '#84d4d2',
-        \ '#a89984',
-        \ '#948774',
-        \ '#D84A44',
-        \ '#679a69',
-        \ '#d79921',
-        \ '#6fa3a6',
-        \ '#b48ead',
-        \ '#72b7b5',
-        \ '#d5c4a1']
+  let g:terminal_ansi_colors = ['#1d2021', '#D84A44', '#91ba93', '#d65d0e',
+        \ '#83a598', '#b48ead', '#84d4d2', '#a89984', '#948774', '#D84A44',
+        \ '#679a69', '#d79921', '#6fa3a6', '#b48ead', '#72b7b5', '#d5c4a1']
 endif
 " }}}
 " Linked groups {{{
