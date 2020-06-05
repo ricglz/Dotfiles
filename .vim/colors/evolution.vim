@@ -14,6 +14,73 @@ endif
 let g:colors_name='evolution'
 set background=dark
 " }}}
+" Functions {{{
+function! s:Highlight(args)
+  exec 'highlight ' . join(a:args, ' ')
+endfunction
+
+function! s:AddGroundValues(accumulator, ground, color)
+  let new_list = a:accumulator
+  for [where, value] in items(a:color)
+    if value == "NONE" || value == "none" || value == ""
+      call add(new_list, where . a:ground . '= NONE')
+    else
+      call add(new_list, where . a:ground . '=' . value)
+    endif
+  endfor
+
+  return new_list
+endfunction
+
+function! s:Col(group, fg_name, ...)
+  " ... = optional bg_name
+
+  let pieces = [a:group]
+
+  if a:fg_name !=# ''
+    let pieces = s:AddGroundValues(pieces, 'fg', s:colors[a:fg_name])
+  endif
+
+  if a:0 > 0 && a:1 !=# ''
+    let pieces = s:AddGroundValues(pieces, 'bg', s:colors[a:1])
+  endif
+
+  call s:Clear(a:group)
+  call s:Highlight(pieces)
+endfunction
+
+function! s:Attr(group, attr)
+  let l:attrs = [a:group, 'term=' . a:attr, 'cterm=' . a:attr, 'gui=' . a:attr]
+  call s:Highlight(l:attrs)
+endfunction
+
+function! s:Clear(group)
+  exec 'highlight clear ' . a:group
+endfunction
+"}}}
+" Colors {{{
+let s:colors = {}
+
+let s:colors.aqua_green = { 'cterm': 73, 'gui': '#72b7b5' }
+let s:colors.black = { 'cterm': 234, 'gui': '#1d2021' }
+let s:colors.brown = { 'cterm': 237, 'gui': '#3c3836' }
+let s:colors.brown_2 = { 'cterm': 239, 'gui': '#504945' }
+let s:colors.dark_aqua_green = { 'cterm': 73, 'gui': '#6fa3a6' }
+let s:colors.dark_brown = { 'cterm': 173, 'gui': '#2c2824' }
+let s:colors.dark_green = { 'cterm': 65, 'gui': '#29342d' }
+let s:colors.grey = { 'cterm': 235, 'gui': '#282828' }
+let s:colors.light_brown = { 'cterm': 102, 'gui': '#948774' }
+let s:colors.light_yellow = { 'cterm': 187, 'gui': '#d5c4a1' }
+let s:colors.light_yellow_2 = { 'cterm': 234, 'gui': '#d5c4a1' }
+let s:colors.none = { 'cterm': 'NONE', 'gui': 'NONE' }
+let s:colors.orange = { 'cterm': 173, 'gui': '#c7743e' }
+let s:colors.purple = { 'cterm': 139, 'gui': '#b48ead' }
+let s:colors.red = { 'cterm': 167, 'gui': '#D84A44' }
+let s:colors.washed_aqua_green = { 'cterm': 65, 'gui': '#83a598' }
+let s:colors.washed_green = { 'cterm': 65, 'gui': '#91BA93' }
+let s:colors.washed_yellow = { 'cterm': 144, 'gui': '#bdae93' }
+let s:colors.yellow = { 'cterm': 172, 'gui': '#d79921' }
+" }}}
 " General colorscheme {{{
 " Text; Miscellaneous {{{
 hi Directory      ctermfg=73   guifg=#72b7b5    ctermbg=NONE guibg=NONE    cterm=NONE gui=NONE
@@ -212,3 +279,4 @@ hi def link markdownH3               Todo
 hi def link markdownHeadingDelimiter Todo
 " }}}
 " }}}
+unlet s:colors
