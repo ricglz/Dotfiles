@@ -1,0 +1,4 @@
+mafredri/zsh-async
+ohmyzsh/ohmyzsh path:lib
+sindresorhus/pure
+~/Dotfiles/plugins
