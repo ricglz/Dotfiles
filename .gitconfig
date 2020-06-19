@@ -6,3 +6,6 @@
 
 [core]
   excludesfile=/Users/ricglz/.gitignore
+
+[pull]
+  rebase=false
