@@ -35,18 +35,6 @@ class ${1:`!p snip.rv = camelcase_filename()`}
    ${3}
 endsnippet
 
-snippet if
-if ${1:condition}
-  ${0:${VISUAL}}
-endsnippet
-
-snippet ife
-if ${1:condition}
-  ${2:${VISUAL}}
-else
-  ${0:# body...}
-endsnippet
-
 snippet eif
 else if ${1:condition}
   ${0:${VISUAL}}
@@ -65,8 +53,4 @@ switch ${1:object}
   when ${2:value}
     ${0:# body...}
   ${3:else}
-endsnippet
-
-snippet log
-console.log ${0:Hello world}
 endsnippet
