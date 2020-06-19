@@ -1,4 +1,8 @@
+# Repos
 mafredri/zsh-async
 ohmyzsh/ohmyzsh path:lib
 sindresorhus/pure
+zsh-users/zsh-syntax-highlighting
+
+# Local
 ~/Dotfiles/plugins

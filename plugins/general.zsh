@@ -1,5 +1,7 @@
 # ---- Aliases ----
 alias cat='bat'
+alias e='exit'
+alias ex='exit'
 alias vim='nvim'
 
 # --- Functions ---
