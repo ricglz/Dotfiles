@@ -1,9 +1,9 @@
 # Configure PATH
-export PATH="/usr/local/opt/ruby/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export PATH="$HOME/.npm-packages/bin:/usr/local/opt/python/libexec/bin:$PATH"
-export PATH="/usr/local/sbin:/usr/local/lib/ruby/gems/2.6.0/bin:$PATH"
+export PATH="/Library/TeX/texbin:/usr/local/sbin:$HOME/.npm-packages/bin"
+export PATH="$PATH:/usr/local/lib/ruby/gems/2.6.0/bin:/usr/local/opt/ruby/bin"
+export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="$PATH:$HOME/.rvm/gems/ruby-2.5.1/bin:$HOME/flutter/bin"
-export PATH="/Library/TeX/texbin/:$PATH:/Users/ricglz/.cargo/bin"
+export PATH="$PATH:/Users/ricglz/.cargo/bin"
 
 # Other exports
 export EDITOR=vim
