@@ -25,8 +25,8 @@ else
 fi
 
 echo "Installing basic brew packages"
-brew install bat ffmpeg fzf gcc git joplin node python ruby vim yarn youtube-dl
-brew cask install flux font-source-code-pro google-chrome iterm2
+brew install getantibody/tap/antibody bat fd ffmpeg fzf joplin neovim vim yarn youtube-dl
+brew cask install flux font-source-code-pro kitty
 
 echo "Installing oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
