@@ -1,5 +1,11 @@
 # Dotfiles
-This is the setup is use for my dotfiles, it cover a wide range of configuration, but mainly is `brew/cask packages`, `zsh` and `vim`.
+This is the setup is use for my dotfiles, it cover a wide range of configuration, being these:
+* Brew packages
+* ZSH plugins and prompt
+* VIM configuration (Neovim)
+* Pandoc/Latex
+* NPM/Yarn packages
+* Aliases, functions and others for shell
 
 ## Pre-installing
 1. Install git: `$ xcode-select --install`
@@ -10,12 +16,13 @@ This is the setup is use for my dotfiles, it cover a wide range of configuration
 Run: `./install.sh`
 
 ## What it will do?
-1. Install brew if you haven't installed it yet.
-2. Install essential brew packages
-3. Install `oh-my-zsh`
-4. Set up symlinks of dotfiles, this is done with [sl-setup.sh](./sl-setup.sh)
-5. Create folders and files that are missing and are required
-6. Install npm global packages using [npm-g-installs.sh](./npm-g-installs.sh)
-7. Configure osx using [osx.sh](./osx.sh)
-8. Setup for latex and pandoc, installing with brew and running [tlmgr_configuration.zsh](./tlmgr_configuration.zsh)
-9. Source zshrc file
+1. Install or update brew depending of the case
+2. Install essential brew packages (antibody being one of them)
+3. Setup the symlinks for the dotfiles located inside the folder
+4. Setup configuration for kitty terminal
+5. Setup configuration for Neovim
+6. Make necessary folders and files for a correct functionality
+7. Optional installation of certain npm/yarn global packages
+8. Optional OSX configuration
+9. Optional latex and pandoc configuration
+10. Sourcing the `.zshrc` file to trigger the changes
