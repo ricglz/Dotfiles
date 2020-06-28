@@ -28,11 +28,15 @@ echo "Installing basic brew packages"
 brew install getantibody/tap/antibody bat fd ffmpeg fzf joplin neovim vim yarn youtube-dl
 brew cask install flux font-source-code-pro kitty
 
-echo "Installing oh-my-zsh"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
 echo "Setting up symlinks"
 ./sl-setup.sh
+
+echo "Setting up kitty configuration"
+mkdir ~/.config/kitty
+ln -s ~/Dotfiles/kitty.conf ~/.config/kitty
+
+echo "Setting up neovim configuration"
+ln -s ~/Dotfiles/.vim ~/.config/nvim
 
 echo "Making folders"
 DIRECTORIES=('.npm-packages', 'Screenshots', '.vim/plugged', '.vim/undo', '.vim/swaps', '.vim/spell')
@@ -47,19 +51,19 @@ done
 echo "Creating the extra.zsh file in case it doesn't exist"
 touch ~/extra.zsh
 
-ask_for_confirmation "You want to install npm packages?"
+ask_for_confirmation "Install npm packages?"
 if answer_is_yes; then
   echo "Installing npm global packages"
   ./npm-g-installs.sh
 fi
 
-ask_for_confirmation "You want to setup osx configuration?"
+ask_for_confirmation "Setup osx configuration?"
 if answer_is_yes; then
   echo "Setting up configuration for osx"
   ./osx.sh
 fi
 
-ask_for_confirmation "You want to setup latex and pandoc?"
+ask_for_confirmation "Setup latex and pandoc?"
 if answer_is_yes; then
   echo "Setting up latex and pandoc"
   brew install pandoc pandoc-citeproc
