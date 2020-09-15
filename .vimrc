@@ -223,6 +223,8 @@ Plug 'lucapette/vim-textobj-underscore'
 Plug 'mrk21/yaml-vim', {'for': 'yaml'}
 Plug 'mustache/vim-mustache-handlebars', {'for': 'mustache'}
 Plug 'onemanstartup/vim-slim', {'for': 'slim'}
+Plug 'othree/html5.vim', {'for': 'html'}
+Plug 'pbrisbin/vim-mkdir'
 Plug 'pechorin/any-jump.vim', {'for': ['ruby', 'slim']}
 Plug 'rhysd/vim-textobj-ruby', {'for': 'ruby'}
 Plug 'tpope/vim-commentary'
