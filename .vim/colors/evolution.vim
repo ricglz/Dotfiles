@@ -85,14 +85,13 @@ let s:colors.yellow = { 'cterm': 172, 'gui': '#d79921' }
 " Text; Miscellaneous {{{
 call s:Col('Directory', 'aqua_green')
 call s:Col('NonText', 'brown')
-call s:Col('Normal', 'light_yellow')
 call s:Col('Normal', 'light_yellow', 'black')
-call s:Col('SignColumn', 'grey', 'black')
-call s:Col('SpecialComment', 'aqua_green')
-call s:Col('VertSplit', 'brown')
-call s:Col('SpecialKey', 'light_brown')
 call s:Col('QuickFixLine', 'none', 'dark_brown')
+call s:Col('SignColumn', 'grey', 'black')
 call s:Col('SpecialChar', 'yellow')
+call s:Col('SpecialComment', 'aqua_green')
+call s:Col('SpecialKey', 'light_brown')
+call s:Col('VertSplit', 'brown')
 " }}}
 
 " Cursor {{{
