@@ -1,5 +1,6 @@
 # ---- Aliases ----
 alias cat='bat'
+alias cl='clear'
 alias e='exit'
 alias ex='exit'
 alias vim='nvim'
@@ -52,12 +53,15 @@ function add_music() {
   metadata="([0-9]*\\. )?(?P<artist>.+?)(\\s*OST [0-9]*)?\\s*(-|\\|)"
   metadata="${metadata}\\s*(?P<title>.+)\\s*(.*Oficial.*)?\\s*"
   youtube-dl $1 -x --download-archive archive.txt \
-    --audio-format "mp3" \
+    --yes-playlist --audio-format "mp3" \
     --add-metadata --embed-thumbnail \
     --metadata-from-title "${metadata}" \
+    --ignore-errors \
     -o "%(title)s.%(ext)s"
   fd -E 'archive\.txt' -x open
-  sleep 10
+  echo 'Waiting to open all the music files'
+  sleep 100
+  echo 'Hopefully all the music was open, then I will delete'
   fd -E 'archive\.txt' -x rm
   cd -
 }
