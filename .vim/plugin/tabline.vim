@@ -140,3 +140,14 @@ function! tabline#update(zombie)
   set showtabline=2
   set tabline=%!tabline#render()
 endfunction
+
+function! s:goyo_enter()
+  set showtabline=0
+endfunction
+
+function! s:goyo_leave()
+  set showtabline=2
+endfunction
+
+autocmd! User GoyoEnter call <SID>goyo_enter()
+autocmd! User GoyoLeave call <SID>goyo_leave()

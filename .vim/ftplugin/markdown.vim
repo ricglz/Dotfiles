@@ -13,6 +13,7 @@ setlocal wrap
 " Mappings for easy navigation due wrap {{{
 nmap <buffer>0 g0
 nmap <buffer>$ g$
+nnoremap <Leader>g :Goyo<cr>
 " }}}
 
 " surround.vim {{{
