@@ -184,15 +184,29 @@ augroup ultisnips_config
 augroup END
 "}}}
 
+" vim-sort-motion {{{
+augroup sort_motion_config
+  let g:sort_motion_flags = "ui"
+augroup END
+"}}}
+
 " deoplete.nvim {{{
 if has('nvim')
   augroup deoplete_config
     let g:deoplete#enable_at_startup = 0
     let g:loaded_python_provider = 0
     autocmd InsertEnter * call deoplete#enable()
-    let g:python3_host_prog = "/usr/local/opt/python/libexec/bin/python"
+    let g:python3_host_prog = "/usr/local/bin/python3.8"
+    let g:jedi#completions_enabled = 0
   augroup END
 endif
+"}}}
+
+" vimtex {{{
+augroup vimtex_config
+  let g:vimtex_compiler_method = 'tectonic'
+  let g:tex_flavor = 'latex'
+augroup END
 "}}}
 
 " Plugins
@@ -200,41 +214,46 @@ endif
 " Load plugins {{{
 call plug#begin('~/.vim/plugged')
 
+" General snippets
 Plug '/usr/local/opt/fzf'
-Plug 'HerringtonDarkholme/yats.vim', {'for': ['typescript', 'typescriptreact']}
-Plug 'MaxMEllon/vim-jsx-pretty', {'for': 'react'}
-Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
-Plug 'SirVer/ultisnips'
-Plug 'bps/vim-textobj-python', {'for': 'python'}
 Plug 'christoomey/vim-sort-motion'
 Plug 'coderifous/textobj-word-column.vim'
 Plug 'dense-analysis/ale'
-Plug 'digitaltoad/vim-pug', {'for': 'pug'}
-Plug 'ekalinin/Dockerfile.vim', {'for': ['Dockerfile', 'docker-compose']}
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf.vim', {'on': ['GFiles', 'Files', 'Rg']}
 Plug 'junegunn/vim-easy-align'
 Plug 'kana/vim-textobj-function'
 Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-user'
-Plug 'kchmck/vim-coffee-script', {'for': 'coffee'}
-Plug 'keith/swift.vim', {'for': 'swift'}
 Plug 'lucapette/vim-textobj-underscore'
-Plug 'mrk21/yaml-vim', {'for': 'yaml'}
-Plug 'mustache/vim-mustache-handlebars', {'for': 'mustache'}
-Plug 'onemanstartup/vim-slim', {'for': 'slim'}
-Plug 'othree/html5.vim', {'for': 'html'}
 Plug 'pbrisbin/vim-mkdir'
-Plug 'pechorin/any-jump.vim', {'for': ['ruby', 'slim']}
-Plug 'rhysd/vim-textobj-ruby', {'for': 'ruby'}
+Plug 'pechorin/any-jump.vim'
+Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
+Plug 'SirVer/ultisnips'
+Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-markdown', {'for': 'markdown'}
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
-Plug 'wlangstroth/vim-racket', {'for': 'racket'}
 Plug 'xolox/vim-misc'
+
+" Javascript/React plugins
+Plug 'HerringtonDarkholme/yats.vim', {'for': ['typescript', 'typescriptreact']}
+Plug 'MaxMEllon/vim-jsx-pretty', {'for': 'react'}
 Plug 'yuezk/vim-js', {'for': 'javascript'}
+
+" Ruby/slim/yaml plugins
+Plug 'kchmck/vim-coffee-script', {'for': 'coffee'}
+Plug 'mrk21/yaml-vim', {'for': 'yaml'}
+Plug 'onemanstartup/vim-slim', {'for': 'slim'}
+Plug 'rhysd/vim-textobj-ruby', {'for': 'ruby'}
+Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
+
+" Others
+Plug 'bps/vim-textobj-python', {'for': 'python'}
+Plug 'ekalinin/Dockerfile.vim', {'for': ['Dockerfile', 'docker-compose']}
+Plug 'junegunn/goyo.vim', {'for': 'markdown'}
+Plug 'othree/html5.vim', {'for': 'html'}
+Plug 'tpope/vim-markdown', {'for': 'markdown'}
 
 call plug#end()
 " }}}
