@@ -1,7 +1,9 @@
 # Things to always ignore
 .DS_Store
-node_modules
 .vs
+.vsvode
+__pycache__
+node_modules
 
 # Vim related
 .netrwhist
