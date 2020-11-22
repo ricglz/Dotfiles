@@ -6,7 +6,7 @@ export PATH="$PATH:$HOME/.rvm/gems/ruby-2.5.1/bin:$HOME/flutter/bin"
 export PATH="$PATH:/Users/ricglz/.cargo/bin:/usr/local/opt/python/libexec/bin"
 
 # Other exports
-export EDITOR=vim
+export EDITOR=nvim
 export LANG=en_US.UTF-8
 export DEFAULT_USER=`whoami` # Removes user name and dispositve name in terminal
 export FZF_DEFAULT_COMMAND='fd --type file'
