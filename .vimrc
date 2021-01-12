@@ -11,7 +11,7 @@ colorscheme evolution
 " }}}
 
 " Local directories {{{
-set backupdir=~/.vim/backups
+" set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
 set undodir=~/.vim/undo
 " }}}
@@ -22,6 +22,7 @@ augroup sets_config
   set autoindent " Copy indent from last line when starting new line
   set backspace=indent,eol,start " Make backspace expected behavior in insert mode
   set clipboard=unnamed " Share clipboard with the system
+  set cmdheight=2 " Give more space for displaying messages
   set cursorcolumn " Highlight current column
   set cursorline " Highlight current line
   set expandtab " Expand tabs to spaces
@@ -44,10 +45,12 @@ augroup sets_config
   set laststatus=2 " Always show status line
   set lazyredraw " Don't redraw when we don't have to
   set magic " Enable extended regexes
+  set nobackup " For coc.nvim
   set noerrorbells " Disable error bells
   set noshowmode " Don't show the current mode (airline.vim takes care of us)
   set nostartofline " Don't reset cursor to start of line when moving around
   set nowrap " Do not wrap lines
+  set nowritebackup " For coc.nvim
   set number " Set current number line
   set ofu=syntaxcomplete#Complete " Set omni-completion method
   set regexpengine=1 " Use the old regular expression engine (it's faster for certain language syntaxes)
@@ -57,8 +60,10 @@ augroup sets_config
   set scrolloff=3 "Start scrolling three lines before horizontal border of window
   set shell=/bin/zsh " Use /bin/sh for executing shell commands
   set shiftwidth=2 " The # of spaces for indenting
+  set shortmess+=c " Don't pass messages to |ins-completion-menu|.
   set shortmess=atI " Don't show the intro message when starting vim
   set showtabline=2 " Always show tab bar
+  set signcolumn=yes " Show signcolumn
   set smartcase " Ignore 'ignorecase' if search patter contains uppercase characters
   set smarttab " At start of line, <Tab> inserts shiftwidth spaces, <Bs> deletes shiftwidth spaces
   set softtabstop=2 " Tab key results in 2 spaces
@@ -69,6 +74,7 @@ augroup sets_config
   set ttyfast " Send more characters at a given time
   if !(has('nvim')) | set ttymouse=xterm | endif " Set mouse type to xterm
   set undofile " Persistent Undo
+  set updatetime=300 " For better performance for coc.nvim
   set wildchar=<TAB> " Character for CLI expansion (TAB-completion)
   set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js
   set wildignore+=*/bower_components/*,*/node_modules/*
@@ -190,18 +196,6 @@ augroup sort_motion_config
 augroup END
 "}}}
 
-" deoplete.nvim {{{
-if has('nvim')
-  augroup deoplete_config
-    let g:deoplete#enable_at_startup = 0
-    let g:loaded_python_provider = 0
-    autocmd InsertEnter * call deoplete#enable()
-    let g:python3_host_prog = "/usr/local/bin/python3.8"
-    let g:jedi#completions_enabled = 0
-  augroup END
-endif
-"}}}
-
 " vimtex {{{
 augroup vimtex_config
   let g:vimtex_compiler_method = 'tectonic'
@@ -209,12 +203,73 @@ augroup vimtex_config
 augroup END
 "}}}
 
+" coc.nvim {{{
+if has('nvim')
+  " Use tab for trigger completion with characters ahead and navigate.
+  " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+  " other plugin before putting this into your config.
+  inoremap <silent><expr> <TAB>
+        \ pumvisible() ? "\<C-n>" :
+        \ <SID>check_back_space() ? "\<TAB>" :
+        \ coc#refresh()
+  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+  function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+  endfunction
+
+  inoremap <silent><expr> <c-space> coc#refresh()
+
+  " Make <CR> auto-select the first completion item and notify coc.nvim to
+  " format on enter, <cr> could be remapped by other vim plugin
+  inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+        \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+  " GoTo code navigation.
+  nmap <silent> gd <Plug>(coc-definition)
+  nmap <silent> gy <Plug>(coc-type-definition)
+  nmap <silent> gi <Plug>(coc-implementation)
+  nmap <silent> gr <Plug>(coc-references)
+
+  " Use K to show documentation in preview window.
+  nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+  function! s:show_documentation()
+    if (index(['vim','help'], &filetype) >= 0)
+      execute 'h '.expand('<cword>')
+    elseif (coc#rpc#ready())
+      call CocActionAsync('doHover')
+    else
+      execute '!' . &keywordprg . " " . expand('<cword>')
+    endif
+  endfunction
+
+  " Apply AutoFix to problem on the current line.
+  nmap <leader>qf  <Plug>(coc-fix-current)
+
+  vmap <leader>a <Plug>(coc-codeaction-selected)
+  nmap <leader>a <Plug>(coc-codeaction-selected)
+
+  " Add `:Format` command to format current buffer.
+  command! -nargs=0 Format :call CocAction('format')
+  " Add `:Fold` command to fold current buffer.
+  command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+  " Add `:OR` command for organize imports of the current buffer.
+  command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+  let g:coc_global_extensions = [
+    \ 'coc-css', 'coc-explorer', 'coc-flow', 'coc-python', 'coc-snippets',
+    \ 'coc-spell-checker', 'coc-tsserver', 'coc-json'
+  \]
+endif
+" }}}
+
 " Plugins
 
 " Load plugins {{{
 call plug#begin('~/.vim/plugged')
 
-" General snippets
+" General plugins
 Plug '/usr/local/opt/fzf'
 Plug 'christoomey/vim-sort-motion'
 Plug 'coderifous/textobj-word-column.vim'
@@ -228,7 +283,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'lucapette/vim-textobj-underscore'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'pechorin/any-jump.vim'
-Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
