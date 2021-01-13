@@ -64,7 +64,14 @@ function! statusline#cursorinfo() abort
   let linedigits = float2nr(ceil(log10(line('$') + 1)))
   let nwid = '%' . linedigits . '.' . linedigits
   let statuslinetext = s:modecolor()
-  if &ft == 'markdown' | let statuslinetext .= ' W:%{wordcount().words}' | endif
+  if &ft == 'markdown'
+    let current_mode = get(s:modes, mode(), '-')[1]
+    if current_mode == 'VISUAL'
+      let statuslinetext .= ' W:%{wordcount().visual_words}/%{wordcount().words}'
+    else
+      let statuslinetext .= ' W:%{wordcount().words}'
+    endif
+  endif
   let statuslinetext .= ' %2p%% ☰ '  " U+2630
   let statuslinetext .= nwid . 'l/' . nwid .  'L : %02c %*'
   return statuslinetext
