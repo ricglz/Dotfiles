@@ -1,0 +1,23 @@
+{
+  "python.pythonPath": "/usr/local/bin/python3.8",
+  "cSpell.userWords": [
+    "Hanabi",
+    "Heatmap",
+    "MCTS",
+    "SVMs",
+    "deffuzifier",
+    "deque",
+    "dtype",
+    "keras",
+    "klass",
+    "matmul",
+    "ndarray",
+    "noinsert",
+    "numpy",
+    "pygame",
+    "pyplot",
+    "rmse",
+    "rmses",
+    "sklearn"
+  ]
+}
