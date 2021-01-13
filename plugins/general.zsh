@@ -3,6 +3,7 @@ alias cat='bat'
 alias cl='clear'
 alias e='exit'
 alias ex='exit'
+alias jpn='jupyter notebook'
 alias vim='nvim'
 
 # --- Functions ---
