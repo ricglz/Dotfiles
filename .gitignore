@@ -4,6 +4,7 @@
 .vsvode
 __pycache__
 node_modules
+.ipynb_checkpoints
 
 # Vim related
 .netrwhist
