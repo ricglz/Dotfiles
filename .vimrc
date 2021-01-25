@@ -1,153 +1,8 @@
 " General VIM Configuration
 
-" Mapleader {{{
 let mapleader=","
-" }}}
-
-" Syntax highlighting {{{
-set t_Co=256
 syntax on
 colorscheme evolution
-" }}}
-
-" Local directories {{{
-" set backupdir=~/.vim/backups
-set directory=~/.vim/swaps
-set undodir=~/.vim/undo
-" }}}
-
-" (Set)tings {{{
-augroup sets_config
-  autocmd!
-  set autoindent " Copy indent from last line when starting new line
-  set backspace=indent,eol,start " Make backspace expected behavior in insert mode
-  set clipboard=unnamed " Share clipboard with the system
-  set cmdheight=2 " Give more space for displaying messages
-  set cursorcolumn " Highlight current column
-  set cursorline " Highlight current line
-  set expandtab " Expand tabs to spaces
-  set foldcolumn=0 " Column to show folds
-  set foldenable " Enable folding
-  set foldlevel=0 " Close all folds by default
-  set foldmethod=syntax " Syntax are used to specify folds
-  set foldminlines=0 " Allow folding single lines
-  set foldnestmax=5 " Set max fold nesting level
-  set formatoptions+=1 " Break before 1-letter words
-  set formatoptions+=2 " Use indent from 2nd line of a paragraph
-  set formatoptions+=c " Format comments
-  set formatoptions+=l " Don't break lines that are already long
-  set formatoptions+=n " Recognize numbered lists
-  set formatoptions+=r " Continue comments by default
-  set hidden " When a buffer is brought to foreground, remember undo history and marks
-  set hlsearch " Highlight searches
-  set ignorecase " Ignore case of searches
-  set incsearch " Highlight dynamically as pattern is typed
-  set laststatus=2 " Always show status line
-  set lazyredraw " Don't redraw when we don't have to
-  set magic " Enable extended regexes
-  set nobackup " For coc.nvim
-  set noerrorbells " Disable error bells
-  set noshowmode " Don't show the current mode (airline.vim takes care of us)
-  set nostartofline " Don't reset cursor to start of line when moving around
-  set nowrap " Do not wrap lines
-  set nowritebackup " For coc.nvim
-  set number " Set current number line
-  set ofu=syntaxcomplete#Complete " Set omni-completion method
-  set regexpengine=1 " Use the old regular expression engine (it's faster for certain language syntaxes)
-  set relativenumber " Set relative numbers line
-  set report=0 " Show all changes
-  set ruler " Show the cursor position
-  set scrolloff=3 "Start scrolling three lines before horizontal border of window
-  set shell=/bin/zsh " Use /bin/sh for executing shell commands
-  set shiftwidth=2 " The # of spaces for indenting
-  set shortmess+=c " Don't pass messages to |ins-completion-menu|.
-  set shortmess=atI " Don't show the intro message when starting vim
-  set showtabline=2 " Always show tab bar
-  set signcolumn=yes " Show signcolumn
-  set smartcase " Ignore 'ignorecase' if search patter contains uppercase characters
-  set smarttab " At start of line, <Tab> inserts shiftwidth spaces, <Bs> deletes shiftwidth spaces
-  set softtabstop=2 " Tab key results in 2 spaces
-  set splitbelow " New window goes below
-  set splitright " New windows goes right
-  set suffixes=.bak,~,.swp,.swo,.o,.d,.info,.aux,.log,.dvi,.pdf,.bin,.bbl,.blg,.brf,.cb,.dmg,.exe,.ind,.idx,.ilg,.inx,.out,.toc,.pyc,.pyd,.dll
-  set title " Show the filename in the window titlebar
-  set ttyfast " Send more characters at a given time
-  if !(has('nvim')) | set ttymouse=xterm | endif " Set mouse type to xterm
-  set undofile " Persistent Undo
-  set updatetime=300 " For better performance for coc.nvim
-  set wildchar=<TAB> " Character for CLI expansion (TAB-completion)
-  set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js
-  set wildignore+=*/bower_components/*,*/node_modules/*
-  set wildignore+=*/smarty/*,*/vendor/*,*/.git/*,*/.hg/*,*/.svn/*,*/.sass-cache/*,*/log/*,*/tmp/*,*/build/*,*/ckeditor/*,*/doc/*,*/source_maps/*,*/dist/*
-  set wildignore+=.DS_Store
-  set wildmenu " Hitting TAB in command mode will show possible completions above command line
-  set wildmode=list:longest " Complete only until point of ambiguity
-  set winminheight=0 " Allow splits to be reduced to a single line
-  set wrapscan " Searches wrap around end of file
-augroup END
-" }}}
-
-" FastEscape {{{
-" Speed up transition from modes
-if ! has('gui_running')
-  set ttimeoutlen=10
-  augroup FastEscape
-    autocmd!
-    au InsertEnter * set timeoutlen=0
-    au InsertLeave * set timeoutlen=1000
-  augroup END
-endif
-" }}}
-
-" Mappings {{{
-augroup mappings_config
-  autocmd!
-  " Remove search highlight {{{
-  nnoremap <Leader><space> :noh<cr>
-  " }}}
-
-  " Yank from cursor to end of line {{{
-  nnoremap Y y$
-  " }}}
-
-  " Buffer navigation {{{
-  nnoremap <leader>p :bp<CR>
-  nnoremap <leader>n :bn<CR>
-  " }}}
-
-  " Better split switching (Ctrl-j, Ctrl-k, Ctrl-h, Ctrl-l) {{{
-  nnoremap <C-j> <C-W>j
-  nnoremap <C-k> <C-W>k
-  nnoremap <C-h> <C-W>h
-  nnoremap <C-l> <C-W>l
-  " }}}
-
-  " Remap :W to :w {{{
-  command! W write
-  " }}}
-
-  " Search and replace word under cursor (,*) {{{
-  nnoremap <leader>* :%s/\<<C-r><C-w>\>//g<Left><Left>
-  vnoremap <leader>* "hy:%s/\V<C-r>h//<left>
-  " }}}
-
-  " Join lines and restore cursor location (J) {{{
-  nnoremap J mjJ`j
-  " }}}
-
-  " Toggle folds (<Space>) {{{
-  nnoremap <silent> <space> :exe 'silent! normal! '.((foldclosed('.')>0)? 'zMzx' : 'zc')<CR>
-  " }}}
-
-  " Set configuration for increment number {{{
-  nnoremap <C-i> <C-a>
-  " }}}
-
-  " Maps to repeat macro {{{
-  nnoremap - @@
-  " }}}
-augroup END
-"}}}
 
 " Plugin Configuration
 
@@ -203,67 +58,6 @@ augroup vimtex_config
 augroup END
 "}}}
 
-" coc.nvim {{{
-if has('nvim')
-  " Use tab for trigger completion with characters ahead and navigate.
-  " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-  " other plugin before putting this into your config.
-  inoremap <silent><expr> <TAB>
-        \ pumvisible() ? "\<C-n>" :
-        \ <SID>check_back_space() ? "\<TAB>" :
-        \ coc#refresh()
-  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-  function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
-  endfunction
-
-  inoremap <silent><expr> <c-space> coc#refresh()
-
-  " Make <CR> auto-select the first completion item and notify coc.nvim to
-  " format on enter, <cr> could be remapped by other vim plugin
-  inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-        \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-  " GoTo code navigation.
-  nmap <silent> gd <Plug>(coc-definition)
-  nmap <silent> gy <Plug>(coc-type-definition)
-  nmap <silent> gi <Plug>(coc-implementation)
-  nmap <silent> gr <Plug>(coc-references)
-
-  " Use K to show documentation in preview window.
-  nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-  function! s:show_documentation()
-    if (index(['vim','help'], &filetype) >= 0)
-      execute 'h '.expand('<cword>')
-    elseif (coc#rpc#ready())
-      call CocActionAsync('doHover')
-    else
-      execute '!' . &keywordprg . " " . expand('<cword>')
-    endif
-  endfunction
-
-  " Apply AutoFix to problem on the current line.
-  nmap <leader>qf  <Plug>(coc-fix-current)
-
-  vmap <leader>a <Plug>(coc-codeaction-selected)
-  nmap <leader>a <Plug>(coc-codeaction-selected)
-
-  " Add `:Format` command to format current buffer.
-  command! -nargs=0 Format :call CocAction('format')
-  " Add `:Fold` command to fold current buffer.
-  command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-  " Add `:OR` command for organize imports of the current buffer.
-  command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-  let g:coc_global_extensions = [
-    \ 'coc-css', 'coc-explorer', 'coc-flow', 'coc-python', 'coc-snippets',
-    \ 'coc-spell-checker', 'coc-tsserver', 'coc-json'
-  \]
-endif
-" }}}
-
 " Plugins
 
 " Load plugins {{{
@@ -282,31 +76,23 @@ Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-user'
 Plug 'lucapette/vim-textobj-underscore'
 Plug 'pbrisbin/vim-mkdir'
-Plug 'pechorin/any-jump.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'xolox/vim-misc'
 
 " Javascript/React plugins
 Plug 'HerringtonDarkholme/yats.vim', {'for': ['typescript', 'typescriptreact']}
 Plug 'MaxMEllon/vim-jsx-pretty', {'for': 'react'}
 Plug 'yuezk/vim-js', {'for': 'javascript'}
 
-" Ruby/slim/yaml plugins
-Plug 'kchmck/vim-coffee-script', {'for': 'coffee'}
-Plug 'mrk21/yaml-vim', {'for': 'yaml'}
-Plug 'onemanstartup/vim-slim', {'for': 'slim'}
-Plug 'rhysd/vim-textobj-ruby', {'for': 'ruby'}
-Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
-
 " Others
 Plug 'bps/vim-textobj-python', {'for': 'python'}
 Plug 'ekalinin/Dockerfile.vim', {'for': ['Dockerfile', 'docker-compose']}
 Plug 'junegunn/goyo.vim', {'for': 'markdown'}
+Plug 'lervag/vimtex'
 Plug 'othree/html5.vim', {'for': 'html'}
 Plug 'tpope/vim-markdown', {'for': 'markdown'}
 
