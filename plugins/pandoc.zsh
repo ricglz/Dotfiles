@@ -1,11 +1,12 @@
 function md_to_pdf() {
   new_name=$(echo "$1" | cut -d '.' -f 1)
-  pandoc "$1" -o "$new_name.pdf" --template eisvogel --listings --pdf-engine=xelatex
+  pandoc "$1" -o "$new_name.pdf" --template eisvogel --listings --pdf-engine=tectonic
 }
 
 function md_to_pdf_cited() {
   new_name=$(echo "$1" | cut -d '.' -f 1)
-  pandoc "$1" -o "$new_name.pdf" --template eisvogel_apa --listings --pdf-engine=xelatex --filter pandoc-citeproc
+  pandoc "$1" -o "$new_name.pdf" --template eisvogel_apa --listings \
+              --pdf-engine=tectonic --filter pandoc-fignos pandoc-citeproc
 }
 
 function md_to_word() {
