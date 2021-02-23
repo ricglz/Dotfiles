@@ -13,8 +13,6 @@ augroup ale_config
   let g:ale_sign_warning = '⚠'
   let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace']}
   let g:ale_fix_on_save = 1
-  nmap <silent> <C-p> <Plug>(ale_previous_wrap)
-  nmap <silent> <C-n> <Plug>(ale_next_wrap)
 augroup END
 " }}}
 
@@ -54,7 +52,6 @@ augroup END
 " vimtex {{{
 augroup vimtex_config
   let g:vimtex_compiler_method = 'tectonic'
-  let g:tex_flavor = 'latex'
 augroup END
 "}}}
 
@@ -92,7 +89,7 @@ Plug 'yuezk/vim-js', {'for': 'javascript'}
 Plug 'bps/vim-textobj-python', {'for': 'python'}
 Plug 'ekalinin/Dockerfile.vim', {'for': ['Dockerfile', 'docker-compose']}
 Plug 'junegunn/goyo.vim', {'for': 'markdown'}
-Plug 'lervag/vimtex'
+Plug 'lervag/vimtex', {'for': 'tex'}
 Plug 'othree/html5.vim', {'for': 'html'}
 Plug 'tpope/vim-markdown', {'for': 'markdown'}
 
