@@ -2,12 +2,13 @@
 [user]
   name="Ricardo J González C"
   email="rjgcastillo@hotmail.com"
-  username="ricglz0201"
+  username="ricglz"
 
 [core]
   excludesfile=/Users/ricglz/.gitignore
 
 [pull]
   rebase=false
+
 [init]
-	defaultBranch = main
+  defaultBranch=main
