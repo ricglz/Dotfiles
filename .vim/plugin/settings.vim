@@ -6,6 +6,7 @@ augroup sets_config
   set cmdheight=2
   set cursorcolumn
   set cursorline
+  set encoding=utf8
   set expandtab
   set foldcolumn=0
   set foldenable
