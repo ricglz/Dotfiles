@@ -1,6 +1,7 @@
 augroup sets_config
   autocmd!
   set autoindent
+  set background=dark
   set backspace=indent,eol,start
   set clipboard=unnamed
   set cmdheight=2
@@ -51,6 +52,7 @@ augroup sets_config
   set splitright
   set suffixes=.bak,~,.swp,.swo,.o,.d,.info,.aux,.log,.dvi,.pdf,.bin,.bbl,.blg
   set suffixes+=.brf,.cb,.dmg,.exe,.ind,.idx,.ilg,.inx,.out,.toc,.pyc,.pyd,.dll
+  set termguicolors
   set title
   set undodir=~/.vim/undo
   set undofile
