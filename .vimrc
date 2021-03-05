@@ -35,15 +35,13 @@ Plug 'junegunn/goyo.vim', {'for': 'markdown'}
 Plug 'lervag/vimtex', {'for': 'tex'}
 Plug 'othree/html5.vim', {'for': 'html'}
 Plug 'tpope/vim-markdown', {'for': 'markdown'}
-Plug 'tyrannicaltoucan/vim-deep-space'
-Plug 'vim-scripts/AfterColors.vim'
 
 call plug#end()
 " }}}
 
 let mapleader=","
 syntax on
-colorscheme deep-space
+colorscheme gruvbox
 
 " Plugin Configuration
 
