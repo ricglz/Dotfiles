@@ -9,6 +9,7 @@
     "MCTS",
     "Perceptron",
     "SVMs",
+    "Spotify",
     "crossentropy",
     "deffuzifier",
     "deque",
@@ -23,7 +24,8 @@
     "pyplot",
     "rmse",
     "rmses",
-    "sklearn"
+    "sklearn",
+    "spotipy"
   ],
   "python.linting.enabled": false,
   "css.validate": false,
