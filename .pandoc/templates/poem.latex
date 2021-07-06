@@ -1,0 +1,147 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[twocolumn]{article}
+$if(title)$
+\title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
+$endif$
+\author{$for(author)$$author$$sep$ \and $endfor$}
+\date{$date$}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Confesiones de una mente incoherente},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\begin{document}
+\maketitle
+
+Como humanos vivimos fascinados por la necesidad de categorizar cada
+aspecto que encontremos en nuestras vidas: Si nuestra comida es dulce,
+salada o amarga, si el carro que conducimos es convertible, camioneta,
+compacto o eléctrico, si la estación metereológica en la que nos
+encontramos es verano, otoño, invierno o primavera. Todo esto con la
+finalidad de encontrar un resultado a nuestra vida, de intentar
+controlar la incertidumbre en la que constantemente nos encontramos. Sin
+embargo, estas categorías constantemente terminan siendo completamente
+polarizantes: ser feo o guapo, ser capitalista o comunista, ser rico o
+pobre, vivir como un santo o vivir como lo llamaría la iglesia llena de
+pecados y libertades. Puede que esto se deba a nuestra necesidad humana
+de determinar qué es ``\emph{bueno}'' y qué es ``\emph{malo}'', o por la
+naturaleza competitiva que tenemos de atacar y ganar ante que aquellos
+que son diferentes a nosotros.
+
+A pesar de lo postulado con anterioridad, muy rara vez las personas
+llegan a un punto de radicalidad sobre esas ideas. Y este lleva al mayor
+conflicto que alguien puede tener, sentirse a gusto viviendo del lado
+\emph{A} de la moneda, pero deseando vivir del lado \emph{B}, siendo eso
+lo que me pasa a mi. Desde mis tempranos años de la niñez soñaba con la
+posibilidad de disfrutar de esa libertad de salir y hacer todo lo que
+quisiera como veía que muchos adultos hacía, yéndose materializándose
+esa idea en mi adolescencia cuando sabía que quería una vida que muchos
+considerarían gloriosa: llena de placeres, en fiestas y celebraciones
+donde hubiese licor y mujeres. Acompañados de esos placeres prohibidos
+por la ley pero usados hasta por los que los prohibían. Donde
+posiblemente pudiese disfrutar de la compañía de personas más allá de
+las que sabía que me atraía. Al fin y al cabo, ¿quién no quisiese
+compartir y recibir más amor y placer sin importar de quién? Y fui
+creciendo con esa idea, de tener varias parejas de vida y disfrutar,
+como la sociedad aunque lo tache de mala fama, lo romantiza al mostrar
+que las personas más felices y exitosas son las que viven de dicha
+forma.
+
+Al llegar a mis 18, decidí empezar con esta aventura, ver si los sueños
+y fantasías eran tan buenas cómo pensaba, conocí y cité a alguien que
+hace pocos días conocí y cuyo nombre ya olvidé, si es que acaso me lo
+llegó a mencionar. En mi cabeza estaba a punto de disfrutar la primera
+noche de muchas, con personas que no importa que no conociese porque a
+ella tampoco le importaba, sólo la emoción y el goce del momento. Dejé
+de desnudarla con la mirada y empecé a hacerlo de verdad mientras sentía
+cada centímetro de su piel con las yemas de mis dedos que recorrían su
+cuerpo mientras disfrutábamos mutuamente. El momento no puedo negar que
+fue grandioso, pero el sentimiento pronto se desvaneció tan pronto
+llegamos al climax. Al tenerla tirada agotada en la cama, no pude dejar
+de pensar que no me sentía satisfecho, no de forma sexual, sino otro
+tipo de satisfacción. Acababa de tener mi primera vez, y en lugar de
+emocionarme por el futuro de mi sexualidad, honestamente me deprimí. No
+se podía comparar el sentimiento que sentía, comparado a la satisfacción
+y júbilo que sentía después de pasar 15 minutos con la chica que estaba
+locamente enamorado. Esos minutos te los podría recitar de memoria
+mientras sonreía y disfrutaba por recordarlo, sin embargo, en este caso
+a pesar de haber sido hace unos momentos no recuerdo nada importante. La
+despedí la siguiente mañana y al menos ella se veía satisfecha.
+
+No podía creerlo, el sexo era lo último que podía rescatar ese sueño que
+tenía de posible goce de vida como sentía que todos deseaban hacer
+internamente, ya que el licor, las drogas y las fiestas lo fui
+descartando mientras crecía. El alcohol no podía soportarlo por su olor
+y sabor, además que no me emocionaba la idea de no tener mi mente al
+100\% por algún momento, siendo esto último lo que también descartó las
+drogas. Mientras tanto las fiestas las detestaba por la necesidad de
+interacción social, la multitud de personas que por el alcohol y las
+drogas dejaban de mostrar esa máscara con las que lo veía durante el
+día, y por último en menor medida no era muy fuerte de la música y su
+volumen. Tal parece que sólo era yo otra persona con delirio de
+grandeza, alguien sin ambiciones de verdad. Y que la única posible que
+tuvo para según ser feliz, no puede cumplirla porque la verdad es que no
+lo harían feliz. ¿Qué juegos hace la vida no lo creen? Dándonos deseos
+que en realidad son inalcanzables no necesariamente por nuestras
+aptitudes, sino porque en realidad nuestra propia psique y moral nos lo
+prohibían.
+
+Traté de negarlo, pero vivía frustrado porque no podía vivir todo eso:
+el sentirse deseado, el vivir sin preocupaciones, el amar y ser amado,
+el vivir por un momento feliz. Pero todo esta envidia salía a la luz de
+mi que en realidad era un problema cada vez que oía de personas que
+vivían experiencias que yo sólo podía soñar. El cómo ellos al terminar
+una noche con un desconocido la mayoría de las veces estaban encantados
+por la experiencia. El cómo ellos podían salir y divertirse sin sentir
+que sin ese ligera perdida de conciencia por alcohol, puede que no se
+sentirían así y que los abrumara los días o semanas conscientes. Vivía
+en una ironía e hipocresía, viviendo de una forma por como me sentía
+completamente a gusto y feliz, pero en el fondo también envidiando no
+tener más. Tal vez sólo era codicia, y como un chamaco que ve que no
+puede tener un juguete, aunque sepa muy bien el por qué, sólo el deseo
+que sea prohibido hace que lo desee más
+
+\end{document}
