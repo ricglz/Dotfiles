@@ -3,10 +3,14 @@ function md_to_pdf() {
   pandoc "$1" -o "$new_name.pdf" --template eisvogel --listings --pdf-engine=tectonic
 }
 
-function md_to_pdf_cited() {
+function md_to_pdf_default() {
   new_name=$(echo "$1" | cut -d '.' -f 1)
-  pandoc "$1" -o "$new_name.pdf" --template eisvogel_apa --listings \
-              --pdf-engine=tectonic --filter pandoc-fignos pandoc-citeproc
+  pandoc "$1" -o "$new_name.pdf" --listings --pdf-engine=tectonic
+}
+
+function md_to_pdf_poem() {
+  new_name=$(echo "$1" | cut -d '.' -f 1)
+  pandoc "$1" -o "$new_name.pdf" --template poem --listings --pdf-engine=tectonic
 }
 
 function md_to_word() {
