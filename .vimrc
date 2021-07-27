@@ -42,6 +42,7 @@ call plug#end()
 let mapleader=","
 syntax on
 colorscheme gruvbox
+let g:python3_host_prog = '/usr/local/bin/python3.8'
 
 " Plugin Configuration
 
