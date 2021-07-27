@@ -17,9 +17,11 @@ augroup mappings_config
   " }}}
 
   " Remap for uppercase typos {{{
-  command! X x
-  command! W write
-  command! Q quit
+  if has('nvim')
+    command! X x
+    command! W write
+    command! Q quit
+  endif
   " }}}
 
   " Search and replace word under cursor (,*) {{{
