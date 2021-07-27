@@ -1,0 +1,14 @@
+#!/bin/zsh
+
+if [ ! -e "$HOME/Music/legal" ]; then
+  mkdir "$HOME/Music/legal"
+fi
+cd $HOME/Music/legal
+metadata="([0-9]*\\. )?(?P<artist>.+?)(\\s*OST [0-9]*)?\\s*(-|\\|)"
+metadata="${metadata}\\s*(?P<title>.+)\\s*(.*Oficial.*)?\\s*"
+yta --download-archive archive.txt --yes-playlist --max-filesize "10m" \
+    --add-metadata --embed-thumbnail --ignore-errors \
+    --metadata-from-title "${metadata}" -o "%(title)s.%(ext)s" $@
+echo 'Waiting to open all the music files...'
+for file in *.mp3; do open $file; sleep 1; rm $file; done
+cd -
