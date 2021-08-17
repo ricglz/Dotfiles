@@ -42,12 +42,12 @@ init:
 	printf '' > templates/tag_index_footer.html
 	printf '<h1>$$TITLE</h1>' > templates/article_header.html
 	printf '' > templates/article_footer.html
-	printf 'blog\n' > .git/info/exclude
 
 build: blog/index.html tagpages $(patsubst $(BLOG_SRC)/%.md,blog/%.html,$(ARTICLES)) $(patsubst %,blog/%.xml,$(BLOG_FEEDS))
+	cp -r data/ blog
 
 deploy: build
-	rsync -rLtvz $(BLOG_RSYNC_OPTS) blog/ data/ $(BLOG_REMOTE)
+	git subtree push --prefix blog origin gh-pages
 
 clean:
 	rm -rf blog tags
@@ -59,7 +59,7 @@ config:
 
 tags/%: $(BLOG_SRC)/%.md
 	mkdir -p tags
-	grep -i '^; *tags:' "$<" | cut -d: -f2- | sed 's/  */\n/g' | sed '/^$$/d' | sort -u > $@
+	grep -i '^; *tags:' "$<" | cut -d: -f2- | gsed 's/  */\n/g' | gsed '/^$$/d' | sort -u > $@
 
 blog/index.html: $(ARTICLES) $(TAGFILES) $(addprefix templates/,$(addsuffix .html,header index_header tag_list_header tag_entry tag_separator tag_list_footer article_list_header article_entry article_separator article_list_footer index_footer footer))
 	mkdir -p blog
@@ -84,9 +84,9 @@ blog/index.html: $(ARTICLES) $(TAGFILES) $(addprefix templates/,$(addsuffix .htm
 		git log --diff-filter=A --date="format:%s $(BLOG_DATE_FORMAT_INDEX)" --pretty=format:'%ad%n' -- "$$f"; \
 	done | sort -k2nr | cut -d" " -f1,3- | while IFS=" " read -r FILE DATE; do \
 		"$$first" || envsubst < templates/article_separator.html; \
-		URL="`printf '%s' "\$$FILE" | sed 's,^$(BLOG_SRC)/\(.*\).md,\1,'`.html" \
+		URL="`printf '%s' "\$$FILE" | gsed 's,^$(BLOG_SRC)/\(.*\).md,\1,'`.html" \
 		DATE="$$DATE" \
-		TITLE="`head -n1 "\$$FILE" | sed -e 's/^# //g'`" \
+		TITLE="`head -n1 "\$$FILE" | gsed -e 's/^# //g'`" \
 		envsubst < templates/article_entry.html; \
 		first=false; \
 	done >> $@; \
@@ -111,14 +111,14 @@ blog/@%.html: $(TAGFILES) $(addprefix templates/,$(addsuffix .html,header tag_in
 	envsubst < templates/tag_index_header.html >> $@; \
 	envsubst < templates/article_list_header.html >> $@; \
 	first=true; \
-	for f in $(shell grep -FH '$*' $(TAGFILES) | sed 's,^tags/\([^:]*\):.*,$(BLOG_SRC)/\1.md,'); do \
+	for f in $(shell grep -FH '$*' $(TAGFILES) | gsed 's,^tags/\([^:]*\):.*,$(BLOG_SRC)/\1.md,'); do \
 		printf '%s ' "$$f"; \
 		git log --diff-filter=A --date="format:%s $(BLOG_DATE_FORMAT_INDEX)" --pretty=format:'%ad%n' -- "$$f"; \
 	done | sort -k2nr | cut -d" " -f1,3- | while IFS=" " read -r FILE DATE; do \
 		"$$first" || envsubst < templates/article_separator.html; \
-		URL="`printf '%s' "\$$FILE" | sed 's,^$(BLOG_SRC)/\(.*\).md,\1,'`.html" \
+		URL="`printf '%s' "\$$FILE" | gsed 's,^$(BLOG_SRC)/\(.*\).md,\1,'`.html" \
 		DATE="$$DATE" \
-		TITLE="`head -n1 "\$$FILE" | sed -e 's/^# //g'`" \
+		TITLE="`head -n1 "\$$FILE" | gsed -e 's/^# //g'`" \
 		envsubst < templates/article_entry.html; \
 		first=false; \
 	done >> $@; \
@@ -141,7 +141,7 @@ blog/%.html: $(BLOG_SRC)/%.md $(addprefix templates/,$(addsuffix .html,header ar
 	export TAGS; \
 	envsubst < templates/header.html > $@; \
 	envsubst < templates/article_header.html >> $@; \
-	sed -e 1d \
+	gsed -e 1d \
 		-e '/^;/d' \
 		-e 's/&/\&amp;/g' \
 		-e 's/</\&lt;/g' \
@@ -180,7 +180,7 @@ blog/rss.xml: $(ARTICLES)
 			"$(BLOG_URL_ROOT)/`basename $$FILE .md`.html" \
 			"$(BLOG_URL_ROOT)/`basename $$FILE .md`.html" \
 			"$$DATE" \
-			"`sed -n '1d;/^$$/{2{d;b};q};p' < $$FILE`"; \
+			"`gsed -n '1d;/^$$/{2{d;b};q};p' < $$FILE`"; \
 	done >> $@
 	printf '</channel>\n</rss>\n' >> $@
 
@@ -198,6 +198,6 @@ blog/atom.xml: $(ARTICLES)
 			"$$DATE" \
 			"`git log -n 1 --date="format:%Y-%m-%dT%H:%M:%SZ" --pretty=format:'%ad' -- "$$FILE"`" \
 			"$$AUTHOR" \
-			"`sed -n '1d;/^$$/{2{d;b};q};p' < $$FILE`"; \
+			"`gsed -n '1d;/^$$/{2{d;b};q};p' < $$FILE`"; \
 	done >> $@
 	printf '</feed>\n' >> $@
