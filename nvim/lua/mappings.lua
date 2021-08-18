@@ -30,8 +30,11 @@ map('n', '<space>', ":exe 'silent! normal! '.((foldclosed('.')>0)? 'zMzx' : 'zc'
 map('n', '-', '@@', opts)
 
 -- Compe mappings
-map('i', '<C-Space> ', 'compe#complete()', silent_expr_opts)
+map('i', '<TAB> ', 'compe#complete()', silent_expr_opts)
 map('i', '<CR> ', "compe#confirm('<CR>')", silent_expr_opts)
 map('i', '<C-e> ', "compe#close('<C-e>')", silent_expr_opts)
 map('i', '<C-f> ', "compe#scroll({ 'delta': +4 })", silent_expr_opts)
 map('i', '<C-d> ', "compe#scroll({ 'delta': +4 })", silent_expr_opts)
+
+-- Telescope
+map('n', '<C-p>', ':Telescope find_files<CR>', opts)

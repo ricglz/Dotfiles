@@ -1,6 +1,6 @@
 require('lualine').setup {
   options = {
-    theme = 'tokyonight',
+    theme = 'material-nvim',
   },
   sections = {
     lualine_x = {'filetype'}

@@ -14,7 +14,9 @@ vim.o.scrolloff = 3
 
 vim.o.termguicolors = true
 vim.o.background = 'dark'
-vim.cmd('colorscheme tokyonight')
+vim.cmd('colorscheme material')
+vim.g.material_style = 'darker'
+
 --
 -- ================= Indentation ================= --
 

@@ -48,7 +48,10 @@ local packer = require('packer').startup(function()
   }
 
   -- (Status/Tab)line
-  use 'romgrk/barbar.nvim'
+  use {
+    'romgrk/barbar.nvim',
+    requires = {'kyazdani42/nvim-web-devicons'}
+  }
   use 'hoob3rt/lualine.nvim'
 
   -- Comments / Todos
@@ -69,12 +72,11 @@ local packer = require('packer').startup(function()
   use 'windwp/nvim-ts-autotag'
 
   -- Others
-  use 'folke/tokyonight.nvim'
+  use 'marko-cerovac/material.nvim'
   use 'norcalli/nvim-colorizer.lua'
   use 'Pocco81/TrueZen.nvim'
 end)
 
-require 'plugins-config/barbar'
 require 'plugins-config/lualine'
 require 'plugins-config/nvim-autopairs'
 require 'plugins-config/nvim-compe'
