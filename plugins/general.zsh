@@ -6,6 +6,7 @@ alias ex='exit'
 alias jpn='jupyter notebook'
 alias vim='nvim'
 alias yta='youtube-dl -x --audio-format "mp3"'
+alias java8='/usr/local/opt/openjdk@8/bin/java'
 
 # --- Functions ---
 # Create a folder and move into it in one command
