@@ -31,10 +31,6 @@ brew cask install flux font-source-code-pro kitty
 echo "Setting up symlinks"
 ./sl-setup.sh
 
-echo "Setting up kitty configuration"
-mkdir ~/.config/kitty
-ln -s ~/Dotfiles/kitty.conf ~/.config/kitty
-
 echo "Setting up neovim configuration"
 ln -s ~/Dotfiles/.vim ~/.config/nvim
 
