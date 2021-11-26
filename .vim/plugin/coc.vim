@@ -26,7 +26,7 @@ augroup mappings_config
 
     let g:coc_global_extensions = [
       \ 'coc-css', 'coc-flow', 'coc-python', 'coc-snippets',
-      \ 'coc-spell-checker', 'coc-tsserver', 'coc-json'
+      \ 'coc-spell-checker', 'coc-tsserver', 'coc-json', 'coc-cspell-dicts'
     \]
   endif
 augroup END

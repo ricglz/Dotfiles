@@ -20,7 +20,9 @@
     "deffuzifier",
     "deque",
     "dtype",
+    "empatía",
     "equivariance",
+    "hparams",
     "inpainting",
     "keras",
     "klass",
@@ -28,6 +30,7 @@
     "ndarray",
     "noinsert",
     "numpy",
+    "perceptrons",
     "pygame",
     "pyplot",
     "rmse",
@@ -36,6 +39,8 @@
     "spotipy",
     "wandb"
   ],
+  "cSpellExt.enableDictionaries": ["spanish"],
+  "cSpell.language": "en,es",
   "python.linting.enabled": false,
   "css.validate": false,
   "javascript.validate.enable": false
