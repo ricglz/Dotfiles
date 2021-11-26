@@ -1,7 +1,8 @@
 # Configure PATH
 export PATH="/usr/local/sbin:$HOME/.npm-packages/bin:/usr/local/opt/ruby/bin"
-export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export PATH="$PATH:$HOME/.cargo/bin:/usr/local/opt/python/libexec/bin"
+export PATH="$PATH:/usr/local/opt/openjdk@16/bin:/usr/local/bin:/usr/bin:/bin"
+export PATH="$PATH:/usr/sbin:/sbin:$HOME/.cargo/bin"
+export PATH="$PATH:/usr/local/opt/python/libexec/bin"
 export PATH="$PATH:$HOME/Library/Python/3.8/bin:$HOME/bin"
 
 # Other exports
