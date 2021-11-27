@@ -5,7 +5,7 @@ alias e='exit'
 alias ex='exit'
 alias jpn='jupyter notebook'
 alias vim='nvim'
-alias yta='youtube-dl -x --audio-format "mp3"'
+alias yta='yt-dlp -x --audio-format "mp3"'
 alias java8='/usr/local/opt/openjdk@8/bin/java'
 
 # --- Functions ---
