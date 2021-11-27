@@ -25,8 +25,7 @@ else
 fi
 
 echo "Installing basic brew packages"
-brew install getantibody/tap/antibody bat fd ffmpeg fzf joplin neovim vim yarn youtube-dl
-brew cask install flux font-source-code-pro kitty
+brew bundle
 
 echo "Setting up symlinks"
 ./sl-setup.sh
