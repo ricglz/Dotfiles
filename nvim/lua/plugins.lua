@@ -36,4 +36,15 @@ return require('packer').startup(function()
     config = "require'config/nvim-treesitter'"
   }
   use {'windwp/nvim-ts-autotag', disable = not is_enabled('treesitter'), after = 'nvim-treesitter'}
+
+  -- LSP and Autocomplete
+  use {'neovim/nvim-lspconfig', event = 'BufRead'}
+  use {
+    'hrsh7th/nvim-cmp',
+    config = "require'config/nvim-cmp'"
+  }
+  use 'hrsh7th/cmp-nvim-lsp'
+  use {'hrsh7th/cmp-buffer', after = 'nvim-cmp'}
+  use {'hrsh7th/vim-vsnip', after = "nvim-cmp"}
+  use {'windwp/nvim-autopairs', after = 'nvim-cmp', config = "require'config/nvim-autopairs'"}
 end)

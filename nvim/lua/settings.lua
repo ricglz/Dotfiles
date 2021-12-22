@@ -11,6 +11,7 @@ set.backspace = 'indent,eol,start'
 set.backup = false
 set.clipboard = 'unnamed'
 set.cmdheight = 2
+set.completeopt = 'menu,menuone,noselect'
 set.cursorcolumn = true
 set.cursorline = true
 set.encoding = 'utf8'
