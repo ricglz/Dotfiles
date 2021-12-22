@@ -55,4 +55,9 @@ return require('packer').startup(function()
     cmd = "Telescope",
     config = "require'config/telescope'"
   }
+
+  -- Other
+  use {'terrortylor/nvim-comment', config = "require('nvim_comment').setup()"}
+  use {'blackCauldron7/surround.nvim', config = "require('surround').setup(mappings_style = 'surround')"}
+  use {'christoomey/vim-sort-motion'} -- TODO: Keep looking if there comes out a lua version
 end)
