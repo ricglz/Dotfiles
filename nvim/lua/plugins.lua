@@ -12,4 +12,17 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use 'LionC/nest.nvim'
   use {'norcalli/nvim-colorizer.lua', config="require'config/nvim-colorizer'", ft={'css', 'html'}}
+  use {
+    'akinsho/nvim-bufferline.lua',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = "require'config/nvim-bufferline'",
+    event = 'BufWinEnter'
+  }
+  use 'eddyekofo94/gruvbox-flat.nvim'
+  use {
+    'hoob3rt/lualine.nvim',
+    config = "require'config/lualine'",
+    event = 'BufWinEnter',
+    requires = {'kyazdani42/nvim-web-devicons', opt = true},
+  }
 end)
