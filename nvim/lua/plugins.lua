@@ -47,4 +47,12 @@ return require('packer').startup(function()
   use {'hrsh7th/cmp-buffer', after = 'nvim-cmp'}
   use {'hrsh7th/vim-vsnip', after = "nvim-cmp"}
   use {'windwp/nvim-autopairs', after = 'nvim-cmp', config = "require'config/nvim-autopairs'"}
+
+  -- Telescope
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
+    cmd = "Telescope",
+    config = "require'config/telescope'"
+  }
 end)
