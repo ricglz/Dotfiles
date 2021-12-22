@@ -5,8 +5,8 @@ augroup mappings_config
   " }}}
 
   " Buffer navigation {{{
-  nnoremap <leader>p :bp<CR>
-  nnoremap <leader>n :bn<CR>
+  nnoremap <Tab> <cmd>bp<CR>
+  nnoremap <S-Tab> <cmd>bn<CR>
   " }}}
 
   " Better split switching (Ctrl-j, Ctrl-k, Ctrl-h, Ctrl-l) {{{
