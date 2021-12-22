@@ -46,10 +46,4 @@ cmp.setup({
   }
 })
 
-require("cmp_dictionary").setup({
-    dic = {
-        ["*"] = "/usr/share/dict/words",
-    },
-})
-
 vim.cmd("autocmd FileType TelescopePrompt lua require('cmp').setup.buffer { enabled = false }")

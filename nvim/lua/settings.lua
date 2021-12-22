@@ -1,9 +1,9 @@
 local set = vim.opt
 
 local wildignore = '*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js'
-wildignore = wildignore + '*/bower_components/*,*/node_modules/*,*/vendor/*,*/.git/*'
-wildignore = wildignore + '*/build/*,*/ckeditor/*,*/doc/*,*/source_maps/*,*/dist/*'
-wildignore = wildignore + '*/smarty/*,*/.hg/*,*/.svn/*,*/.sass-cache/*,*/log/*,*/tmp/*'
+wildignore = wildignore .. '*/bower_components/*,*/node_modules/*,*/vendor/*,*/.git/*'
+wildignore = wildignore .. '*/build/*,*/ckeditor/*,*/doc/*,*/source_maps/*,*/dist/*'
+wildignore = wildignore .. '*/smarty/*,*/.hg/*,*/.svn/*,*/.sass-cache/*,*/log/*,*/tmp/*'
 
 set.autoindent = true
 set.background = 'dark'
@@ -17,11 +17,8 @@ set.cursorline = true
 set.encoding = 'utf8'
 set.errorbells = false
 set.expandtab = true
-set.foldcolumn = 0
 set.foldenable = true
-set.foldlevel = 0
 set.foldmethod = 'syntax'
-set.foldminlines = 1
 set.foldnestmax = 5
 set.formatoptions = 'j1ncroql'
 set.hidden = true
@@ -56,8 +53,7 @@ set.title = true
 set.undodir = '~/.vim/undo'
 set.undofile = true
 set.updatetime = 300
-set.wildchar = '<TAB>'
-set.wildignore = wildignore + 'DS_Store'
+set.wildignore = wildignore .. 'DS_Store'
 set.wildmenu = true
 set.wildmode = 'list:longest'
 set.winminheight = 0

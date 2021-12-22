@@ -18,3 +18,6 @@ viminfo
 dump.rdb
 ssh
 wandb
+
+# Nvim thingies
+nvim/plugin

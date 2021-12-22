@@ -13,17 +13,17 @@ return require('packer').startup(function()
   use 'LionC/nest.nvim'
 
   -- Visual plugins
-  use {'norcalli/nvim-colorizer.lua', config="require'config/nvim-colorizer'", ft={'css', 'html'}}
+  use {'norcalli/nvim-colorizer.lua', config="require'configs/nvim-colorizer'", ft={'css', 'html'}}
   use {
     'akinsho/nvim-bufferline.lua',
     requires = 'kyazdani42/nvim-web-devicons',
-    config = "require'config/nvim-bufferline'",
+    config = "require'configs/nvim-bufferline'",
     event = 'BufWinEnter'
   }
   use 'eddyekofo94/gruvbox-flat.nvim'
   use {
     'hoob3rt/lualine.nvim',
-    config = "require'config/lualine'",
+    config = "require'configs/lualine'",
     event = 'BufWinEnter',
     requires = {'kyazdani42/nvim-web-devicons', opt = true},
   }
@@ -33,31 +33,31 @@ return require('packer').startup(function()
     'nvim-treesitter/nvim-treesitter',
     event = 'BufWinEnter',
     run = ':TSUpdate',
-    config = "require'config/nvim-treesitter'"
+    config = "require'configs/nvim-treesitter'"
   }
-  use {'windwp/nvim-ts-autotag', disable = not is_enabled('treesitter'), after = 'nvim-treesitter'}
+  use {'windwp/nvim-ts-autotag', after = 'nvim-treesitter'}
 
   -- LSP and Autocomplete
   use {'neovim/nvim-lspconfig', event = 'BufRead'}
   use {
     'hrsh7th/nvim-cmp',
-    config = "require'config/nvim-cmp'"
+    config = "require'configs/nvim-cmp'"
   }
   use 'hrsh7th/cmp-nvim-lsp'
   use {'hrsh7th/cmp-buffer', after = 'nvim-cmp'}
   use {'hrsh7th/vim-vsnip', after = "nvim-cmp"}
-  use {'windwp/nvim-autopairs', after = 'nvim-cmp', config = "require'config/nvim-autopairs'"}
+  use {'windwp/nvim-autopairs', after = 'nvim-cmp', config = "require'configs/nvim-autopairs'"}
 
   -- Telescope
   use {
     'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
     cmd = "Telescope",
-    config = "require'config/telescope'"
+    config = "require'configs/telescope'"
   }
 
   -- Other
   use {'terrortylor/nvim-comment', config = "require('nvim_comment').setup()"}
-  use {'blackCauldron7/surround.nvim', config = "require('surround').setup(mappings_style = 'surround')"}
+  use {'blackCauldron7/surround.nvim', config = "require('surround').setup({mappings_style = 'surround'})"}
   use {'christoomey/vim-sort-motion'} -- TODO: Keep looking if there comes out a lua version
 end)

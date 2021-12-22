@@ -1,3 +1,5 @@
+vim.g.mapleader = ','
+
 require('nest').applyKeymaps {
   {'<C-h>', '<C-w>h'},
   {'<C-j>', '<C-w>j'},
