@@ -9,5 +9,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 return require('packer').startup(function()
-  use {'LionC/nest.nvim'}
+  use 'wbthomason/packer.nvim'
+  use 'LionC/nest.nvim'
+  use {'norcalli/nvim-colorizer.lua', config="require'config/nvim-colorizer'", ft={'css', 'html'}}
 end)
