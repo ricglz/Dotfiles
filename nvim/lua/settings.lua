@@ -50,7 +50,6 @@ set.suffixes = '.bak,~,.swp,.swo,.o,.d,.info,.aux,.log,.dvi,.pdf,.bin,.bbl,.blg,
 set.swapfile = false
 set.termguicolors = true
 set.title = true
-set.undodir = '~/.vim/undo'
 set.undofile = true
 set.updatetime = 300
 set.wildignore = wildignore .. 'DS_Store'
