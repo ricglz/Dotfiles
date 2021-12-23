@@ -1,5 +1,7 @@
 # Dotfiles
+
 This is the setup is use for my dotfiles, it cover a wide range of configuration, being these:
+
 * Brew packages
 * ZSH plugins and prompt
 * VIM configuration (Neovim)
@@ -8,6 +10,7 @@ This is the setup is use for my dotfiles, it cover a wide range of configuration
 * Aliases, functions and others for shell
 
 ## Pre-installing
+
 1. Install git: `$ xcode-select --install`
 2. Clone the repo: `$ git clone https://github.com/ricglz0201/Dotfiles.git`
 
@@ -16,6 +19,7 @@ This is the setup is use for my dotfiles, it cover a wide range of configuration
 Run: `./install.sh`
 
 ## What it will do?
+
 1. Install or update brew depending of the case
 2. Install essential brew packages (antibody being one of them)
 3. Setup the symlinks for the dotfiles located inside the folder
