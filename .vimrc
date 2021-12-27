@@ -3,39 +3,43 @@
 " Load plugins {{{
 call plug#begin('~/.vim/plugged')
 
-" General plugins
-Plug '/usr/local/opt/fzf'
-Plug 'christoomey/vim-sort-motion'
-Plug 'coderifous/textobj-word-column.vim'
+" Fzf
+" Plug '/usr/local/opt/fzf'
+" Plug 'junegunn/fzf.vim', {'on': ['GFiles', 'Files', 'Rg']}
+
+" ALE (Static analysis)
 Plug 'dense-analysis/ale'
-Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/fzf.vim', {'on': ['GFiles', 'Files', 'Rg']}
+
+" New vim-ish commands
+Plug 'christoomey/vim-sort-motion'
 Plug 'junegunn/vim-easy-align'
-Plug 'kana/vim-textobj-function'
-Plug 'kana/vim-textobj-indent'
-Plug 'kana/vim-textobj-user'
-Plug 'lucapette/vim-textobj-underscore'
-Plug 'pbrisbin/vim-mkdir'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'SirVer/ultisnips'
-Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 
-" Javascript/React plugins
+" New text objects
+Plug 'kana/vim-textobj-function'
+Plug 'kana/vim-textobj-indent'
+Plug 'kana/vim-textobj-user'
+Plug 'lucapette/vim-textobj-underscore'
+Plug 'bps/vim-textobj-python', {'for': 'python'}
+
+" Snippets
+Plug 'SirVer/ultisnips'
+
+" Filetypes specific plugins
 Plug 'HerringtonDarkholme/yats.vim', {'for': ['typescript', 'typescriptreact']}
 Plug 'MaxMEllon/vim-jsx-pretty', {'for': 'react'}
 Plug 'yuezk/vim-js', {'for': 'javascript'}
-
-" Others
-Plug 'bps/vim-textobj-python', {'for': 'python'}
 Plug 'ekalinin/Dockerfile.vim', {'for': ['Dockerfile', 'docker-compose']}
 Plug 'junegunn/goyo.vim', {'for': 'markdown'}
 Plug 'lervag/vimtex', {'for': 'tex'}
 Plug 'othree/html5.vim', {'for': 'html'}
 Plug 'tpope/vim-markdown', {'for': 'markdown'}
 
+" Others
+Plug 'pbrisbin/vim-mkdir'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 " }}}
 
