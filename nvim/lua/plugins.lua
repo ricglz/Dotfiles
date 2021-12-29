@@ -36,6 +36,20 @@ return require('packer').startup(function()
     config = "require'configs/nvim-treesitter'"
   }
   use {'windwp/nvim-ts-autotag', after = 'nvim-treesitter'}
+  use {'andymass/vim-matchup', after = 'nvim-treesitter'}
+  use {
+    'numToStr/Comment.nvim',
+    after = 'nvim-treesitter',
+    config = "require'configs/nvim-comment'"
+  }
+  use {
+    'nvim-treesitter/nvim-treesitter-refactor',
+    after = 'nvim-treesitter'
+  }
+  use {
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    after = 'nvim-treesitter'
+  }
 
   -- LSP and Autocomplete
   use {
@@ -47,8 +61,12 @@ return require('packer').startup(function()
     requires = {'neovim/nvim-lspconfig'},
   }
   use {'hrsh7th/cmp-buffer', after = 'nvim-cmp'}
-  use {'hrsh7th/vim-vsnip', after = "nvim-cmp"}
-  use {'windwp/nvim-autopairs', after = 'nvim-cmp', config = "require'configs/nvim-autopairs'"}
+  use {'hrsh7th/vim-vsnip', requires = "nvim-cmp"}
+  use {
+    'windwp/nvim-autopairs',
+    after = 'nvim-cmp',
+    config = "require'configs/nvim-autopairs'"
+  }
 
   -- Telescope
   use {
@@ -59,7 +77,6 @@ return require('packer').startup(function()
   }
 
   -- Other
-  use {'terrortylor/nvim-comment', config = "require('nvim_comment').setup()"}
-  use {'blackCauldron7/surround.nvim', config = "require('surround').setup({mappings_style = 'surround'})"}
+  use {'blackCauldron7/surround.nvim', config = "require'configs/surround'"}
   use {'christoomey/vim-sort-motion'} -- TODO: Keep looking if there comes out a lua version
 end)
