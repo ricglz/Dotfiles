@@ -9,21 +9,25 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 return require('packer').startup(function()
+  local lua_path = function(pkg)
+    return string.format("require'configs.%s'", pkg)
+  end
+
   use 'wbthomason/packer.nvim'
   use 'LionC/nest.nvim'
 
   -- Visual plugins
-  use {'norcalli/nvim-colorizer.lua', config="require'configs/nvim-colorizer'", ft={'css', 'html'}}
+  use {'norcalli/nvim-colorizer.lua', config = lua_path('nvim-colorizer'), ft={'css', 'html'}}
   use {
     'akinsho/nvim-bufferline.lua',
     requires = 'kyazdani42/nvim-web-devicons',
-    config = "require'configs/nvim-bufferline'",
+    config = lua_path('nvim-bufferline'),
     event = 'BufWinEnter'
   }
   use 'eddyekofo94/gruvbox-flat.nvim'
   use {
     'hoob3rt/lualine.nvim',
-    config = "require'configs/lualine'",
+    config = lua_path('lualine'),
     event = 'BufWinEnter',
     requires = {'kyazdani42/nvim-web-devicons', opt = true},
   }
@@ -33,14 +37,14 @@ return require('packer').startup(function()
     'nvim-treesitter/nvim-treesitter',
     event = 'BufWinEnter',
     run = ':TSUpdate',
-    config = "require'configs/nvim-treesitter'"
+    config = lua_path('nvim-treesitter')
   }
   use {'windwp/nvim-ts-autotag', after = 'nvim-treesitter'}
   use {'andymass/vim-matchup', after = 'nvim-treesitter'}
   use {
     'numToStr/Comment.nvim',
     after = 'nvim-treesitter',
-    config = "require'configs/nvim-comment'"
+    config = lua_path('nvim-comment')
   }
   use {
     'nvim-treesitter/nvim-treesitter-refactor',
@@ -54,7 +58,8 @@ return require('packer').startup(function()
   -- LSP and Autocomplete
   use {
     'hrsh7th/nvim-cmp',
-    config = "require'configs/nvim-cmp'",
+    config = lua_path('nvim-cmp'),
+    event = 'BufWinEnter',
   }
   use {
     'hrsh7th/cmp-nvim-lsp',
@@ -65,7 +70,7 @@ return require('packer').startup(function()
   use {
     'windwp/nvim-autopairs',
     after = 'nvim-cmp',
-    config = "require'configs/nvim-autopairs'"
+    config = lua_path('nvim-autopairs')
   }
 
   -- Telescope
@@ -73,10 +78,11 @@ return require('packer').startup(function()
     'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
     cmd = "Telescope",
-    config = "require'configs/telescope'"
+    config = lua_path('telescope')
   }
 
   -- Other
-  use {'blackCauldron7/surround.nvim', config = "require'configs/surround'"}
+  use {'blackCauldron7/surround.nvim', config = lua_path('surround')}
   use {'christoomey/vim-sort-motion'} -- TODO: Keep looking if there comes out a lua version
+  use 'dstein64/vim-startuptime'
 end)
