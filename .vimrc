@@ -67,17 +67,17 @@ augroup END
 " }}}
 
 " fzf.vim {{{
-augroup fzf_config
-  autocmd!
-  silent! !git rev-parse --is-inside-work-tree
-  if v:shell_error == 0
-    map <C-p> :GFiles --cached --others --exclude-standard<CR>
-    map <C-o> :GFiles?<CR>
-  else
-    map <C-p> :Files<CR>
-  endif
-  map <C-a> :Rg<CR>
-augroup END
+" augroup fzf_config
+"   autocmd!
+"   silent! !git rev-parse --is-inside-work-tree
+"   if v:shell_error == 0
+"     map <C-p> :GFiles --cached --others --exclude-standard<CR>
+"     map <C-o> :GFiles?<CR>
+"   else
+"     map <C-p> :Files<CR>
+"   endif
+"   map <C-a> :Rg<CR>
+" augroup END
 " }}}
 
 " UltiSnips.vim {{{
