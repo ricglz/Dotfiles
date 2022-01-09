@@ -8,11 +8,16 @@ node_modules
 
 # Vim related
 .netrwhist
-vim/.vim/autoload/plug.vim.old
-vim/.vim/plugged/*
-vim/.vim/spell
-vim/.vim/undo/*
+.vim/autoload/plug.vim.old
+.vim/plugged/*
+.vim/spell
+.vim/undo/*
 viminfo
+
+# Other things to ignore
+dump.rdb
+ssh
+wandb
 
 # Nvim thingies
 nvim/plugin
