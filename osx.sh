@@ -7,13 +7,8 @@
 # Save to disk (not to iCloud) by default
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
-# Disable the “Are you sure you want to open this application?” dialog
-defaults write com.apple.LaunchServices LSQuarantine -bool false
-
-# Disable smart quotes as they’re annoying when typing code
+# Disable smart quotes/dashes as they’re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
-
-# Disable smart dashes as they’re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
 ###############################################################################
@@ -24,20 +19,19 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Max (editable)" 80
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" 80
 defaults write com.apple.BluetoothAudioAgent "Apple Initial Bitpool (editable)" 80
-defaults write com.apple.BluetoothAudioAgent "Apple Initial Bitpool Min (editable)" 80
-defaults write com.apple.BluetoothAudioAgent "Negotiated Bitpool" 80
-defaults write com.apple.BluetoothAudioAgent "Negotiated Bitpool Max" 80
-defaults write com.apple.BluetoothAudioAgent "Negotiated Bitpool Min" 80
-
-# Disable soundeffects, because their kind of annoying
-defaults write "Apple Global Domain" "com.apple.sound.uiaudio.enabled" -bool false
+defaults write com.apple.BluetoothAudioAgent "Negotiated Bitpool" 37
+defaults write com.apple.BluetoothAudioAgent "Negotiated Bitpool Max" 37
+defaults write com.apple.BluetoothAudioAgent "Negotiated Bitpool Min" 37
+defaults write com.apple.BluetoothAudioAgent "Stream - Flush Ring on Packet Drop (editable)" 0
+defaults write com.apple.BluetoothAudioAgent "Stream - Max Outstanding Packets (editable)" 30
+defaults write com.apple.BluetoothAudioAgent "Stream Resume Delay" "0.75"
 
 # Set a blazingly fast keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 1
 defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
-# Stop iTunes from responding to the keyboard media keys
-# launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2 > /dev/null
+# Disable soundeffects, because their kind of annoying
+defaults write "Apple Global Domain" "com.apple.sound.uiaudio.enabled" -bool false
 
 ###############################################################################
 # Screen                                                                      #
