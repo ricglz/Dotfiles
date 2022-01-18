@@ -29,6 +29,7 @@ brew bundle
 
 echo "Setting up symlinks using stow"
 stow -Svt ~ */
+ln -s "$(pwd)/git/.gitignore" "$HOME/.gitignore"
 
 echo "Making folders"
 DIRECTORIES=('.npm-packages', 'Screenshots', '.vim/plugged', '.vim/undo', '.vim/swaps', '.vim/spell')
