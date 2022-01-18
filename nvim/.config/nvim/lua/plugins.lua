@@ -85,4 +85,5 @@ return require('packer').startup(function()
   use {'blackCauldron7/surround.nvim', config = lua_path('surround')}
   use {'christoomey/vim-sort-motion'} -- TODO: Keep looking if there comes out a lua version
   use 'dstein64/vim-startuptime'
+  use 'nathom/filetype.nvim'
 end)
