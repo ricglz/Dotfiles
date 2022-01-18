@@ -5,4 +5,4 @@ sindresorhus/pure
 zsh-users/zsh-syntax-highlighting
 
 # Local
-~/Dotfiles/plugins
+~/plugins
