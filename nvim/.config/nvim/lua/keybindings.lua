@@ -13,12 +13,6 @@ require('nest').applyKeymaps {
   {'J', 'mjJ`j'},
   {'space', ":exe 'silent! normal! '.((foldclosed('.')>0)? 'zMzx' : 'zc')<CR>"},
   {'-', '@@'},
-
-  {'<leader>', {
-    {'*', ":%s/\\<<C-r><C-w>\\>//g<Left><Left>"},
-    {'*', "hy:%s/\\V<C-r>h//g<Left><Left>", mode='v'},
-  }},
-
   {mode='v', {
     {'<', '<gv'},
     {'>', '>gv'},

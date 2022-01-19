@@ -15,6 +15,7 @@ return require('packer').startup(function()
 
   use 'wbthomason/packer.nvim'
   use 'LionC/nest.nvim'
+  use {'folke/which-key.nvim', config = lua_path('which-key')}
 
   -- Visual plugins
   use {'norcalli/nvim-colorizer.lua', config = lua_path('nvim-colorizer'), ft={'css', 'html'}}
@@ -82,7 +83,11 @@ return require('packer').startup(function()
   }
 
   -- Other
-  use {'blackCauldron7/surround.nvim', config = lua_path('surround')}
+  -- This one sucked, will see if I can contribute to improve it, but for know
+  -- it is crap
+  -- use {'blackCauldron7/surround.nvim', config = lua_path('surround')}
+  use 'tpope/vim-surround'
+  use 'tpope/vim-repeat'
   use {'christoomey/vim-sort-motion'} -- TODO: Keep looking if there comes out a lua version
   use 'dstein64/vim-startuptime'
   use 'nathom/filetype.nvim'

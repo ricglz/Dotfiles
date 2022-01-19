@@ -14,7 +14,6 @@ require'nvim-treesitter.configs'.setup {
       enable = true,
       keymaps = {
         goto_definition = "<leader>d",
-        list_definitions = "<leader>l"
       }
     }
   },
