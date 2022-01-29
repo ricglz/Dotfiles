@@ -14,10 +14,16 @@ return require('packer').startup(function()
   end
 
   use 'wbthomason/packer.nvim'
-  use 'LionC/nest.nvim'
+
+  -- Performance/Fix
+  use 'antoinemadec/FixCursorHold.nvim'
+  use 'nathom/filetype.nvim'
+
+  -- Keybinding
+  use {'LionC/nest.nvim', config = lua_path('nest')}
   use {'folke/which-key.nvim', config = lua_path('which-key')}
 
-  -- Visual plugins
+  -- Visual
   use {'norcalli/nvim-colorizer.lua', config = lua_path('nvim-colorizer'), ft={'css', 'html'}}
   use {
     'akinsho/nvim-bufferline.lua',
@@ -78,7 +84,6 @@ return require('packer').startup(function()
   use {
     'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
-    cmd = "Telescope",
     config = lua_path('telescope')
   }
 
@@ -88,7 +93,6 @@ return require('packer').startup(function()
   -- use {'blackCauldron7/surround.nvim', config = lua_path('surround')}
   use 'tpope/vim-surround'
   use 'tpope/vim-repeat'
-  use {'christoomey/vim-sort-motion'} -- TODO: Keep looking if there comes out a lua version
+  use 'christoomey/vim-sort-motion' -- TODO: Keep looking if there comes out a lua version
   use 'dstein64/vim-startuptime'
-  use 'nathom/filetype.nvim'
 end)

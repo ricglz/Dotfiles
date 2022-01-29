@@ -1,3 +1,5 @@
+vim.g.mapleader = ','
+
 local set = vim.opt
 
 local wildignore = '*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js'
