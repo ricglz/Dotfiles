@@ -80,6 +80,14 @@ return require('packer').startup(function()
     config = lua_path('nvim-autopairs')
   }
 
+  -- Formatting
+  use({
+    'jose-elias-alvarez/null-ls.nvim',
+    requires = { 'neovim/nvim-lspconfig', 'nvim-lua/plenary.nvim' },
+    config = lua_path('null-ls'),
+  })
+
+
   -- Telescope
   use {
     'nvim-telescope/telescope.nvim',
