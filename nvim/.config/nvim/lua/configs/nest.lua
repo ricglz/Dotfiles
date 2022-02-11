@@ -1,4 +1,3 @@
-print('hello')
 require('nest').applyKeymaps {
   {'<C-h>', '<C-w>h'},
   {'<C-j>', '<C-w>j'},
@@ -8,9 +7,8 @@ require('nest').applyKeymaps {
   {'<S-Tab>', '<cmd>bprevious<CR>'},
   {'<C-p>', '<cmd>Telescope git_files<CR>'},
   {'<C-a>', '<cmd>Telescope live_grep<CR>'},
-  {'Y', 'y$'},
   {'J', 'mjJ`j'},
-  {'space', ":exe 'silent! normal! '.((foldclosed('.')>0)? 'zMzx' : 'zc')<CR>"},
+  {'<space>', ":exe 'silent! normal! '.((foldclosed('.')>0)? 'zMzx' : 'zc')<CR>"},
   {'-', '@@'},
   {mode='v', {
     {'<', '<gv'},
