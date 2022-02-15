@@ -24,12 +24,3 @@ cmp.setup({
 })
 
 vim.cmd("autocmd FileType TelescopePrompt lua require('cmp').setup.buffer { enabled = false }")
-
-local servers = {'cssls', 'eslint', 'html', 'jsonls', 'rust_analyzer', 'tsserver'}
-local nvim_lsp = require('lspconfig')
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    capabilities = capabilities
-  }
-end

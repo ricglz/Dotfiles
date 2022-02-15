@@ -25,7 +25,7 @@ return require('packer').startup(function()
   use 'nathom/filetype.nvim'
 
   -- Keybinding
-  use {'LionC/nest.nvim', config = lua_path('nest'), event = 'BufWinEnter'}
+  use {'LionC/nest.nvim', config = lua_path('nest')}
   use {
     'folke/which-key.nvim',
     config = lua_path('which-key'),
@@ -69,23 +69,27 @@ return require('packer').startup(function()
 
   -- LSP and Autocomplete
   local use_after_cmp = function(opts) use_after('nvim-cmp', opts) end
-
   use {
     'hrsh7th/nvim-cmp',
     config = lua_path('nvim-cmp'),
     event = 'InsertEnter',
   }
+  use {
+    'hrsh7th/cmp-nvim-lsp',
+    config = 'require"lsp"',
+    requires = 'neovim/nvim-lspconfig',
+  }
+
   use_after_cmp { 'hrsh7th/cmp-buffer' }
-  use_after_cmp { 'hrsh7th/cmp-nvim-lsp', requires = 'neovim/nvim-lspconfig' }
   use_after_cmp { 'windwp/nvim-autopairs', config = lua_path('nvim-autopairs') }
 
   -- Formatting
-  use({
+  use {
     'jose-elias-alvarez/null-ls.nvim',
     requires = { 'neovim/nvim-lspconfig', 'nvim-lua/plenary.nvim' },
     config = lua_path('null-ls'),
     event = 'BufWritePre',
-  })
+  }
 
 
   -- Telescope
@@ -102,5 +106,5 @@ return require('packer').startup(function()
   use 'tpope/vim-surround'
   use 'tpope/vim-repeat'
   use 'christoomey/vim-sort-motion' -- TODO: Keep looking if there comes out a lua version
-  use { 'dstein64/vim-startuptime', cmd = 'BufWinEnter' }
+  use { 'dstein64/vim-startuptime', cmd = 'StartupTime' }
 end)
