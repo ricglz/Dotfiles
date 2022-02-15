@@ -13,6 +13,11 @@ return require('packer').startup(function()
     return string.format("require'configs.%s'", pkg)
   end
 
+  local use_after = function(plugin, opts)
+    opts['after'] = plugin
+    use(opts)
+  end
+
   use 'wbthomason/packer.nvim'
 
   -- Performance/Fix
@@ -20,16 +25,24 @@ return require('packer').startup(function()
   use 'nathom/filetype.nvim'
 
   -- Keybinding
-  use {'LionC/nest.nvim', config = lua_path('nest')}
-  use {'folke/which-key.nvim', config = lua_path('which-key')}
+  use {'LionC/nest.nvim', config = lua_path('nest'), event = 'BufWinEnter'}
+  use {
+    'folke/which-key.nvim',
+    config = lua_path('which-key'),
+    event = 'InsertEnter',
+  }
 
   -- Visual
-  use {'norcalli/nvim-colorizer.lua', config = lua_path('nvim-colorizer'), ft={'css', 'html'}}
+  use {
+    'norcalli/nvim-colorizer.lua',
+    config = lua_path('nvim-colorizer'),
+    ft={'css', 'html'},
+  }
   use {
     'akinsho/nvim-bufferline.lua',
     requires = 'kyazdani42/nvim-web-devicons',
     config = lua_path('nvim-bufferline'),
-    event = 'BufWinEnter'
+    event = 'BufWinEnter',
   }
   use 'eddyekofo94/gruvbox-flat.nvim'
   use {
@@ -40,51 +53,38 @@ return require('packer').startup(function()
   }
 
   -- Treesitter
+  local use_after_ts = function(opts) use_after('nvim-treesitter', opts) end
+
   use {
     'nvim-treesitter/nvim-treesitter',
     event = 'BufWinEnter',
     run = ':TSUpdate',
-    config = lua_path('nvim-treesitter')
+    config = lua_path('nvim-treesitter'),
   }
-  use {'windwp/nvim-ts-autotag', after = 'nvim-treesitter'}
-  use {'andymass/vim-matchup', after = 'nvim-treesitter'}
-  use {
-    'numToStr/Comment.nvim',
-    after = 'nvim-treesitter',
-    config = lua_path('nvim-comment')
-  }
-  use {
-    'nvim-treesitter/nvim-treesitter-refactor',
-    after = 'nvim-treesitter'
-  }
-  use {
-    'nvim-treesitter/nvim-treesitter-textobjects',
-    after = 'nvim-treesitter'
-  }
+  use_after_ts { 'windwp/nvim-ts-autotag', event = 'InsertEnter' }
+  use_after_ts { 'andymass/vim-matchup' }
+  use_after_ts { 'numToStr/Comment.nvim', config = lua_path('nvim-comment') }
+  use_after_ts { 'nvim-treesitter/nvim-treesitter-refactor' }
+  use_after_ts { 'nvim-treesitter/nvim-treesitter-textobjects' }
 
   -- LSP and Autocomplete
+  local use_after_cmp = function(opts) use_after('nvim-cmp', opts) end
+
   use {
     'hrsh7th/nvim-cmp',
     config = lua_path('nvim-cmp'),
-    event = 'BufWinEnter',
+    event = 'InsertEnter',
   }
-  use {
-    'hrsh7th/cmp-nvim-lsp',
-    requires = {'neovim/nvim-lspconfig'},
-  }
-  use {'hrsh7th/cmp-buffer', after = 'nvim-cmp'}
-  use {'hrsh7th/vim-vsnip', requires = "nvim-cmp"}
-  use {
-    'windwp/nvim-autopairs',
-    after = 'nvim-cmp',
-    config = lua_path('nvim-autopairs')
-  }
+  use_after_cmp { 'hrsh7th/cmp-buffer' }
+  use_after_cmp { 'hrsh7th/cmp-nvim-lsp', requires = 'neovim/nvim-lspconfig' }
+  use_after_cmp { 'windwp/nvim-autopairs', config = lua_path('nvim-autopairs') }
 
   -- Formatting
   use({
     'jose-elias-alvarez/null-ls.nvim',
     requires = { 'neovim/nvim-lspconfig', 'nvim-lua/plenary.nvim' },
     config = lua_path('null-ls'),
+    event = 'BufWritePre',
   })
 
 
@@ -102,5 +102,5 @@ return require('packer').startup(function()
   use 'tpope/vim-surround'
   use 'tpope/vim-repeat'
   use 'christoomey/vim-sort-motion' -- TODO: Keep looking if there comes out a lua version
-  use 'dstein64/vim-startuptime'
+  use { 'dstein64/vim-startuptime', cmd = 'BufWinEnter' }
 end)
