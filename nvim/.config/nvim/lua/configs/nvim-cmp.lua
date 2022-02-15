@@ -6,7 +6,9 @@ end
 local feedkey = function(key, mode)
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
 end
+
 local cmp = require 'cmp'
+local luasnip = require 'luasnip'
 
 cmp.setup({
   mapping = {
@@ -16,10 +18,16 @@ cmp.setup({
     ['<C-e>'] = cmp.mapping.close(),
     ['<CR>'] = cmp.mapping.confirm({select = true}),
   },
+  snippet = {
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+    end
+  },
   sources = {
     {name = 'nvim_lsp'},
     {name = 'buffer'},
-    {name = 'omni'}
+    {name = 'omni'},
+    {name = 'luasnip'},
   }
 })
 

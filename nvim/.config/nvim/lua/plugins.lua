@@ -68,20 +68,22 @@ return require('packer').startup(function()
   use_after_ts { 'nvim-treesitter/nvim-treesitter-textobjects' }
 
   -- LSP and Autocomplete
-  local use_after_cmp = function(opts) use_after('nvim-cmp', opts) end
-  use {
-    'hrsh7th/nvim-cmp',
-    config = lua_path('nvim-cmp'),
-    event = 'InsertEnter',
-  }
   use {
     'hrsh7th/cmp-nvim-lsp',
     config = 'require"lsp"',
     requires = 'neovim/nvim-lspconfig',
   }
 
+  local use_after_cmp = function(opts) use_after('nvim-cmp', opts) end
+  use {
+    'hrsh7th/nvim-cmp',
+    config = lua_path('nvim-cmp'),
+    event = 'InsertEnter',
+  }
+
   use_after_cmp { 'hrsh7th/cmp-buffer' }
   use_after_cmp { 'windwp/nvim-autopairs', config = lua_path('nvim-autopairs') }
+  use_after_cmp { 'saadparwaiz1/cmp_luasnip', requires='L3MON4D3/LuaSnip' }
 
   -- Formatting
   use {
