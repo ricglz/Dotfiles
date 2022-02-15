@@ -54,7 +54,6 @@ local format = function(client)
     client.resolved_capabilities.document_formatting = false
     return
   end
-  print(client.name)
 
   if add_command == nil then
     other_path()
