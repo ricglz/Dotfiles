@@ -8,7 +8,7 @@ require('nest').applyKeymaps {
   {'<C-p>', '<cmd>Telescope git_files<CR>'},
   {'<C-a>', '<cmd>Telescope live_grep<CR>'},
   {'J', 'mjJ`j'},
-  {'<space>', ":exe 'silent! normal! '.((foldclosed('.')>0)? 'zMzx' : 'zc')<CR>"},
+  {'<space>', 'za'},
   {'-', '@@'},
   {mode='v', {
     {'<', '<gv'},
