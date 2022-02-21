@@ -25,7 +25,7 @@ Plug 'lucapette/vim-textobj-underscore'
 Plug 'bps/vim-textobj-python', {'for': 'python'}
 
 " Snippets
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 
 " Filetypes specific plugins
 Plug 'HerringtonDarkholme/yats.vim', {'for': ['typescript', 'typescriptreact']}

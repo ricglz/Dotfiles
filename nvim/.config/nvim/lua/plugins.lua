@@ -73,6 +73,10 @@ return require('packer').startup(function()
     config = 'require"lsp"',
     requires = 'neovim/nvim-lspconfig',
   }
+  use {
+    'L3MON4D3/LuaSnip',
+    config = lua_path('lua-snip'),
+  }
 
   local use_after_cmp = function(opts) use_after('nvim-cmp', opts) end
   use {
@@ -97,7 +101,7 @@ return require('packer').startup(function()
   -- Telescope
   use {
     'nvim-telescope/telescope.nvim',
-    requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
+    requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'},
     config = lua_path('telescope')
   }
 
