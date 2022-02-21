@@ -1,57 +1,34 @@
 snippet log
-console.log($1);
-endsnippet
-
+  console.log($1);
 snippet fun
-function ${1:myFunction}($2) {
-  $3
-}
-endsnippet
-
+  function ${1:myFunction}($2) {
+    $3
+  }
 snippet afun
-async function ${1:myFunction}(${2:args}) {
-  $3
-}
-endsnippet
-
+  async function ${1:myFunction}(${2:args}) {
+    $3
+  }
 snippet imp
-import $1 from '$2';
-endsnippet
-
+  import $1 from '$2';
 snippet cf
-const $1 = () => (
-  $2
-)
-endsnippet
-
+  const $1 = () => (
+    $2
+  )
 snippet expd
-export default $1;
-endsnippet
-
+  export default $1;
 snippet if
-if($1) {
-  $0
-}
-endsnippet
-
+  if($1) {
+    $0
+  }
 snippet ife
-if($1) {
-  $2
-} else {
-  $0
-}
-endsnippet
-
-snippet addE "Add event listener"
-${1:document}.addEventListener('click', function() {
-  $0
-});
-endsnippet
-
+  if($1) {
+    $2
+  } else {
+    $0
+  }
 snippet try
-try {
-  $1
-} catch (err) {
-  $0
-}
-endsnippet
+  try {
+    $1
+  } catch (err) {
+    $0
+  }

@@ -1,0 +1,9 @@
+extends javascript
+snippet ust "useState snippet"
+  const [${1:state}, ${2:setState}] = React.useState($3);
+snippet usef "useEffect snippet"
+  React.useEffect(() => {
+    $1
+  }, [$2]);
+snippet usec "useContext snippet"
+  const $1 = React.useContext($2);

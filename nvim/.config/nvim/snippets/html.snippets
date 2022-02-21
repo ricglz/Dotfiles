@@ -1,163 +1,110 @@
 snippet html "Boilerplate for the start of the html"
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>
-      $1
-    </title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="./css/index.css"/>
-    <script defer src="./js/index.js"></script>
-    $2
-  </head>
-  <body>
-    $0
-  </body>
-</html>
-endsnippet
-
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <title>
+	$1
+      </title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="stylesheet" type="text/css" href="./css/index.css"/>
+      <script defer src="./js/index.js"></script>
+      $2
+    </head>
+    <body>
+      $0
+    </body>
+  </html>
 snippet a
-<a href="$1">$2</a>
-endsnippet
-
+  <a href="$1">$2</a>
 snippet h1
-<h1>$1</h1>
-endsnippet
-
+  <h1>$1</h1>
 snippet ol
-<ol>
-  <li>$1</li>$2
-</ol>
-endsnippet
-
+  <ol>
+    <li>$1</li>$2
+  </ol>
 snippet ul
-<ul>
-  <li>$1</li>$2
-</ul>
-endsnippet
-
+  <ul>
+    <li>$1</li>$2
+  </ul>
 snippet li
-<li>$1</li>
-endsnippet
-
+  <li>$1</li>
 snippet p
-<p>$1</p>
-endsnippet
-
+  <p>$1</p>
 snippet img
-<img src="$1" alt="$2" />
-endsnippet
-
+  <img src="$1" alt="$2" />
 snippet form
-<form>
-  $1
-</form>
-endsnippet
-
+  <form>
+    $1
+  </form>
 snippet leg "Legend tag"
-<legend>
-  $1
-</legend>
-endsnippet
-
+  <legend>
+    $1
+  </legend>
 snippet lab "Label tag"
-<label for="${1:input}">$2</label>
-endsnippet
-
+  <label for="${1:input}">$2</label>
 snippet inp "Input tag"
-<input type="${1:text}" id="${2:input}" />
-endsnippet
-
+  <input type="${1:text}" id="${2:input}" />
 snippet inpb "Submit button tag"
-<button id="${1:submit-btn}" type="submit">$2</button>
-endsnippet
-
+  <button id="${1:submit-btn}" type="submit">$2</button>
 snippet main
-<main>
-  $1
-</main>
-endsnippet
-
+  <main>
+    $1
+  </main>
 snippet tab "Table tag containing head and body"
-<table>
-  <thead>
-    <tr>
-      <th>$1</th>$2
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>$3</td>$4
-    </tr>
-  </tbody>
-</table>
-endsnippet
-
+  <table>
+    <thead>
+      <tr>
+	<th>$1</th>$2
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td>$3</td>$4
+      </tr>
+    </tbody>
+  </table>
 snippet span
-<span>$1</span>
-endsnippet
-
+  <span>$1</span>
 snippet foot "Footer tag"
-<footer>
-  $1
-</footer>
-endsnippet
-
+  <footer>
+    $1
+  </footer>
 snippet div
-<div>
-  $1
-</div>
-endsnippet
-
+  <div>
+    $1
+  </div>
 snippet sel "Select tag"
-<select id="$1">
-  <option value="$2">
-    $3
-  </option>
-</select>
-endsnippet
-
+  <select id="$1">
+    <option value="$2">
+      $3
+    </option>
+  </select>
 snippet opt "Option tag"
-<option value="$1">
-  $2
-</option>
-endsnippet
-
+  <option value="$1">
+    $2
+  </option>
 snippet ta "Textarea tag"
-<textarea id="$1">
-  $2
-</textarea>
-endsnippet
-
+  <textarea id="$1">
+    $2
+  </textarea>
 snippet head
-<header>
-  $1
-</header>
-endsnippet
-
+  <header>
+    $1
+  </header>
 snippet add "Address tag"
-<address>
-  $1
-</address>
-endsnippet
-
+  <address>
+    $1
+  </address>
 snippet nav
-<nav>
-  $1
-</nav>
-endsnippet
-
+  <nav>
+    $1
+  </nav>
 snippet link
-<link rel="stylesheet" type="text/css" href="${1:./css/index.css}"/>
-endsnippet
-
+  <link rel="stylesheet" type="text/css" href="${1:./css/index.css}"/>
 snippet scr "Script tag with defer"
-<script defer src="${1:./js/index.js}"></script>
-endsnippet
-
+  <script defer src="${1:./js/index.js}"></script>
 snippet sec "Section tag"
-<section>
-  $1
-</section>
-endsnippet
+  <section>
+    $1
+  </section>

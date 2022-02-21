@@ -1,11 +1,8 @@
 snippet if "if ... then (if)"
-if ${2:[[ ${1:condition} ]]}; then
-  ${0:#statements}
-fi
-endsnippet
-
+  if ${2:[[ ${1:condition} ]]}; then
+    ${0:#statements}
+  fi
 snippet fun "function ..."
-function $1($2) {
-  $3
-}
-endsnippet
+  function $1($2) {
+    $3
+  }
