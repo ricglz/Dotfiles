@@ -1,5 +1,4 @@
 local add_command = vim.api.nvim_add_user_command
-
 local no_lsp = function() return (#vim.lsp.buf_get_clients()) < 1 end
 
 local format_document = function()
@@ -44,7 +43,7 @@ end
 local other_path = function()
   vim.cmd([[
     augroup fmt
-      autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
+      autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1500)
     augroup END
   ]])
 end
@@ -62,9 +61,26 @@ local format = function(client)
   end
 end
 
+local add_key_bindings = function()
+  require('nest').applyKeymaps {
+    {'K', vim.lsp.buf.hover},
+    {'g', {
+      {'D', vim.lsp.buf.declaration},
+      {'d', vim.lsp.buf.definition},
+      {'i', vim.lsp.buf.implementation},
+      {'r', vim.lsp.buf.references},
+    }},
+    {'<leader>', {
+      {'c', vim.lsp.buf.code_action},
+      {'D', vim.lsp.buf.type_definition},
+    }},
+  }
+end
+
 local on_attach = function(client)
   vim.cmd('autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focus=false, scope="cursor", border="rounded"})')
   format(client)
+  add_key_bindings()
 end
 
 return on_attach
