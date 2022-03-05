@@ -61,7 +61,10 @@ return require('packer').startup(function()
     run = ':TSUpdate',
     config = lua_path('nvim-treesitter'),
   }
-  use_after_ts { 'windwp/nvim-ts-autotag', event = 'InsertEnter' }
+  use_after_ts {
+    'windwp/nvim-ts-autotag',
+    ft = {'typescript', 'typescriptreact'},
+  }
   use_after_ts { 'andymass/vim-matchup' }
   use_after_ts { 'numToStr/Comment.nvim', config = lua_path('nvim-comment') }
   use_after_ts { 'nvim-treesitter/nvim-treesitter-refactor' }
@@ -109,6 +112,9 @@ return require('packer').startup(function()
     config = lua_path('telescope')
   }
 
+  -- Syntax
+  use { 'ekalinin/Dockerfile.vim', ft='dockerfile' }
+
   -- Other
   -- This one sucked, will see if I can contribute to improve it, but for know
   -- it is crap
@@ -117,4 +123,5 @@ return require('packer').startup(function()
   use 'tpope/vim-repeat'
   use 'christoomey/vim-sort-motion' -- TODO: Keep looking if there comes out a lua version
   use { 'dstein64/vim-startuptime', cmd = 'StartupTime' }
+  use { 'jghauser/mkdir.nvim', event = 'BufWritePre', config="require'mkdir'" }
 end)
