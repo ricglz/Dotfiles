@@ -7,6 +7,7 @@ alias jpn='jupyter notebook'
 alias vim='nvim'
 alias yta='yt-dlp -x --audio-format "mp3"'
 alias java8='/usr/local/opt/openjdk@8/bin/java'
+alias components-lines='git ls-files src | grep -E "(tsx|jsx)$" | xargs wc -l | sort'
 
 # --- Functions ---
 # Create a folder and move into it in one command
