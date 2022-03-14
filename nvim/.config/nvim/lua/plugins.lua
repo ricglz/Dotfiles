@@ -29,7 +29,7 @@ return require('packer').startup(function()
   use {
     'folke/which-key.nvim',
     config = lua_path('which-key'),
-    event = 'InsertEnter',
+    event = 'BufWinEnter',
   }
 
   -- Visual
@@ -44,7 +44,7 @@ return require('packer').startup(function()
     config = lua_path('nvim-bufferline'),
     event = 'BufWinEnter',
   }
-  use 'eddyekofo94/gruvbox-flat.nvim'
+  use { 'eddyekofo94/gruvbox-flat.nvim', event = 'BufWinEnter' }
   use {
     'hoob3rt/lualine.nvim',
     config = lua_path('lualine'),
@@ -71,15 +71,7 @@ return require('packer').startup(function()
   use_after_ts { 'nvim-treesitter/nvim-treesitter-textobjects' }
 
   -- LSP and Autocomplete
-  use {
-    'hrsh7th/cmp-nvim-lsp',
-    config = 'require"lsp"',
-    requires = 'neovim/nvim-lspconfig',
-  }
-  use {
-    'L3MON4D3/LuaSnip',
-    config = lua_path('lua-snip'),
-  }
+  use { 'neovim/nvim-lspconfig', config = 'require"lsp"' }
 
   local use_after_cmp = function(opts) use_after('nvim-cmp', opts) end
   use {
@@ -90,7 +82,12 @@ return require('packer').startup(function()
 
   use_after_cmp { 'hrsh7th/cmp-buffer' }
   use_after_cmp { 'windwp/nvim-autopairs', config = lua_path('nvim-autopairs') }
-  use_after_cmp { 'saadparwaiz1/cmp_luasnip', requires='L3MON4D3/LuaSnip' }
+  use_after_cmp { 'saadparwaiz1/cmp_luasnip', config = lua_path('lua-snip'), requires='L3MON4D3/LuaSnip' }
+  use_after_cmp {
+    'hrsh7th/cmp-nvim-lsp',
+    event = 'InsertEnter',
+    requires = 'neovim/nvim-lspconfig',
+  }
 
   -- Formatting
   use {
@@ -99,7 +96,6 @@ return require('packer').startup(function()
     config = lua_path('null-ls'),
     event = 'BufWritePre',
   }
-
 
   -- Telescope
   use {
@@ -125,5 +121,10 @@ return require('packer').startup(function()
   use 'christoomey/vim-sort-motion' -- TODO: Keep looking if there comes out a lua version
   use { 'junegunn/vim-easy-align', config = lua_path('vim-easy-align') }
   use { 'dstein64/vim-startuptime', cmd = 'StartupTime' }
-  use { 'jghauser/mkdir.nvim', event = 'BufWritePre', config="require'mkdir'" }
+  use { 'jghauser/mkdir.nvim', event = 'BufWritePre', config = "require'mkdir'" }
+  use {
+    'famiu/bufdelete.nvim',
+    cmd = 'Bdelete',
+    config = lua_path('bufdelete'),
+  }
 end)

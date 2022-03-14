@@ -8,6 +8,7 @@ require('nest').applyKeymaps {
   {'J', 'mjJ`j'},
   {'<space>', 'za'},
   {'-', '@@'},
+  {'<leader>d', '<cmd>Bdelete<CR>'},
   {mode='v', {
     {'<', '<gv'},
     {'>', '>gv'},
