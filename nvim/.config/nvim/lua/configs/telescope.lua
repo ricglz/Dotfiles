@@ -2,6 +2,8 @@ local actions = require('telescope.actions')
 local previewers = require('telescope.previewers')
 local sorters = require('telescope.sorters')
 local telescope = require('telescope')
+
+-- Setup
 telescope.setup {
   defaults = {
     layout_config = {width = 0.75, prompt_position = "top", preview_cutoff = 120, horizontal = {mirror = false}, vertical = {mirror = false}},
@@ -51,4 +53,12 @@ telescope.setup {
     }
   }
 }
+
+-- Extensions
 telescope.load_extension('fzf')
+
+-- Mappings
+require('nest').applyKeymaps {
+  {'<C-p>', '<cmd>Telescope git_files<CR>'},
+  {'<C-f>', '<cmd>Telescope live_grep<CR>'},
+}

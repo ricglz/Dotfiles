@@ -5,8 +5,6 @@ require('nest').applyKeymaps {
   {'<C-l>', '<C-w>l'},
   {'<Tab>', '<cmd>bnext<CR>'},
   {'<S-Tab>', '<cmd>bprevious<CR>'},
-  {'<C-p>', '<cmd>Telescope git_files<CR>'},
-  {'<C-f>', '<cmd>Telescope live_grep<CR>'},
   {'J', 'mjJ`j'},
   {'<space>', 'za'},
   {'-', '@@'},

@@ -107,6 +107,7 @@ return require('packer').startup(function()
     requires = {
       'nvim-lua/popup.nvim',
       'nvim-lua/plenary.nvim',
+      'LionC/nest.nvim',
       {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
     },
     config = lua_path('telescope')
@@ -122,6 +123,7 @@ return require('packer').startup(function()
   use 'tpope/vim-surround'
   use 'tpope/vim-repeat'
   use 'christoomey/vim-sort-motion' -- TODO: Keep looking if there comes out a lua version
+  use { 'junegunn/vim-easy-align', config = lua_path('vim-easy-align') }
   use { 'dstein64/vim-startuptime', cmd = 'StartupTime' }
   use { 'jghauser/mkdir.nvim', event = 'BufWritePre', config="require'mkdir'" }
 end)
