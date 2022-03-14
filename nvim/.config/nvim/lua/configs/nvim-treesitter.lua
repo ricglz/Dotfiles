@@ -10,12 +10,6 @@ require'nvim-treesitter.configs'.setup {
       enable = true,
       keymaps = { smart_rename = "<leader>r" }
     },
-    navigation = {
-      enable = true,
-      keymaps = {
-        goto_definition = "<leader>d",
-      }
-    }
   },
   textobjects = {
     select = {
