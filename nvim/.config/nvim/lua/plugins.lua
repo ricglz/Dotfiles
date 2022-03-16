@@ -111,17 +111,23 @@ return require('packer').startup(function()
   -- Terminal
   use { 'numToStr/FTerm.nvim', cmd = {'Git', 'Term'}, config = lua_path('fterm') }
 
+  -- Testing
+  use {
+    'klen/nvim-test',
+    cmd = { 'TestNearest', 'TestFile', 'TestSuite', 'TestLast' },
+    config = lua_path('nvim-test')
+  }
+
   -- Syntax
   use { 'ekalinin/Dockerfile.vim', ft='dockerfile' }
 
-  -- Other
-  -- This one sucked, will see if I can contribute to improve it, but for know
-  -- it is crap
-  -- use {'blackCauldron7/surround.nvim', config = lua_path('surround')}
+  -- Vim-like plugins
   use 'tpope/vim-surround'
   use 'tpope/vim-repeat'
   use 'christoomey/vim-sort-motion' -- TODO: Keep looking if there comes out a lua version
   use { 'junegunn/vim-easy-align', config = lua_path('vim-easy-align') }
+
+  -- Other
   use { 'dstein64/vim-startuptime', cmd = 'StartupTime' }
   use { 'jghauser/mkdir.nvim', event = 'BufWritePre', config = "require'mkdir'" }
   use { 'famiu/bufdelete.nvim', cmd = 'Bdelete' }
