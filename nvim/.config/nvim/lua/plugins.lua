@@ -86,7 +86,11 @@ return require('packer').startup(function()
 
   use_after_cmp { 'hrsh7th/cmp-buffer' }
   use_after_cmp { 'windwp/nvim-autopairs', config = lua_path('nvim-autopairs') }
-  use_after_cmp { 'saadparwaiz1/cmp_luasnip', config = lua_path('lua-snip'), requires='L3MON4D3/LuaSnip' }
+  use_after_cmp {
+    'saadparwaiz1/cmp_luasnip',
+    config = lua_path('lua-snip'),
+    requires='L3MON4D3/LuaSnip'
+  }
 
   -- Formatting
   use {
