@@ -44,7 +44,7 @@ return require('packer').startup(function()
     config = lua_path('nvim-bufferline'),
     event = 'BufWinEnter',
   }
-  use { 'eddyekofo94/gruvbox-flat.nvim', event = 'BufWinEnter' }
+  use 'eddyekofo94/gruvbox-flat.nvim'
   use {
     'hoob3rt/lualine.nvim',
     config = lua_path('lualine'),
@@ -71,7 +71,11 @@ return require('packer').startup(function()
   use_after_ts { 'nvim-treesitter/nvim-treesitter-textobjects' }
 
   -- LSP and Autocomplete
-  use { 'neovim/nvim-lspconfig', config = 'require"lsp"' }
+  use {
+    'neovim/nvim-lspconfig',
+    requires='hrsh7th/cmp-nvim-lsp',
+    config = 'require"lsp"'
+  }
 
   local use_after_cmp = function(opts) use_after('nvim-cmp', opts) end
   use {
@@ -83,11 +87,6 @@ return require('packer').startup(function()
   use_after_cmp { 'hrsh7th/cmp-buffer' }
   use_after_cmp { 'windwp/nvim-autopairs', config = lua_path('nvim-autopairs') }
   use_after_cmp { 'saadparwaiz1/cmp_luasnip', config = lua_path('lua-snip'), requires='L3MON4D3/LuaSnip' }
-  use_after_cmp {
-    'hrsh7th/cmp-nvim-lsp',
-    event = 'InsertEnter',
-    requires = 'neovim/nvim-lspconfig',
-  }
 
   -- Formatting
   use {
@@ -109,6 +108,9 @@ return require('packer').startup(function()
     config = lua_path('telescope')
   }
 
+  -- Terminal
+  use { 'numToStr/FTerm.nvim', cmd = {'Git', 'Term'}, config = lua_path('fterm') }
+
   -- Syntax
   use { 'ekalinin/Dockerfile.vim', ft='dockerfile' }
 
@@ -122,9 +124,5 @@ return require('packer').startup(function()
   use { 'junegunn/vim-easy-align', config = lua_path('vim-easy-align') }
   use { 'dstein64/vim-startuptime', cmd = 'StartupTime' }
   use { 'jghauser/mkdir.nvim', event = 'BufWritePre', config = "require'mkdir'" }
-  use {
-    'famiu/bufdelete.nvim',
-    cmd = 'Bdelete',
-    config = lua_path('bufdelete'),
-  }
+  use { 'famiu/bufdelete.nvim', cmd = 'Bdelete' }
 end)
