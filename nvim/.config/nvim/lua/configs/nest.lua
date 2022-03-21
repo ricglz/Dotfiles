@@ -17,4 +17,7 @@ require('nest').applyKeymaps {
     {'<', '<gv'},
     {'>', '>gv'},
   }},
+  {mode='t', {
+    {'<C-t>', '<cmd>Term<CR>'},
+  }},
 }
