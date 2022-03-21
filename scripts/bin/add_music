@@ -4,11 +4,27 @@ if [ ! -e "$HOME/Music/legal" ]; then
   mkdir "$HOME/Music/legal"
 fi
 cd $HOME/Music/legal
-metadata="([0-9]*\\. )?(?P<artist>.+?)(\\s*OST [0-9]*)?\\s*(-|\\|)"
-metadata="${metadata}\\s*(?P<title>.+)\\s*(.*Oficial.*)?\\s*"
-yt-dlp --download-archive archive.txt --yes-playlist --max-filesize "10m" \
+
+separator="\\s*(-|\\|)\\s*"
+number="([0-9]*\\. )"
+ost_number="(\\s*OST [0-9]*)"
+official="(.*Off?icial.*\\s*)"
+
+# Extra flags
+brackets="\\[.*\\]"
+live="\\([Ll]ive.*\\)"
+feat="\\([Ff]eat .*\\)"
+from="\\([Ff]rom .*\\)"
+extended="\\([Ee]xtended .*\\)"
+remastered="\\([Rr]emastered .*\\)"
+extra_flags="($brackets|$live|$feat|$from|$extended|$remastered)"
+
+metadata="\\s*$number?(?P<artist>.+?)$ost_number?$separator"
+metadata="$metadata(?P<title>.+)\\s*$official?($extra_flags\\s*)?"
+
+yt-dlp --download-archive archive.txt --yes-playlist --max-filesize "11m" \
        --min-filesize "1m" --add-metadata --embed-thumbnail --ignore-errors \
-       --metadata-from-title "${metadata}" -o "%(title)s.%(ext)s" \
+       --metadata-from-title "$metadata" -o "%(title)s.%(ext)s" \
        -x --audio-format "mp3" $@
 echo 'Waiting to open all the music files...'
 open /System/Applications/Music.app
