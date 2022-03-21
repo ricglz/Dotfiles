@@ -73,6 +73,7 @@ local add_key_bindings = function()
     {'<leader>', {
       {'c', vim.lsp.buf.code_action},
       {'D', vim.lsp.buf.type_definition},
+      {'r', vim.lsp.buf.rename},
     }},
   }
 end

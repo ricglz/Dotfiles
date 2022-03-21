@@ -5,12 +5,6 @@ require'nvim-treesitter.configs'.setup {
   highlight = enabled,
   autotag = enabled,
   matchup = enabled,
-  refactor = {
-    smart_rename = {
-      enable = true,
-      keymaps = { smart_rename = "<leader>r" }
-    },
-  },
   textobjects = {
     select = {
       enable = true,

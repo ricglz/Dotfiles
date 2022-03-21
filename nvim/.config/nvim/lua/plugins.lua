@@ -67,7 +67,6 @@ return require('packer').startup(function()
   }
   use_after_ts { 'andymass/vim-matchup' }
   use_after_ts { 'numToStr/Comment.nvim', config = lua_path('nvim-comment') }
-  use_after_ts { 'nvim-treesitter/nvim-treesitter-refactor' }
   use_after_ts { 'nvim-treesitter/nvim-treesitter-textobjects' }
 
   -- LSP and Autocomplete
