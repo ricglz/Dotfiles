@@ -61,4 +61,5 @@ telescope.load_extension('fzf')
 require('nest').applyKeymaps {
   {'<C-p>', '<cmd>Telescope git_files<CR>'},
   {'<C-f>', '<cmd>Telescope live_grep<CR>'},
+  {'<C-d>', '<cmd>Telescope diagnostics<CR>'},
 }
