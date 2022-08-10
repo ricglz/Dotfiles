@@ -1,5 +1,14 @@
 #!/bin/zsh
 
+ADD_ARTIST=false
+
+case $1 in
+  -a | --add-artist)
+    ADD_ARTIST=true
+    shift # remove the current value for `$1` and use the next
+    ;;
+esac
+
 if [ ! -e "$HOME/Music/legal" ]; then
   mkdir "$HOME/Music/legal"
 fi
@@ -18,12 +27,24 @@ extra_flags="($brackets|$live|$feat|$from|$extended|$remastered)"
 
 metadata="\\s*(?P<title>.+)\\s*$official?($extra_flags\\s*)?"
 
+if [[ $ADD_ARTIST == true ]]; then
+  separator="\\s*(-|\\|)\\s*"
+  number="([0-9]*\\. )"
+  ost_number="(\\s*OST [0-9]*)"
+  prefix="\\s*$number?(?P<artist>.+?)$ost_number?$separator"
+  metadata="${prefix}${metadata}"
+fi
+
+echo $metadata
+
 yt-dlp --download-archive archive.txt --yes-playlist --max-filesize "11m" \
        --min-filesize "1m" --add-metadata --embed-thumbnail --ignore-errors \
        --metadata-from-title "$metadata" -o "%(title)s.%(ext)s" \
        -x --audio-format "mp3" $@
+
 echo 'Waiting to open all the music files...'
 open /System/Applications/Music.app
 sleep 2
-for file in *.mp3; do open $file; sleep 0.5; rm $file; done
+for file in *.mp3; do open $file; sleep 0.25; rm $file; done
+
 cd -
