@@ -42,13 +42,11 @@ return require('packer').startup(function()
     'akinsho/nvim-bufferline.lua',
     requires = 'kyazdani42/nvim-web-devicons',
     config = lua_path('nvim-bufferline'),
-    event = 'BufWinEnter',
   }
   use 'eddyekofo94/gruvbox-flat.nvim'
   use {
     'hoob3rt/lualine.nvim',
     config = lua_path('lualine'),
-    event = 'BufWinEnter',
     requires = {'kyazdani42/nvim-web-devicons', opt = true},
   }
 
