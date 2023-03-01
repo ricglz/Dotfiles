@@ -7,6 +7,7 @@ alias ex='exit'
 alias java8='/usr/local/opt/openjdk@8/bin/java'
 alias jpn='jupyter notebook'
 alias python='python3'
+alias pip='/usr/local/bin/pip3.10'
 alias vim='nvim'
 alias yta='yt-dlp -x --audio-format "mp3"'
 
